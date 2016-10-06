@@ -44,10 +44,6 @@
 
       <field name="section" title="Section" toolbox="yes" rank="2">
         <attribute group="Specification" name="type" mandatory="true" type="list" options='["linear", "table"]' >Type of Section</attribute>
-
-        
-
-
         <attribute group="Settings" name="layout" mandatory="true" type="list" default="vertical" options='["vertical", "horizontal"]' >Layout</attribute>
         <attribute group="Settings" name="add_caption" default="Add to table">Add to Table Button Caption</attribute>
         <attribute group="Settings" name="next_caption" default="">Next Section Button Caption</attribute>
@@ -55,17 +51,11 @@
         <attribute group="Settings" name="totals" type="boolean" default="false">If table, show a total row?</attribute>
         <attribute group="Settings" name="datetime" type="boolean" default="true">If table, show the date/time column?</attribute>
         <attribute group="Settings" name="allowdel" type="boolean" default="false">If table, allow delete?</attribute>
-
         <attribute group="Settings" name="timer" type="int" default="0">If table, prompt the user to complete every 'n' minutes</attribute>
-
-
         <attribute group="Settings" name="groupby" type="varchar" default="">Table columns to group by</attribute>
         <attribute group="Settings" name="grouped" type="varchar" default="">Table columns to group (sum)</attribute>
         <attribute group="Settings" name="colour">Hex colour of button </attribute>
-
-       <attribute group="Validation" name="rowrequired" type="boolean" default="true">If table, must it contain at least 1 row</attribute>
-
-
+        <attribute group="Validation" name="rowrequired" type="boolean" default="true">If table, must it contain at least 1 row</attribute>
         <attribute group="Behaviour" name="hidden" type="boolean" mandatory="false">Is this field hidden</attribute>
         <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
         <attribute group="Advanced" name="sql" type="varchar" default="">For table sections, a SQL query to run when a row is added to the table</attribute>
@@ -83,16 +73,10 @@
         <attribute group="Settings" name="totals" type="boolean" default="false">If table, show a total row?</attribute>
         <attribute group="Settings" name="datetime" type="boolean" default="true">If table, show the date/time column?</attribute>
         <attribute group="Settings" name="allowdel" type="boolean" default="false">If table, allow delete?</attribute>
-
          <attribute name="frequency"  group="Behaviour" mandatory="false">Trigger Query Frequency in Milliseconds</attribute>
-
-
         <attribute group="Settings" name="groupby" type="varchar" default="">Table columns to group by</attribute>
         <attribute group="Settings" name="grouped" type="varchar" default="">Table columns to group (sum)</attribute>
-
        <attribute group="Validation" name="rowrequired" type="boolean" default="true">If table, must it contain at least 1 row</attribute>
-
-
         <attribute group="Behaviour" name="hidden" type="boolean" mandatory="false">Is this field hidden</attribute>
         <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
         <attribute group="Advanced" name="sql" type="varchar" default="">For table sections, a SQL query to run when a row is added to the table</attribute>
@@ -111,7 +95,7 @@
         <attribute name="hidden"  type="boolean" group="Behaviour" mandatory="true">Is this field hidden</attribute>
         <attribute name="regex"  mandatory="false"  group="Behaviour" type="regex">Regular expression mask for this field</attribute>
         <attribute name="example" mandatory="false" group="Behaviour">Example</attribute>
-         <attribute name="forcecaptial" type="boolean" mandatory="false" group="Behaviour">Ensure first letter is a capital</attribute>
+        <attribute name="forcecaptial" type="boolean" mandatory="false" group="Behaviour">Ensure first letter is a capital</attribute>
         <attribute name="max" mandatory="false"  group="Validation" type="int">Max characters</attribute>
         <attribute name="min" mandatory="false"  group="Validation" type="int">Min characters</attribute>
         <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
