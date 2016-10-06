@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<EditorConfig>
+  <form>
+    <availablefields>
+
+      <field name="form" title="Form" toolbox="no" rank="1">
+        <attribute group="Information" name="FormId" type="readonly">Form ID</attribute>
+        <attribute group="Information" name="NCFormId" type="readonly">NC Form ID</attribute>
+        <attribute group="Information" name="Name" type="readonly">Name</attribute>
+        <attribute group="Information" name="Type" type="readonly">Type</attribute>
+        <attribute group="Information" name="Factory" type="readonly">Factory</attribute>
+        <attribute group="Information" name="Area" type="readonly">Area</attribute>
+        <attribute group="Information" name="Function" type="readonly">Function</attribute>
+        <attribute group="Information" name="Version" type="readonly">Version</attribute>
+        <attribute group="Information" name="Order" formbuilder="no">Order</attribute>
+        <attribute group="Information" name="Pallette" type="readonly" >Palette Name</attribute>
+        <attribute group="Information" name="Status" type="readonly">Status</attribute>
+        <attribute group="Information" name="RevisionDate" type="readonly">Revision Date</attribute>
+        <attribute group="Information" name="Date Created" type="readonly">Date Created</attribute>
+        <attribute group="Parameters" name="parameters" type="options">Parameters</attribute>
+        <attribute group="Parameters" name="menuform" type="boolean">Menu Form</attribute>
+        <attribute group="Settings" name="appmode" default="false" type="boolean">Application mode (single page)</attribute>
+        <attribute group="Settings" name="buttons" default="true" type="boolean">Submit buttons when in app mode?</attribute>
+        <attribute group="Settings" name="allowcorrectiveactionform" default="false" type="boolean">Should Non Conformances open a corrective action form?</attribute>
+        <attribute group="Settings" name="nonconformanceseverity" default="None,Minor,Major">Non Conformance Severity List</attribute>
+        <attribute group="Settings" name="next_caption" default="Next">Next Section Button Caption</attribute>
+        <attribute group="Settings" name="prev_caption" default="Previous">Previous Section Button Caption</attribute>
+        <attribute group="Settings" name="autosave" type="boolean">Autosave</attribute>
+        <attribute group="Settings" name="autosave_guid" formbuilder="no">Autosave GUID</attribute>
+        <attribute group="Settings" name="allowverficaition" type="boolean">Allow Verficaition</attribute>
+        <attribute group="Settings" name="submitsql">SQL to Execute on Submit</attribute>
+        <attribute group="Settings" name="submittedsql" formbuilder="no">Executed on Submit</attribute>
+        <attribute group="Settings" name="submitpopup">Message to display on Submit</attribute>
+        <attribute group="Settings" name="base64logo">Base 64 Logo</attribute>
+        <attribute group="Cases" name="iscase" type="boolean">This form is part of a Case</attribute>
+        <attribute group="Cases" name="casetype" >Case Type</attribute>
+        <attribute group="Cases" name="casestatuschange" type="varchar" default="Open">Case Status on submit</attribute>
+        <attribute group="Cases" name="caseguid" formbuilder="no">Case GUID</attribute>
+        <attribute group="Cases" name="caseid" formbuilder="no">Case ID</attribute>
+        <attribute group="Cases" name="casesqlcache" formbuilder="no">Case SQL Cache</attribute>
+        <attribute group="Parameters" name="resultid" formbuilder="no">ResultID in edit mode</attribute>
+      </field>
+
+      <field name="section" title="Section" toolbox="yes" rank="2">
+        <attribute group="Specification" name="type" mandatory="true" type="list" options='["linear", "table"]' >Type of Section</attribute>
+
+        
+
+
+        <attribute group="Settings" name="layout" mandatory="true" type="list" default="vertical" options='["vertical", "horizontal"]' >Layout</attribute>
+        <attribute group="Settings" name="add_caption" default="Add to table">Add to Table Button Caption</attribute>
+        <attribute group="Settings" name="next_caption" default="">Next Section Button Caption</attribute>
+        <attribute group="Settings" name="prev_caption" default="">Previous Section Button Caption</attribute>
+        <attribute group="Settings" name="totals" type="boolean" default="false">If table, show a total row?</attribute>
+        <attribute group="Settings" name="datetime" type="boolean" default="true">If table, show the date/time column?</attribute>
+        <attribute group="Settings" name="allowdel" type="boolean" default="false">If table, allow delete?</attribute>
+
+        <attribute group="Settings" name="timer" type="int" default="0">If table, prompt the user to complete every 'n' minutes</attribute>
+
+
+        <attribute group="Settings" name="groupby" type="varchar" default="">Table columns to group by</attribute>
+        <attribute group="Settings" name="grouped" type="varchar" default="">Table columns to group (sum)</attribute>
+        <attribute group="Settings" name="colour">Hex colour of button </attribute>
+
+       <attribute group="Validation" name="rowrequired" type="boolean" default="true">If table, must it contain at least 1 row</attribute>
+
+
+        <attribute group="Behaviour" name="hidden" type="boolean" mandatory="false">Is this field hidden</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="sql" type="varchar" default="">For table sections, a SQL query to run when a row is added to the table</attribute>
+        <attribute group="Advanced" name="delsql" type="varchar" default="">For table sections, a SQL query to run when a row deleted from the table</attribute>
+        <attribute group="Advanced" name="tablefiltercolumn" type="varchar" default="">For table sections, mail merge by filtering on this column</attribute>
+        <attribute group="Advanced" name="tablefilter" type="varchar" default="">For table sections, mail merge by filtering using these value</attribute>
+      </field>
+
+       <field name="summary" title="Summary Section" toolbox="yes" rank="2">
+        <attribute group="Specification" name="type" mandatory="true" type="list" options='["summary"]' >Type of Section</attribute>
+        <attribute group="Settings" name="layout" mandatory="true" type="list" default="vertical" options='["vertical", "horizontal"]' >Layout</attribute>
+        <attribute group="Settings" name="add_caption" default="Add to table">Add to Table Button Caption</attribute>
+        <attribute group="Settings" name="next_caption" default="">Next Section Button Caption</attribute>
+        <attribute group="Settings" name="prev_caption" default="">Previous Section Button Caption</attribute>
+        <attribute group="Settings" name="totals" type="boolean" default="false">If table, show a total row?</attribute>
+        <attribute group="Settings" name="datetime" type="boolean" default="true">If table, show the date/time column?</attribute>
+        <attribute group="Settings" name="allowdel" type="boolean" default="false">If table, allow delete?</attribute>
+
+         <attribute name="frequency"  group="Behaviour" mandatory="false">Trigger Query Frequency in Milliseconds</attribute>
+
+
+        <attribute group="Settings" name="groupby" type="varchar" default="">Table columns to group by</attribute>
+        <attribute group="Settings" name="grouped" type="varchar" default="">Table columns to group (sum)</attribute>
+
+       <attribute group="Validation" name="rowrequired" type="boolean" default="true">If table, must it contain at least 1 row</attribute>
+
+
+        <attribute group="Behaviour" name="hidden" type="boolean" mandatory="false">Is this field hidden</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="sql" type="varchar" default="">For table sections, a SQL query to run when a row is added to the table</attribute>
+        <attribute group="Advanced" name="delsql" type="varchar" default="">For table sections, a SQL query to run when a row deleted from the table</attribute>
+        <attribute group="Advanced" name="tablefiltercolumn" type="varchar" default="">For table sections, mail merge by filtering on this column</attribute>
+        <attribute group="Advanced" name="tablefilter" type="varchar" default="">For table sections, mail merge by filtering using these value</attribute>
+      </field>
+
+      <field name="varchar" title="Text Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" group="Validation" mandatory="false" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" group="Validation" mandatory="false">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" group="Non Conformance" mandatory="false">Expected value for this field</attribute>
+        <attribute name="validregex" group="Validation"  mandatory="false" type="regex">Regular expression validator for this field</attribute>
+        <attribute name="readonly" type="boolean" group="Behaviour" mandatory="true">Is this field read only</attribute>
+        <attribute name="hidden"  type="boolean" group="Behaviour" mandatory="true">Is this field hidden</attribute>
+        <attribute name="regex"  mandatory="false"  group="Behaviour" type="regex">Regular expression mask for this field</attribute>
+        <attribute name="example" mandatory="false" group="Behaviour">Example</attribute>
+         <attribute name="forcecaptial" type="boolean" mandatory="false" group="Behaviour">Ensure first letter is a capital</attribute>
+        <attribute name="max" mandatory="false"  group="Validation" type="int">Max characters</attribute>
+        <attribute name="min" mandatory="false"  group="Validation" type="int">Min characters</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+
+        <!-- The option values in this have to match one of G.Defaults -->
+        <attribute name="default"  mandatory="false" group="Behaviour" type="list" options='["", "DATE", "TIME", "USERNAME","USERID"]'>Or set default value to one of:</attribute>
+
+        <!-- The option values in this have to match one of G.Formats -->
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="buttons" mandatory="false" group="Behaviour" type="boolean" default="true" >Show the query or calculate button?</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="isproduct" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Product Identifer (PLU)?</attribute>
+        <attribute name="iscustomer" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Customer Identifer?</attribute>
+        <attribute name="isbatch" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Batch Identifer?</attribute>
+        <attribute name="isline" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Line Identifer?</attribute>
+        <attribute name="issupplier" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Supplier Identifer?</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="inputstyle" type="varchar" default="">Inline style to apply to the input</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+        <attribute name="iscasename" type="boolean" group="Cases" mandatory="false" default="false">Is this a Case Identifer?</attribute>
+        <attribute name="casestatusupdate" type="boolean" group="Cases" mandatory="false" default="false">Use this value to update the case status after submit</attribute>
+         <attribute group="Advanced" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+
+      <field name="formlink" title="Form Link" rank="3">
+        <attribute name="form" type="form" mandatory="false" group="Description">Form:</attribute>
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="hidden"  type="boolean" group="Behaviour" mandatory="false">Is this field hidden</attribute>
+        <attribute name="params" type="keyval" formbuilder="no" group="Advanced">Param Store</attribute>
+        <attribute name="editmode" type="boolean" group="Advanced">Are you editing this form</attribute>
+        <attribute name="required" type="boolean" group="Behaviour" default="false">Requires at least one param?</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+      </field>
+
+      <field name="gotolink" title="Goto Link" rank="3">
+        <attribute name="field" type="field" mandatory="false" group="Description">Field:</attribute>
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="hidden"  type="boolean" group="Behaviour" mandatory="false">Is this field hidden</attribute>
+        <attribute name="validate" type="boolean" group="Behaviour" mandatory="false">Validate first:</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+      </field>
+
+       <field name="location" title="GPS Location" rank="3">
+        <attribute name="required" type="boolean" group="Validation" mandatory="false" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="hidden"  type="boolean" group="Behaviour" mandatory="false">Is this field hidden</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+      </field>
+
+      <field name="textarea" title="Text Area" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="validregex" type="regex" mandatory="false" group="Validation">Regular expression validator for this field</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="hidden" type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="regex" type="regex" mandatory="false" group="Behaviour">Regular expression mask for this field</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="rows" type="int" mandatory="false" group="Description">Number of rows</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="number"  title="Number Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="validregex"  mandatory="false" type="regex" group="Validation" default="DECIMAL_NUMBER">Regular expression validator for this field</attribute>
+        <attribute name="readonly" type="boolean" mandatory="true" group="Behaviour">Is this field read only</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="true" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="regex"  mandatory="false" group="Behaviour" type="regex" >Regular expression mask for this field</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+
+        <!-- The option values in this have to match one of G.Formats -->
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["", "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="buttons" mandatory="false" group="Behaviour" type="boolean" default="true" >Show the query or calculate button?</attribute>
+        <attribute name="totalable" type="boolean" default="false" group="Behaviour">Can this field be totaled in a table?</attribute>
+        <attribute name="sectiontotal" type="boolean" default="false" group="Behaviour">Use this field as the section total</attribute>
+        <attribute name="lowerlimit" mandatory="false" group="Non Conformance" type="int">The lower limit for this field</attribute>
+        <attribute name="upperlimit" mandatory="false" group="Non Conformance" type="int">The upper limit for this field</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="isproduct" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Product Identifer (PLU)?</attribute>
+        <attribute name="iscustomer" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Customer Identifer?</attribute>
+        <attribute name="isbatch" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Batch Identifer?</attribute>
+        <attribute name="isline" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Line Identifer?</attribute>
+        <attribute name="issupplier" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Supplier Identifer?</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="weight"  title="Weight Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Place item on scale.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="validregex"  mandatory="false" type="regex" group="Validation" default="DECIMAL_NUMBER">Regular expression validator for this field</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="lowerlimit" mandatory="false" group="Non Conformance" type="int">The lower limit for this field</attribute>
+        <attribute name="upperlimit" mandatory="false" group="Non Conformance" type="int">The upper limit for this field</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="ip" mandatory="true" group="Advanced">Scale IP Address:</attribute>
+        <attribute name="port" mandatory="true" group="Advanced" default="3002">Scale Port:</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+        <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+
+  <field name="rfid"  title="RFID Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Read RDIF tag</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+      </field>
+
+
+       <field name="temp"  title="Temperature Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Place item on scale.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="validregex"  mandatory="false" type="regex" group="Validation" default="DECIMAL_NUMBER">Regular expression validator for this field</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="lowerlimit" mandatory="false" group="Non Conformance" type="int">The lower limit for this field</attribute>
+        <attribute name="upperlimit" mandatory="false" group="Non Conformance" type="int">The upper limit for this field</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="barcode" title="Scan Barcode" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="email" title="Email Address" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="validregex"  mandatory="false" type="regex" group="Validation" formbuilder="no" default="EMAIL">Regular expression validator for this field</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false"  group="Behaviour">Is this field read only</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="boolean" title="Yes/No Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="options" mandatory="false" type="options" default='["Yes", "No"]' group="Description" formbuilder="no">Options for radio buttons</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour" formbuilder="no">Example</attribute>
+        <attribute name="hidden" type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="sql" type="varchar" default="">SQL query to run when a selected</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="passfail" title="Pass/Fail Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="options" mandatory="false" type="options" default='["Pass", "Fail"]' group="Description" formbuilder="no">Options for radio buttons</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour" formbuilder="no">Example</attribute>
+        <attribute name="hidden" type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="sql" type="varchar" default="">SQL query to run when a selected</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="datetime"  title="Date Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false" default="Please enter a date as dd/mm/yyyy">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="lowerdatelimit" mandatory="false" group="Validation">Max no days before today</attribute>
+        <attribute name="upperdatelimit" mandatory="false" group="Validation">Max no days after today</attribute>
+        <attribute name="validregex"  mandatory="false" type="regex" group="Validation" formbuilder="no" default="DATE_SYSTEM">Regular expression validator for this field</attribute>
+        <attribute name="hidden" type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="25/12/2013" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute> 
+       <!--TODO <attribute name="lowerlimit" mandatory="false" group="Non Conformance" type="int">The lower limit for this field</attribute>
+        <attribute name="upperlimit" mandatory="false" group="Non Conformance" type="int">The upper limit for this field</attribute> -->
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+
+       <field name="time"  title="Time Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false" >Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="hidden" type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute> 
+       <!--TODO <attribute name="lowerlimit" mandatory="false" group="Non Conformance" type="int">The lower limit for this field</attribute>
+        <attribute name="upperlimit" mandatory="false" group="Non Conformance" type="int">The upper limit for this field</attribute> -->
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="list" title="Dropdown Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="options" mandatory="true" type="options" group="Description">Options for dropdown list</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="multiple" type="boolean" mandatory="false" group="Behaviour">Can this list have multiple values</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="buttons" mandatory="false" group="Behaviour" type="boolean" default="true" >Show the query or calculate button?</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="isproduct" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Product Identifer (PLU)?</attribute>
+        <attribute name="iscustomer" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Customer Identifer?</attribute>
+        <attribute name="isbatch" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Batch Identifer?</attribute>
+        <attribute name="isline" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Line Identifer?</attribute>
+        <attribute name="issupplier" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Supplier Identifer?</attribute>
+        <attribute name="isdepartment" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Department Identifer?</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute name="casestatusupdate" type="boolean" group="Cases" mandatory="false" default="false">Use this value to update the case status after submit</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="radio" title="Radio Button Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="options" mandatory="true" type="options" group="Description">Options for radio buttons</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="buttons" mandatory="false" group="Behaviour" type="boolean" default="true" >Show the query or calculate button?</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="isproduct" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Product Identifer (PLU)?</attribute>
+        <attribute name="iscustomer" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Customer Identifer?</attribute>
+        <attribute name="isbatch" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Batch Identifer?</attribute>
+        <attribute name="isline" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Line Identifer?</attribute>
+        <attribute name="issupplier" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Supplier Identifer?</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="inputstyle" type="varchar" default="">Inline style to apply to the buttons</attribute>
+        <attribute group="Advanced" name="addtableonselect" type="boolean" default="">Cause this input to Add to Table</attribute>
+        <attribute name="casestatusupdate" type="boolean" group="Cases" mandatory="false" default="false">Use this value to update the case status after submit</attribute>
+        <attribute group="Advanced" name="sql" type="varchar" default="">SQL query to run when a selected</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+
+      <field name="checkbox" title="Checkbox Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="options" mandatory="true" type="options" group="Description">Options for checkboxes</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="requiredgroup" mandatory="false" group="Validation">Flag set to a group of field to ensure at least one is completed</attribute>
+        <attribute name="expected" mandatory="false" group="Non Conformance">Expected value for this field</attribute>
+        <attribute name="readonly" type="boolean" mandatory="false" group="Behaviour">Is this field read only</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour">Example</attribute>
+        <attribute name="value"  mandatory="false" group="Behaviour">Default value</attribute>
+        <attribute name="buttons" mandatory="false" group="Behaviour" type="boolean" default="true" >Show the query or calculate button?</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="isproduct" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Product Identifer (PLU)?</attribute>
+        <attribute name="iscustomer" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Customer Identifer?</attribute>
+        <attribute name="isbatch" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Batch Identifer?</attribute>
+        <attribute name="isline" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Line Identifer?</attribute>
+        <attribute name="issupplier" type="boolean" group="Advanced" mandatory="false" default="false">Is this a Supplier Identifer?</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Advanced" name="inputstyle" type="varchar" default="">Inline style to apply to the buttons</attribute>
+        <attribute group="Advanced" name="addtableonselect" type="boolean" default="">Cause this input to Add to Table</attribute>
+        <attribute name="casestatusupdate" type="boolean" group="Cases" mandatory="false" default="false">Use this value to update the case status after submit</attribute>
+        <attribute group="Advanced" name="sql" type="varchar" default="">SQL query to run when a selected</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+
+
+      <field name="datatable" title="Data Table Field" rank="3">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="float" type="boolean" group="Description" mandatory="false">Display in a column</attribute>
+        <attribute name="editable" type="boolean" group="Description" mandatory="false">Editable?</attribute>
+        <attribute name="required" type="boolean" group="Validation" mandatory="false" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+         <!-- The option values in this have to match one of G.Formats -->
+        <attribute name="format"  mandatory="false" group="Behaviour" type="list" options='["",  "HIDDEN", "STRING", "NUMBER", "CURRENCY_GBP", "CURRENCY_EUR"]'>Format (for tables)</attribute>
+        <attribute name="keeppreviousvalue" type="boolean" group="Behaviour" mandatory="false">Keep the previous value after Add to Table</attribute>
+
+      </field>
+
+      <field name="image" title="Image" rank="3" >
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour" formbuilder="no">Example</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute name="fileupload"  type="boolean" mandatory="false" group="Behaviour">Allow file upload</attribute>
+        <attribute name="annotation"  type="boolean" mandatory="false" group="Behaviour">Allow annotation</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <!--
+        29th July 2014
+        This works OK on WebView and Preview. It doesn't work on the tablet. We haven't got time to debug it, and it isn't important.
+        However, the code is still there, so if we do want to debug it, re-enable the file widget here:
+
+        8th December 2014: Part of the code that's involved (the HTML in RenderTemplate) has NOT been ported into the new FieldHTMLBuilder
+        So if you enable this again, you'll need new HTML!
+      <field name="file" title="File" rank="3" queries="no">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour" formbuilder="no">Example</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+      </field>
+      -->
+
+      <field name="signature"  title="Signature Field" rank="3" queries="yes">
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="required" type="boolean" mandatory="false" group="Validation" default="true">Is this a required field (default is true)?</attribute>
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="example" mandatory="false" default="" group="Behaviour" formbuilder="no">Example</attribute>
+        <attribute name="step" type="step" mandatory="false" group="Non Conformance">Associate this with a HACCP Plan, Process Flow and Step:</attribute>
+        <attribute name="severity" type="list" mandatory="false" group="Non Conformance" options='["Minor", "Major", "Hazardous", "Catastrophic"]'>Severity:</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+         <attribute group="Non Conformance" name="allowncoveride" type="boolean" mandatory="false">Can a Non Conformance severity be overridden</attribute>
+      </field>
+
+      <field name="memo"  title="Memo" rank="3" >
+        <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+        <attribute name="style" mandatory="false" group="Appearance">Text Styling</attribute>
+        <attribute name="memotext" type="multiline" group="Description" mandatory="false">The contents of the memo.</attribute>
+        <attribute name="metadata" type="keyval" mandatory="false" group="Advanced">Any additional data associated with this field</attribute>
+        <attribute name="mailmerge" mandatory="false" group="Advanced">The name of a mail merge field</attribute>
+        <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="Non Conformance" name="code" type="varchar" default="">Internal Code related to this field</attribute>
+      </field>
+
+
+       <field name="docgen"  title="Mail Merge" rank="3" >
+        <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+        <attribute name="template" mandatory="false" group="Description">Template Filename</attribute>
+       </field>
+
+
+      <field name="print"  title="Zebra Print" rank="3" >
+         <attribute name="printspec" type="zebraprint" group="Description" mandatory="false">Design the print job.</attribute>
+         <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+         <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+      </field>
+      
+      <field name="faultcapture"  title="Fault Capture" rank="3" >
+         <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+          <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+         <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+         <attribute group="Advanced" name="addtableonselect" type="boolean" default="true">Cause this input to Add to Table</attribute>
+      </field>
+
+      <field name="limitedfaultcapture"  title="Driving Fault" rank="3" >
+         <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+          <attribute name="hidden"  type="boolean" mandatory="false" group="Behaviour">Is this field hidden</attribute>
+         <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+         <attribute group="Advanced" name="addtableonselect" type="boolean" default="true">Cause this input to Add to Table</attribute>
+      </field>
+
+      
+
+      <field name="axleweight"  title="Axle Weight" rank="3" >
+         <attribute name="helptext" type="multiline" group="Description" mandatory="false">Help text to go below the field.</attribute>
+         <attribute group="Advanced" name="style" type="varchar" default="">Inline style to apply to the control-group</attribute>
+        <attribute group="General" name="axlespread"  type="varchar" >The Axle Spread to render</attribute>
+        <attribute group="General" name="weighttocalc"  type="varchar" >The weight value for calculation</attribute>
+      </field>
+
+    </availablefields>
+  </form>
+</EditorConfig>
