@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Timesheet</title>
+  </head>
+  <version>1</version>
+  <createdby>1</createdby>
+  <authorisedby>1</authorisedby>
+  <reasonforchange>1</reasonforchange>
+  <form title="Timesheet" version="1" createdby="1" authorisedby="1" reasonforchange="1">
+    <section>
+      <fields>
+        <field title="Start Date" type="varchar">
+        </field>
+        <field title="End Date" type="varchar" webservice="getWorkSheet" param="Start Date|End Date" map="Daily">
+        </field>
+      </fields>
+    </section>
+    <section title="Timesheet">
+      <name type="table">Timesheet</name>
+      <fields>
+        <field title="Daily" type="table" caption="Daily">
+          <column title="Date" width="60" editable="false" sortable="false" />
+          <column title="Start Time" width="60" editable="false" sortable="false" />
+          <column title="End Time" width="60" editable="false" sortable="false" />
+          <column title="Miles" width="60" editable="false" sortable="false" />
+          <column title="Scheme" width="100" editable="false" sortable="false" />
+          <column title="Ref No" width="100" editable="false" sortable="false" />
+          <column title="Address" width="100" editable="false" sortable="false" />
+          <column title="Complete" width="50" editable="false" sortable="false" />
+          <column title="Supplementary" width="100" editable="false" sortable="false" />
+        </field>
+      </fields>
+    </section>
+    <section title="Daily Input Fields" type="datainput" table="Daily" rows="9">
+      <name>Daily Input Fields</name>
+      <fields>
+        <field title="Date" type="varchar" tablecol="Date" />
+        <field title="Start Time" expected="" type="varchar" tablecol="Start Time" />
+        <field title="End Time" expected="" type="varchar" tablecol="End Time" />
+        <field title="Miles" expected="" lowerlimit="" upperlimit="" type="int" tablecol="Miles" />
+        <field title="Scheme" expected="" type="varchar" tablecol="Scheme" />
+        <field title="Ref No" expected="" type="varchar" tablecol="Ref No" />
+        <field title="Address" expected="" type="varchar" tablecol="Address" />
+        <field title="Complete" expected="" type="boolean" tablecol="Complete" />
+        <field title="Supplementary" expected="" type="varchar" tablecol="Supplementary" />
+      </fields>
+    </section>
+  </form>
+</QAConfig>

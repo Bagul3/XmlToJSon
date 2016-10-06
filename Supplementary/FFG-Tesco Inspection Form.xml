@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>FFG-Tesco Inspection Form</title>
+  </head>
+  <savefilename>FFG-Tesco Inspection Form</savefilename>
+  <type>FFG-Tesco</type>
+  <form>
+
+    
+
+    <section>
+      <name freq="start" colour="#F0E68C">Foyle Food Group-Tesco Supplementary inspection checklist</name>
+      <fields>
+        <field title="Distance from last location" type="int">
+        </field>
+        <field title="Forename" type="varchar" linked="false">
+        </field>
+        <field title="Surname" type="varchar" linked="false">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  required="true">
+        </field>
+        <field title="FQAS Ref. No." type="varchar" required="false" linked="false">
+        </field>
+        <field title="Email Address" type="varchar" required="false" linked="false">
+        </field>
+        <field  linked="false" title="Inspection Date" type="datetime">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" >
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" >
+        </field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+      </fields>
+    </section>
+    
+    
+    <section>
+      <name freq="once" colour="#A1FBAC">Check List</name>
+      <fields >
+
+        <field linked="false"  title="Land Type" type="memo" >  
+        </field>
+        <field linked="false"  title="Hill %" type="int" >
+        </field>
+        <field linked="false"  title="Lowland %" type="int" >
+        </field>
+        
+        <field title=" " type="info">
+        </field>
+
+        <field linked="false"  title="Sward Type" type="memo" >
+        </field>
+
+        <field linked="false"  title="Unimproved Pasture - uncultivated in last 10 years" type="checkbox" >
+        </field>
+        <field linked="false"  title="Improved Pasture (grass) - cultivated within last 10 years" type="checkbox" >
+        </field>
+        <field linked="false"  title="Improved Pasture (grass/clover) - cultivated within last 10 years" type="checkbox" >
+        </field>
+        <field linked="false"  title="Species rich meadow grassland - few or no inputs and grazed lightly" type="checkbox" >
+        </field>
+
+        <field title=" " type="info">
+        </field>
+        
+        
+        <field title="Soil Analysis" type="memo">
+        </field>
+        <field linked="false"  title="Has the participant carried out Soil Analysis within the last 5 years?" type="boolean">
+        </field>
+        <field linked="false"  title="Date of most recent Soil Analysis" type="datetime" hide="Has the participant carried out Soil Analysis within the last 5 years?=No" disabled="true">
+        </field>
+
+        <field title=" " type="info">
+        </field>
+        <field title="Bedding" type="memo">
+        </field>
+        <field linked="false"  title="Does the participant have bedded or rubber slatted housing for cattle?" type="boolean">
+        </field>
+        <field linked="false"  title="Proportion of housing which is bedded/rubber coated slats (in %)" type="varchar" hide="Does the participant have bedded or rubber slatted housing for cattle?=No" disabled="true">
+        </field>
+
+        <field title=" " type="info">
+        </field>
+        <field title="Nutritional Advice" type="memo">
+        </field>
+        <field linked="false"  title="Does the participant use the services of a Nutritional Adviser?" type="boolean">
+        </field>
+        <field linked="false"  title="Name of Advisor" type="varchar" hide="Does the participant use the services of a Nutritional Adviser?=No" disabled="true">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once" colour="#A1FBAC">Participant's Declaration</name>
+      <fields >
+
+        
+        <field title="" type="memo">
+        </field>
+        <field title="Participant’s Declaration" type="memo">
+        </field>
+        <field   title="1.	I confirm that all the information given in this document is correct to the best of my knowledge." type="info">
+        </field>
+        <field   title="2.	I agree to abide by the requirements of the Foyle Food Group/Tesco Beef Specification." type="info">
+        </field>
+        <field   title="3.	I agree that the information contained in this document may be recorded by NIFCC on behalf of Foyle Food Group and/or Tesco for the purposes of the Foyle Food Group/Tesco Beef Specification.  I understand that this information will not be disclosed to any other party without my consent." type="info">
+        </field>
+        <field   title="4.	I agree to inform NIFCC and/or Foyle Food Group of any changes in my circumstances to those declared in this document." type="info">
+        </field>
+        <field title="Producers Name" type="varchar" >
+        </field>
+        <field title="Position" type="varchar" >
+        </field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30"></field>
+        <field title="Date" type="datetime" >
+        </field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+      </fields>
+    </section>
+
+
+
+  </form>
+</QAConfig>

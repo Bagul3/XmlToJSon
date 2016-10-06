@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QAConfig>
+  <head>
+    <title>Transport Scheme Inspection Checklist</title>
+	<print>
+      <showrectified>true</showrectified>
+      <chars>45</chars>
+      <height>40</height>
+      <heading>Transport Scheme: Non-Conf. Summary</heading>
+      <fields>
+        <field title="Name:" section="Inspection Scope" field="Surname"></field>
+        <field title="Date:" section="Inspection Scope" field="Inspection Date"></field>
+        <field title="Inspector:" section="Inspection Scope" field="Inspector Name"></field>
+        <field title="Staff No:" section="Inspection Scope" field="Staff No."></field>
+      </fields>
+      <standard>
+	   <nc>I acknowledge that the inspector has carried out an inspection and has brought to my attention areas where non-conformances have been identified. I understand that these inspection results are provided for information only at this stage. This report does not indicate wether or not I will be awarded a certificate.</nc>
+      </standard>
+    </print>
+  </head>
+  <savefilename>Transport_Scheme_Inspection_Checklist</savefilename>
+  <type>LTS</type>
+  <form>
+    <section>
+      <name freq="start">Inspection Scope</name>
+      <fields>
+        <field title="Distance from last location" type="int"  ></field>
+	  <field  linked="false" title="Transport Scheme Ref. No." type="int" parameter="true" code="Is.11">
+        </field>
+        <field  linked="false" title="Forename" type="varchar" parameter="true" code="Is.1">
+        </field>
+        <field  linked="false" title="Surname" type="varchar"  parameter="true" code="Is.2">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  parameter="true"  code="Is.12">
+        </field>
+        
+        <field  linked="false" title="Email Address" type="varchar" required="false" clear="true" parameter="true" code="Is.3">
+        </field>
+        
+        <field  linked="false" title="Inspection Type" type="list" text="false" options="Surveillance,Spot Check,Initial,Re-inspection">
+        </field>
+        
+        <field  linked="false" title="Inspection Date" type="datetime" code="Is.7" parameter="true">
+        </field>
+       <field  linked="false" title="Time Arrive" code="Is.8" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" code="Is.9" parameter="true">
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" code="Is.10" parameter="true">
+        </field>
+        <field title="Driver details" type="memo"></field>
+        <field title="Driver 1" type="varchar" required="true"></field>
+        <field title="Driver 2" type="varchar" required="true"></field>
+        <field title="Driver 3" type="varchar" required="true"></field>
+        <field title="Driver 4" type="varchar" required="true"></field>
+
+        <field title="Type of livestock transported" type="memo"></field>
+        
+        <field title="Transport Pigs" type="radio" required="true" >
+          <options>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Pigs Only</option>
+          </options>  
+        
+        </field>
+        <field title="Transport Cattle" type="boolean" required="true" hide="Transport Pigs=Pigs Only"></field>
+        <field title="Transport Sheep" type="boolean" required="true"  hide="Transport Pigs=Pigs Only"></field>
+        
+        <field title="Vehicle Details" type="memo"></field>
+        <field title="Vehicle 1 Type" type="list" options="Rigid Lorry,Artic Trailer,Draw-bar Trailer,Light Livestock Trailer" required="true"></field>
+        <field title="Vehicle 1 Reg/Serial No." type="varchar" required="true"></field>
+        <field title="Vehicle 1 Length" type="int" required="true"></field>
+        <field title="Vehicle 1 Width" type="int" required="true"></field>
+        <field title="Vehicle 1 Livestock Area m2" type="int" calc="Vehicle 1 Length * Vehicle 1 Width" required="true"></field>
+        <field title="Vehicle 1 Inspected" type="boolean" required="true"></field>
+        <field title="Is there a 2nd Vehicle" type="boolean"></field>
+        <field title="Vehicle 2 Type" type="list" options="Rigid Lorry,Artic Trailer,Draw-bar Trailer,Light Livestock Trailer" required="true" hide="Is there a 2nd Vehicle=No"></field>
+        <field title="Vehicle 2 Reg/Serial No." hide="Is there a 2nd Vehicle=No" type="varchar" required="true"></field>
+        <field title="Vehicle 2 Length" type="int" required="true" hide="Is there a 2nd Vehicle=No"></field>
+        <field title="Vehicle 2 Width" type="int" required="true" hide="Is there a 2nd Vehicle=No"></field>
+        <field title="Vehicle 2 Livestock Area m2" hide="Is there a 2nd Vehicle=No" type="int" calc="Vehicle 2 Length * Vehicle 2 Width" required="true"></field>
+        <field title="Vehicle 2 Inspected" hide="Is there a 2nd Vehicle=No" type="boolean" required="true"></field>
+        <field title="Is there a 3rd Vehicle" type="boolean" hide="Is there a 2nd Vehicle=No"></field>
+        <field title="Vehicle 3 Type" type="list" options="Rigid Lorry,Artic Trailer,Draw-bar Trailer,Light Livestock Trailer" required="true" hide="Is there a 3rd Vehicle=No"></field>
+        <field title="Vehicle 3 Reg/Serial No." hide="Is there a 3rd Vehicle=No" type="varchar" required="true"></field>
+        <field title="Vehicle 3 Length" type="int" required="true" hide="Is there a 3rd Vehicle=No"></field>
+        <field title="Vehicle 3 Width" type="int" required="true" hide="Is there a 3rd Vehicle=No"></field>
+        <field title="Vehicle 3 Livestock Area m2" hide="Is there a 3rd Vehicle=No" type="varchar" calc="Vehicle 3 Length * Vehicle 3 Width" required="true"></field>
+        <field title="Vehicle 3 Inspected" hide="Is there a 3rd Vehicle=No" type="boolean" required="true"></field>    
+        
+        
+        <field title="Is the participant a member of Beef/Lamb Scheme" type="boolean" required="true"></field>
+        <field title="FQAS Ref No" hide="Is the participant a member of Beef/Lamb Scheme=No" disabled="true" type="int" required="true"></field>
+        <field title="Is the participant a member of Dairy Scheme" type="boolean" required="true"></field>
+        <field title="Dairy Ref No" hide="Is the participant a member of Dairy Scheme=No" disabled="true" type="int" required="true"></field>
+        <field title="Is the participant a member of Cereals Scheme" type="boolean" required="true"></field>
+        <field title="FQACS Ref No" hide="Is the participant a member of Cereals Scheme=No" disabled="true" type="int" required="true"></field>
+        
+      </fields>
+    </section>
+
+    <section>
+      <name freq="once">Section 1 - Documentation for Employees and Livestock</name>
+      <fields>
+        <field title="1.1 Driver Details" type="memo"></field>
+       
+        <field code="1.1.1" title="Are all licence(s) available" type="radio" detail="Driver Licence Availability NC Details" required="true">
+          <options>
+            <option nc="false">Driving Licence available for all drivers</option>
+            <option nc="minor">Driving Licence not available for all drivers</option>
+          </options>
+        </field>
+        <field title="Driver Licence Availability NC Details" type="varchar" hide="Are all licence(s) available=Driving Licence available for all drivers" disabled="true"></field>
+
+		 <field code="1.1.2" title="Driver(s) relevant HGV/LGV licence" type="radio" detail="Driver Licence NC Details" required="true">
+          <options>
+            <option nc="false">Driver(s) hold relevant licence for vehicle in use</option>
+            <option nc="minor">Driver(s) does not hold relevant licence for vehicle in use</option>
+          </options>
+        </field>
+        <field title="Driver Licence NC Details" type="varchar" hide="Driver(s) relevant HGV/LGV licence=Driver(s) hold relevant licence for vehicle in use" disabled="true"></field>
+        
+
+        <field title="1.2 Training" type="memo"></field>
+        <field code="1.2.1" title="Have driver(s) been trained" type="radio" required="true" detail="Driver Training NC Details">
+          <options>
+            <option nc="false">Driver(s) trained by an experienced driver</option>
+            <option nc="false">Driver(s) attended an approved training course</option>
+            <option nc="minor">Driver(s) attended course - No Details</option>
+            <option nc="major">Driver not trained or attended course</option>
+          </options>
+        </field>
+        
+        <field title="CPC Cert Nos" hide="Have driver(s) been trained!=Driver(s) attended an approved training course" disabled="true" type="varchar" required="false"></field>
+        
+        <field title="Driver Training NC Details" type="varchar" hide="Have driver(s) been trained=Driver(s) trained by an experienced driver|Have driver(s) been trained=Driver(s) attended an approved training course" disabled="true"></field>
+
+
+        <field code="1.2.2" title="Training records available" type="radio" required="true" detail="Driver Training Records NC Details">
+          <options>
+            <option nc="false">Training records available for driver(s)</option>
+            <option nc="minor">Training records not complete for all driver(s)</option>
+            <option nc="major">No training records are available</option>
+          </options>
+        </field>
+        <field title="Driver Training Records NC Details" type="varchar" hide="Training records available!=Training records not complete for all driver(s)" disabled="true"></field>
+
+        <field title="1.3 Documentation" type="memo"></field>
+        <field code="1.3" title="Are all relevant movement documents available" type="radio" required="true" detail="Movement Documents NC Details">
+          <options>
+			<option nc="false">Consignments traceable via daily dairy</option>
+            <option nc="false">ABM delivery notes completed and available</option>
+            <option nc="false">MC2/MS2 declarations available</option>
+            <option nc="minor">ABM delivery notes are not complete</option>
+            <option nc="minor">ABM delivery notes are not available</option>
+          </options>
+        </field>
+        <field title="Movement Documents NC Details" type="varchar" hide="Are all relevant movement documents available=Consignments traceable via daily dairy|Are all relevant movement documents available=ABM delivery notes completed and available|Are all relevant movement documents available=MC2/MS2 declarations available" disabled="true"></field>
+        
+        <field code="1.4" title="Movement document retention" type="radio" required="true">
+          <options>
+            <option nc="false">Records available for last 12 months</option>
+            <option nc="false">New applicant, has only started to keep records</option>
+            <option nc="minor">Records are not available for the last 12 months</option>
+          </options>
+        </field>
+        
+        
+        
+        <field code="1.5.1" title="Transporter authorisation" type="radio" required="true">
+          <options>
+            <option nc="false">No journeys over 65km</option>
+            <option nc="false">DARD Transporter Authorisation available</option>
+            <option nc="minor">Authorised by DARD, confirmation not available</option>
+            <option nc="major">Not Authorised by DARD</option>
+          </options>
+        </field>
+        
+        <field title="Authorisation No." hide="Transporter authorisation!=DARD Transporter Authorisation available" type="varchar"></field>
+        
+        <field code="1.5.2" title="Vehicle Approval Certificate" type="radio" required="true">
+          <options>
+            <option nc="false">No journeys take place over 8 hours</option>
+            <option nc="false">Vehicle Approval Certificate available</option>
+            <option nc="minor">Certificate held, confirmation not available</option>
+            <option nc="major">Journeys over 8 hours, vehicle not approved</option>
+          </options>
+        </field>
+        <field title="Vehicle Certificate Approval No." hide="Vehicle Approval Certificate!=Vehicle Approval Certificate available" type="varchar"></field>
+        
+        
+      </fields>
+    </section>
+        
+       
+    <section>
+      <name freq="once">Section 2 - Livestock Handling</name>
+      <fields>
+        <field code="2.1.1" title="Electric goads" type="radio" required="true" detail="Electric goads NC Details">
+          <options>
+            <option nc="false">Electric goads are not used</option>
+            <option nc="false">Electric goads are only used for guidance</option>
+            <option nc="minor">Electric goads are not used appropriately</option>
+          </options>
+        </field>
+        <field title="Electric goads NC Details" type="varchar" hide="Electric goads!=Electric goads are not used appropriately" disabled="true"></field>
+        
+        <field code="2.1.2" title="Sticks/Alkathene" type="radio" required="true" detail ="Sticks/Alkathene NC Details">
+          <options>
+            <option nc="false">Sticks/alkathene are not used</option>
+            <option nc="false">Sticks/alkathene only used as guides</option>
+            <option nc="minor">Sticks/Alkathene are not used appropriately</option>
+          </options>
+        </field>
+        <field title="Sticks/Alkathene NC Details" type="varchar" hide="Sticks/Alkathene!=Sticks/Alkathene are not used appropriately" disabled="true"></field>
+        
+        <field title="2.2 Bedding" type="memo"></field>
+        <field code="2.2.1" title="Bedding requirement" type="radio" required="true" detail="Bedding NC Details">
+          <options>
+            <option nc="false">No bedding required</option>
+            <option nc="false">Appropriate bedding used, complete below</option>
+            <option nc="minor">Incorrect bedding used</option>
+          </options>
+        </field>
+        <field title="Bedding NC Details" type="varchar" hide="Bedding requirement!=Incorrect bedding used" disabled="true"></field>
+
+
+        <field title="Species being bedded and bedding used" type="info"></field>
+        
+        <field title="Cattle bedded in straw" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Cattle bedded in sawdust" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Calves bedded in straw" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Sheep bedded in straw" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Sheep bedded in sawdust" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Adult Pigs bedded in straw" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Adult Pigs bedded in sawdust" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Adult Pigs bedded in Perforated Floor" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        <field title="Weaner Pigs bedded in straw" hide="Bedding requirement!=Appropriate bedding used, complete below" type="checkbox"></field>
+        
+        <field code="2.2.2" title="Bedding provision" type="radio" required="true">
+          <options>
+            <option nc="false">No bedding required</option>
+            <option nc="false">Bedding store available</option>
+            <option nc="false">Bedding purchased from supplier as required</option>
+            <option nc="minor">No provisions made for bedding</option>
+          </options>
+        </field>
+        
+        
+        <field title="2.3 Stocking Density - See Appendix 6" type="memo"></field>
+
+ 
+		  <field title="Number Of floors" type="radio"  required="true">
+          <options>
+            <option nc="false">1</option>
+            <option nc="false">2</option>
+			<option nc="false">3</option>
+          </options>
+        </field>
+        
+        <field title="No. of cattle" type="int" hide="Inspection Scope#Transport Cattle!=Yes" >
+        </field>
+        <field title="Weight of cattle (kgs)" type="int" hide="Inspection Scope#Transport Cattle!=Yes" >
+        </field>
+
+        <field code="2.3.2" title="Cattle Stocking Density appears" type="radio"   hide="Inspection Scope#Transport Cattle!=Yes">
+          <options>
+            <option nc="false">Adequate</option>
+            <option nc="major">Excessive</option>
+          </options>
+        </field>
+        
+		   
+        <field title="No. of sheep" type="int" hide="Inspection Scope#Transport Sheep!=Yes" >
+        </field>
+        <field title="Weight of sheep (kgs)" type="int" hide="Inspection Scope#Transport Sheep!=Yes" >
+        </field>
+
+        <field code="2.3.2" title="Sheep Stocking Density appears" type="radio"   hide="Inspection Scope#Transport Sheep!=Yes">
+          <options>
+            <option nc="false">Adequate</option>
+            <option nc="major">Excessive</option>
+          </options>
+        </field>
+
+<field title="No. of pigs" type="int" hide="Inspection Scope#Transport Pigs=No">
+        </field>
+        <field title="Weight of pig (kgs)" type="int" hide="Inspection Scope#Transport Pigs=No">
+        </field>
+    
+    <field title="Pig Stocking Density in kg/m2 = Weight of pig (kg) x Total No. of Pigs / Total available floor space (m2)" type="memo">
+        </field>
+
+        <field code="2.3.2" title="Pig Stocking Density appears" type="radio" hide="Inspection Scope#Transport Pigs=No">
+          <options>
+            <option nc="false">Adequate i.e. not greater than 235kg/m2</option>
+            <option nc="major">Excessive</option>
+          </options>
+        </field>
+		
+	   
+	   
+        <field title="Vehicle Height" type="int">
+        </field>
+        
+        <field code="2.3.3" title="Sufficient headroom" type="radio" required="true" detail="Vehicle Height">
+          <options>
+            <option nc="false">Headroom appears adequate</option>
+            <option nc="minor">Headroom does not appear adequate</option>
+          </options>
+        </field>
+        
+        <field title="2.4 Segregation" type="memo"></field>
+        <field code="2.4.1" title="Horned and unhorned segregation" type="radio" required="true"  detail="Segregation NC Details">
+          <options>
+            <option nc="false">Segregated correctlty</option>
+            <option nc="minor">Not Segregated</option>
+          </options>
+        </field>
+        <field title="Segregation NC Details" type="varchar" hide="Horned and unhorned segregation!=Not Segregated" disabled="true"></field>
+        
+        
+        <field code="2.4.2" title="Species separation" type="radio" required="true" detail="Species separation NC Details">
+          <options>
+            <option nc="false">Different species are kept separate</option>
+            <option nc="minor">Different species are mixed</option>
+          </options>
+        </field>
+        <field title="Species separation NC Details" type="varchar" hide="Species separation!=Different species are mixed" disabled="true"></field>
+        
+        <field code="2.4.3" title="Animal size separation" type="radio" required="true"  detail="Animal size NC Details">
+          <options>
+            <option nc="false">Different sized animals are kept separate</option>
+            <option nc="minor">Different sized animals are mixed</option>
+          </options>
+        </field>
+        <field title="Animal size NC Details" type="varchar" hide="Animal size separation!=Different sized animals are mixed" disabled="true"></field>
+
+
+
+        <field code="2.4.4" title="Fractious/excitable livestock transport" type="radio" required="true" detail="Fractious/excitable animal NC Details">
+          <options>
+            <option nc="false">Fractious/excitable livestock are transported safely</option>
+            <option nc="minor">Fractious/excitable livestock are not transported safely</option>
+          </options>
+        </field>
+        <field title="Fractious/excitable animal NC Details" type="varchar" hide="Fractious/excitable livestock transport!=Fractious/excitable livestock are not transported safely" disabled="true"></field>
+
+
+        <field code="2.4.5" title="Assured stock transport" type="radio" required="true" detail="Assured stock transportation NC Details">
+          <options>
+            <option nc="false">Assured/Non-assured stock in separate compartments</option>
+            <option nc="false">Assured/Non-assured stock individually identified</option>
+            <option nc="minor">Assured/Non-assured stock not separated or identified</option>
+          </options>
+        </field>
+
+        <field title="Assured stock transportation NC Details" type="varchar" hide="Assured stock transport!=Assured/Non-assured stock not separated or identified" disabled="true"></field>
+
+
+        <field title="2.5 Ventilation" type="memo"></field>
+        <field code="2.5.1" title="Ventilation" type="radio" required="true"  detail="Ventilation NC Details">
+          <options>
+            <option nc="false">Automatic ventilation system in place </option>
+            <option nc="false">Natural ventilation, appears adequate</option>
+            <option nc="minor">Ventilation appears inadequate</option>
+          </options>
+        </field>
+        <field title="Ventilation NC Details" type="varchar" hide="Ventilation!=Ventilation appears inadequate" disabled="true"></field>
+        
+        
+        <field title="2.6 Fitness" type="memo"></field>
+        
+    <field code="2.6.1" title="Fitness to travel" type="radio" required="true" detail="Unfit Transport NC Details">
+      <options>
+        <option nc="false">Unfit, ill or injured animals transported with vets advice</option>
+        <option nc="minor">Unfit, ill or injured animals transported (no advice taken)</option>
+      </options>
+    </field>
+        <field title="Unfit Transport NC Details" type="varchar" hide="Fitness to travel!=Unfit, ill or injured animals transported (no advice taken)" disabled="true"></field>
+               
+        <field code="2.6.2" title="Injury During Transport" type="radio" required="true"  detail="Injured During Transport NC Details">
+          <options>
+            <option nc="false">Animals injured during transit managed correctly</option>
+            <option nc="minor">Animals injured during transit, not managed correctly</option>
+          </options>
+        </field>
+        <field title="Injured During Transport NC Details" type="varchar" hide="Injury During Transport!=Animals injured during transit, not managed correctly" disabled="true"></field>
+
+          
+        <field code="2.6.3" title="DARD Guidance on the Transport of Casualty Animals" type="radio" required="true">
+          <options>
+            <option nc="false">Transport of Casualty Guidance available</option>
+            <option nc="minor">Transport of Casualty Guidance not available</option>
+          </options>
+        </field>
+       
+        
+        <field title="2.7 Driving" type="memo"></field>
+        <field code="2.7.1" title="Rest periods awareness" type="radio" required="true">
+          <options>
+            <option nc="false">Driver(s) aware of correct rest periods</option>
+            <option nc="minor">Driver(s) not aware of correct rest periods</option>
+          </options>
+        </field>
+    
+
+        <field code="2.7.2" title="Traffic delay priority awareness" type="radio" required="true">
+          <options>
+            <option nc="false">Driver(s) aware of priority</option>
+            <option nc="minor">Driver(s) not aware of priority</option>
+          </options>
+        </field>
+        
+  
+        
+
+        <field title="2.8 CLEANSING AND DISINFECTING" type="memo"></field>
+        <field code="2.8.1" title="Cleansing and disinfecting" type="radio" required="true" detail="Cleaning and Disinfecting NC Details">
+          <options>
+            <option nc="false">Vehicles regularly cleansed with approved disinfectant</option>
+            <option nc="minor">Vehicle not regularly cleansed and disinfected</option>
+            <option nc="minor">Regularly cleansed but disinfectant not used</option>
+            <option nc="major">Disinfectant not used</option>
+          </options>
+        </field>
+        
+        <field title="Cleaning and Disinfecting NC Details" type="varchar" hide="Cleansing and disinfecting!=Vehicle not regularly cleansed and disinfected" disabled="true"></field>                
+ 
+        <field code="2.8.1" title="Disinfectant Name" type="radio" hide="Inspection Scope#Transport Pigs=Pigs Only" detail="Other disinfectant name">
+          <options>
+            <option nc="major">NONE USED</option>
+            <option nc="false">FAM</option>
+            <option nc="false">FAM 30</option>
+            <option nc="false">ANTEC FARM FLUID HD (ROW)</option>
+            <option nc="false">FARMSAN</option>
+            <option nc="false">NOVAGEN FP</option>
+            <option nc="false">TOTAL FARM DISINFECTANT</option>
+            <option nc="false">VIROPHOR 2.8%</option>
+            <option nc="false">VIRKON LSP</option>
+          <option nc="major">OTHER - NON DARD APPROVED</option>
+          </options>
+      </field>
+        
+        
+      <field code="2.8.1" title="Disinfectant Name - Pigs only" type="radio" hide="Inspection Scope#Transport Pigs!=Pigs Only" detail="Other disinfectant name-Pigs only" >
+          <options>
+            <option nc="major">NONE USED</option>
+            <option nc="false">FAM</option>
+            <option nc="false">FAM 30</option>
+            <option nc="false">ANTEC FARM FLUID HD (ROW)</option>
+            <option nc="false">FARMSAN</option>
+            <option nc="false">NOVAGEN FP</option>
+            <option nc="false">TOTAL FARM DISINFECTANT</option>
+            <option nc="false">VIROPHOR 2.8%</option>
+            <option nc="false">CLINIDINE 28</option>
+            <option nc="false">DUPONT VIRUDINE</option>
+            <option nc="false">FARMKLEAR</option>
+            <option nc="false">GPC 8</option>
+            <option nc="false">HPPA</option>
+            <option nc="false">HYPEROX</option>
+            <option nc="false">INCIDIN AL</option>
+            <option nc="false">KICKSTART 2</option>
+            <option nc="false">KILLCOX EXTRA</option>
+            <option nc="false">PERBAC FARM</option>
+            <option nc="false">PROXITANE AHC2</option>
+            <option nc="false">SEPTRIVET 17</option>
+            <option nc="false">STEROXAL</option>
+            <option nc="false">SWC BACTO DETSAN</option>
+            <option nc="false">SWC BROADOL</option>
+            <option nc="false">VANODOX</option>
+            <option nc="false">VIRKON S</option>
+            <option nc="false">VIREX</option>
+            <option nc="false">VIROCID</option>
+            <option nc="false">VIROSHIELD</option>
+            <option nc="false">ZAL PERAX II</option>
+            <option nc="major">OTHER - NON DARD APPROVED</option>
+          </options>
+        </field>
+
+
+        <field title="Other disinfectant name" type="varchar" required="false" hide="Disinfectant Name!=OTHER - NON DARD APPROVED" disabled="true">
+        </field>
+
+        <field title="Other disinfectant name-Pigs only" type="varchar" required="false" hide="Disinfectant Name - Pigs only!=OTHER - NON DARD APPROVED" disabled="true">
+        </field>
+
+        
+        
+        
+        
+        <field code="2.8.2" title="Cleansing/disinfection declaration - not implemented yet in NI" type="radio" disabled="true" required="false">
+          <options>
+            <option nc="false">Cleansed/disinfected before leaving abattoir/market</option>
+            <option nc="false">Cleansed/disinfected after leaving with declaration</option>
+          <option nc="major">Cleansed/disinfected after leaving - no declaration</option>
+          </options>
+        </field>
+        
+        <field title="2.9 CONTINGENCY PLAN" type="memo"></field>
+        <field code="2.9.1" title="Contingency plan" type="radio" required="true" detail="Contingency Plan NC Details">
+          <options>
+            <option nc="false">Contingency Plan in vehicle, fully complete</option>
+            <option nc="minor">Contingency Plan in vehicle, not fully complete</option>
+            <option nc="minor">Contingency Plan complete but not in vehicle</option>
+            <option nc="major">No Contingency Plan</option>
+          </options>
+        </field>
+          <field title="Contingency Plan NC Details" type="varchar" hide="Contingency plan!=Contingency Plan in vehicle, not fully complete" disabled="true"></field>                
+ 
+        
+        <field title="2.10 COMPLAINTS RECORD" type="memo"></field>
+        <field code="2.10.1" title="Complaints Record" type="radio" required="true" detail="Complaints Record NC Details">
+          <options>
+            <option nc="false">Complaints Record available</option>
+            <option nc="minor">Complaints received but complaints not fully complete</option>
+            <option nc="major">Complaints Record is not available</option>
+          </options>
+        </field>
+      
+    <field title="Complaints Record NC Details" type="varchar" hide="Complaints Record!=Complaints received but complaints not fully complete" disabled="true"></field>                
+    
+     </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Section 3 - Loading and Handling Facilities</name>
+      <fields>
+        <field code="3.1.1" title="Sharp edges and hazards" type="radio"
+            required="true" detail="Vehicles Hazards NC Details">
+          <options>
+            <option nc="false">Vehicles free from hazards likely to cause injury</option>
+            <option nc="minor">Vehicles not free from hazards likely to cause injury</option>
+          </options>
+        </field>
+        
+      <field title="Vehicles Hazards NC Details" type="varchar" hide="Sharp edges and hazards=Vehicles free from hazards likely to cause injury" disabled="true"></field>                
+          
+        <field code="3.1.2" title="Pig board" type="radio"
+            required="true">
+          <options>
+            <option nc="false">No pigs transported</option>
+            <option nc="false">Pig board available</option>
+            <option nc="minor">Pig board not available</option>
+          </options>
+        </field>
+        
+        
+        
+        <field title="3.2 RAMPS/FLOORING" type="memo"></field>
+        <field code="3.2.1" title="Ramps" type="radio"
+            required="true" detail="Non-Slip Ramp NC Details">
+          <options>
+            <option nc="false">Internal/external ramps are non-slip</option>
+            <option nc="minor">Internal/external ramps are NOT non-slip</option>
+            <option nc="minor">Internal/external ramps require repair</option>
+          </options>
+        </field>
+        
+        <field title="Non-Slip Ramp NC Details" type="varchar" hide="Ramps=Internal/external ramps are non-slip" disabled="true"></field>                
+        
+        
+        <field title=" " type="info"></field>
+        <field title="Ramp angle calculator (Metres)" type="memo"></field>
+       
+        <field title="Step Height at top of ramp" type="varchar"></field>
+        
+        <field title="Step Height at bottom of ramp C" type="varchar"></field>
+        
+        
+        <field title="Trailer Height B" type="int"></field>
+        <field title="Ramp Length A" type="int"></field>
+        
+        <field title="Ramp Angle" type="int" calc="ROUND(57.2957795 * asin(((Trailer Height B-Step Height at bottom of ramp C)/Ramp Length A)),2)"></field>
+
+        <field title="Ramp Details" type="memo"></field>
+
+        <field title="Number Of Ramps" type="radio"  required="true">
+          <options>
+            <option nc="false">1</option>
+            <option nc="false">2</option>
+            <option nc="false">3</option>
+            <option nc="false">4</option>
+            <option nc="false">5</option>
+          </options>
+        </field>
+
+        <field title="Ramp Angle 1" type="varchar" ></field>
+        <field title="Ramp Angle 2" type="varchar" required="false" disabled="true" hide="Number Of Ramps=1"></field>
+        <field title="Ramp Angle 3" type="varchar" required="false" disabled="true" hide="Number Of Ramps=1|Number Of Ramps=2"></field>
+        <field title="Ramp Angle 4" type="varchar" required="false" disabled="true" hide="Number Of Ramps=1|Number Of Ramps=2|Number Of Ramps=3"></field>
+        <field title="Ramp Angle 5" type="varchar" required="false" disabled="true" hide="Number Of Ramps!=5"></field>
+        
+        
+        <field title="Revised Angles" type="memo"></field>
+        <field title="Cattle 26.6 degree angle" type="info"></field>
+        <field title="Sheep 26.6 degree angle" type="info"></field>
+        <field title="Pigs 20 degree angle" type="info"></field>
+        <field title="Calves 20 degree angle" type="info"></field>
+        
+       
+        <field code="3.2.2" title="Ramp angles" required="true" type="radio" detail="Ramp Angle,Step Height NC detail">
+          <options>
+            <option nc="false">Ramp angles and step heights appear adequate</option>
+            <option nc="major">Ramp angles do not appear adequate</option>
+            <option nc="major">Step Height at Bottom of ramp exceeds 0.2m</option>
+            <option nc="major">Step Height at Top of ramp exceeds 0.2m</option>
+          </options>  
+        
+        </field>
+        <field title="Ramp Angle,Step Height NC detail" type="varchar"  hide="Ramp angles=Ramp angles and step heights appear adequate" disabled="true"></field>
+
+
+        <field code="3.2.3" title="Waste containment" type="radio"
+            required="true" detail="Floor Leakage NC Details">
+          <options>
+            <option nc="false">Tank on vehicle for collection</option>
+            <option nc="false">Floors are constructed to minimize leakage</option>
+            <option nc="minor">Floors not constructed to minimize leakage</option>
+          </options>
+        </field>
+        
+        <field title="Floor Leakage NC Details" type="varchar" hide="Waste containment!=Floors not constructed to minimize leakage" disabled="true"></field>                
+        
+        <field title="3.3 PARTITIONS" type="memo"></field>
+        <field title="76cm high for sheep and pigs and 127cm for cattle" type="info"></field>
+
+        <field code="3.3.1" title="Partitions" type="radio" required="true" detail="Partition Height NC Details">
+          <options>
+            <option nc="false">Partition not required</option>
+            <option nc="false">Partition height is adequate</option>
+            <option nc="minor">Partition height is not adequate</option>
+          </options>
+        </field>
+        <field title="Partition height" type="int" hide="Partitions=Partition not required" disabled="true"></field>
+        <field title="Partition Height NC Details" type="varchar" hide="Partitions!=Partition height is not adequate" disabled="true"></field>                
+        
+        
+        <field title="3.4 INSPECTION FACILITIES" type="memo"></field>
+        <field code="3.4.1" title="Inspection facilities" type="radio"
+          required="true" detail="Inspection Facilities NC Details">
+          <options>
+            <option nc="false">Inspection facilities available  for each deck</option>
+            <option nc="minor">Inspection facilities are not adequate</option>
+            <option nc="major">Inspection facilities are not available</option>
+          </options>
+        </field>
+        
+        <field title="Inspection Facilities NC Details" type="varchar" hide="Inspection facilities!=Inspection facilities are not adequate" disabled="true"></field>                
+        
+        <field title="3.5 LIGHTING" type="memo"></field>
+        <field code="3.5.1" title="Lighting" type="radio" required="true">
+          <options>
+            <option nc="false">Fixed lighting available</option>
+            <option nc="false">Portable lighting available</option>
+            <option nc="minor">Light broken at time of inspection</option>
+            <option nc="major">No method of lighting used</option>
+          </options>
+        </field>
+        
+         <field title="Lighting NC Details" type="varchar" hide="Lighting=Fixed lighting available|Lighting=Portable lighting available" disabled="true"></field>                
+        
+        
+        <field title="3.6 LOGO USAGE" type="memo"></field>
+        <field title="Logos" type="radio" code="3.6" detail="Unapproved logos NC details">
+          <options>
+            <option nc="false">No logos used</option>
+            <option nc="false">Approved logos used (ABP, ABM, Red Tractor)</option>
+            <option nc="major">Unapproved logos used (NIFCC, UKAS)</option>
+          </options>
+        </field>
+        <field title="Unapproved logos NC details" type="varchar" disabled="true" hide="Logos!=Unapproved logos used (NIFCC, UKAS)">
+        </field>        
+      </fields>
+    </section>
+
+
+     <section>
+      <name freq="once">Participant's Declaration</name>
+      <fields>
+        <field title="Participant's Declaration" type="memo"></field>
+        <field title="1. I confirm that all the information given in this document is correct to the best of my knowledge." type="info"></field>
+        <field title="2. I agree to abide by the Product Standard and Rules of the Red Tractor Assurance Livestock Transport Scheme." type="info"></field>
+        <field title="3. I agree to the details contained in this inspection report being divulged to RTA." type="info"></field>
+        <field title="4. I agree to inform Northern Ireland Food Chain Certification of any changes in my circumstances to those declared in this document." type="info"></field>
+        <field title="Participant Name" type="varchar">
+        </field>
+        <field title="Position" type="radio" options="Owner,Partner,Director,Other">
+          <options>
+            <option nc="false">Owner</option>
+            <option nc="false">Partner</option>
+            <option nc="false">Director</option>
+            <option nc="false">Other</option>
+          </options>
+        </field>
+        <field title="Other" type="varchar" hide="Position!=Other" disabled="true">
+        </field>
+		    <field title="Time Departed" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30,19:45,20:00,20:15,20:30">
+        </field>
+        <field title="Inspection Date" type="datetime">
+        </field>
+        <field title="Additional Comments" type="textarea" required="false"></field>
+      </fields>
+    </section>
+
+
+  </form>
+</QAConfig>

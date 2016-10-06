@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Documentation order form</title>
+    </head>
+  <savefilename>Documentation order form</savefilename>
+  <type>Order</type>
+  <form>
+
+
+ 
+    <section>
+      <name freq="start" colour="#F0E68C">Documentation order form</name>
+      <fields>
+        <field required="true"  title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+        <field   required="true" title="Staff Number" type="int">
+        </field>
+        <field  required="true" title="Date" type="datetime">
+        </field>
+
+        <field   required="false" title="Inspection reports - scheme name" type="list" options="FQAS,RTA Dairy,RTA Transport,RTA Market,RTA Poultry,FQACS">
+        </field>
+        <field   required="false" title="Farm walk checklists – scheme name " type="list" options="FQAS,RTA Dairy,RTA Transport,RTA Market,RTA Poultry,FQACS">
+        </field>
+        <field  required="false" title="Appointment cards" type="list" options="FQAS Surveillance,FQAS Spot-check,RTA Dairy">
+        </field>
+        <field  required="false"  title="Time Sheets " type="list" options="Pink,Green,Yellow">
+        </field>
+        <field    title="Non-conformance book" type="checkbox">
+        </field>        
+        <field    title="Appointment card envelopes" type="checkbox">
+        </field>
+        <field   title="Appointment Record Forms" type="checkbox">
+        </field>
+        <field   title="Farm Inspection Checklists  (Purple)" type="checkbox">
+        </field>
+        <field   title="Feed Record Book" type="checkbox">
+        </field>
+        <field   title="FQAS Standards" type="checkbox">
+        </field>
+        <field    title="Veterinary Medicine Book" type="checkbox">
+        </field>
+        <field  title="Feed Sample Forms" type="checkbox">
+        </field>
+        <field  title="Batch Of Inspection Allocations (Names)" type="checkbox">
+        </field>
+        <field   title="Cancellation Form Inside 2 Working Days" type="checkbox">
+        </field>
+        <field  title="Cancellation Form Outside 2 Working Days" type="checkbox">
+        </field>
+        <field   title="Telephone Record Forms" type="checkbox">
+        </field>
+        <field   title="Pre-Paid Envelopes Small" type="checkbox">
+        </field>
+        <field   title="Pre-Paid Envelopes Large" type="checkbox">
+        </field>
+        <field   title="Business Cards" type="checkbox">
+        </field>
+        <field   title="Other" type="checkbox">
+        </field>
+        <field   title="Other details" type="varchar" hide="Other!=true" disabled="true">
+        </field>
+        
+        <field  required="true" title="Method of collection" type="radio">
+          <options>
+            <option >Please Post</option>
+            <option>Will collect from HQ</option>            
+          </options>          
+        </field>
+
+        
+       </fields>
+      </section>
+
+   
+
+  </form>
+</QAConfig>

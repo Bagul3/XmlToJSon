@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>FQACS Inspection</title>
+    <print>
+      <showrectified>true</showrectified>
+      <chars>45</chars>
+      <height>40</height>
+      <heading>FQACS: Non-Conf. Summary</heading>
+      <fields>
+        <field title="FQACS Ref No:" section="FQACS Inspection" field="FQACS Ref. No."></field>
+        <field title="Name:" section="FQACS Inspection" field="Surname"></field>
+        <field title="Date:" section="FQACS Inspection" field="Inspection Date"></field>
+        <field title="Inspector:" section="FQACS Inspection" field="Inspector Name"></field>
+        <field title="Staff No:" section="FQACS Inspection" field="Staff No."></field>
+      </fields>
+      <standard>
+        <nc>I acknowledge that the inspector has carried out an inspection and has brought to my attention areas where non-conformances have been identified. I understand that these inspection results are provided for information only at this stage. This report does not indicate wether or not I will be accepted as a scheme member.</nc>
+      </standard>
+    </print>
+  </head>
+  <savefilename>FQACS Inspection</savefilename>
+  <type>FQACS</type>
+  <form>
+    <section>
+      <name freq="start" colour="#A0ACFC">FQACS Inspection</name>
+      <fields>
+        <field title="Distance from last location" type="int"  ></field>
+        <field title="Inspection Scope" type="list" options="Cereal only,Linked">
+        </field>
+        <field title="Inspection Type" type="list" options="Surveillance,Initial,Re-inspection">
+        </field>
+        <field title="FQACS Ref. No." type="varchar" linked="false">
+        </field>
+        <field title="Forename" type="varchar" linked="false">
+        </field>
+        <field title="Surname" type="varchar" linked="false">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  required="true">
+        </field>
+        <field title="FQAS Ref. No." type="varchar" required="false" linked="false">
+        </field>
+        <field title="Email Address" type="varchar" required="false" linked="false">
+        </field>
+        <field  linked="false" title="Inspection Date" type="datetime">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" >
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" >
+        </field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+      </fields>
+    </section>
+	
+	<section>
+      <name freq="once" colour="#A0ACFC">Farm Details</name>
+      <fields>
+        <field title=" " type="info">
+        </field>
+        <field title="Enterprise Type" type="info">
+        </field>
+        <field title="Grain sold off combine (at harvest)" type="checkbox">
+        </field>
+        <field title="Grain stored for use on farm" type="checkbox">
+        </field>
+        <field title="Grain stored for future trading" type="checkbox">
+        </field>
+        <field title="Some grain stored and sold (BOTH)" type="checkbox">
+        </field>
+        <field title=" " type="info">
+        </field>
+		<field title="Is a contractor used for harvesting?" type="boolean">
+        </field>
+		<field title="Is a grain drier used?" type="boolean">
+        </field>
+		<field title="Is grain stored on farm?" type="boolean">
+        </field>
+		<field title="Are any post harvest grain treatments used?" type="boolean">
+        </field>
+		<field title="Is any grain sold?" type="boolean">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">1.0 The Growing Crop</name>
+      <fields>
+		<field title="1.1 Record type and area of cereals grown (HA)" type="info">
+        </field>
+        <field title="Barley" type="int">
+        </field>
+		<field title="Wheat" type="int">
+        </field>
+        <field title="Oats" type="int">
+        </field>
+		<field title="Oilseed Rape" type="int">
+        </field>
+        <field title="Peas" type="int">
+        </field>
+		<field title="Beans" type="int">
+        </field>
+        <field title="Lupins" type="int">
+        </field>
+        <field title="Other" type="int">
+        </field>
+        <field title="Total HA" type="int" calc="Barley+Oats+Peas+Lupins+Wheat+Oilseed Rape+Beans+Other">
+        </field>
+		<field title="1.2.1 NI Farm Assured Cereals Scheme Standard available?" type="boolean" code="1.2.1" nc="minor">
+        </field>
+		<field title="1.2.2 Code of Good Agricultural Practice for Prevention of Pollution available?" type="boolean" code="1.2.2">
+        </field>
+		<field title="1.3.1 Are field records, including pesticide applications, complete and up to date?" type="boolean" code="1.3.1" nc="minor" detail="Field records NC details"> 
+        </field>
+		<field title="Field records NC details" type="varchar" hide="1.3.1 Are field records, including pesticide applications, complete and up to date?=Yes" disabled="true">
+        </field>
+		<field title="1.3.2 Are equipment cleansing records complete and up to date?" type="boolean" code="1.3.2" nc="minor" detail="Equipment cleansing records NC details">
+        </field>
+		<field title="Equipment cleansing records NC details" type="varchar" hide="1.3.2 Are equipment cleansing records complete and up to date?=Yes" disabled="true">
+        </field>
+		<field title="1.3.3 Are grain storage records required?" type="boolean" code="1.3.3">
+        </field>
+		<field title="1.3.4 Are store sanitising records complete and up to date?" type="boolean" code="1.3.4" nc="minor" hide="1.3.3 Are grain storage records required?=No" detail="Store sanitising records NC details">
+        </field>
+		<field title="Store sanitising records NC details" type="varchar" hide="1.3.4 Are store sanitising records complete and up to date?=Yes" disabled="true">
+        </field>
+		<field title="1.4.1 Is any grain sold?" type="boolean" code="1.4.1">
+        </field>
+		<field title="1.4.2 Are records of all sales (e.g. copies of grain passports) maintained for at least 5 years?" type="boolean" code="1.4.2" nc="minor" hide="1.4.1 Is any grain sold?=No" detail="Grain sales records NC details">
+        </field>
+		<field title="Grain sales records NC details" type="varchar" hide="1.4.2 Are records of all sales (e.g. copies of grain passports) maintained for at least 5 years?=Yes" disabled="true">
+        </field>
+		<field title="1.5.1 Do all operators appear to be competent?" type="boolean" code="1.5.1" nc="minor" detail="Operator competency NC details"> 
+        </field>
+		<field title="Operator competency NC details" type="varchar" hide="1.5.1 Do all operators appear to be competent?=Yes" disabled="true">
+        </field>
+		<field title="1.5.2 Do all operators hold appropriate certificates where legally required (e.g. sprayer operators)?" type="boolean" code="1.5.2" nc="minor" detail="Operator certification NC details">
+        </field>
+		<field title="Operator certification NC details" type="varchar" hide="1.5.2 Do all operators hold appropriate certificates where legally required (e.g. sprayer operators)?=Yes" disabled="true">
+        </field>
+		<field title="1.6 Are only approved chemicals used and in accordance with manufacturers instructions?" type="boolean" code="1.6" nc="minor" detail="Chemical usage NC details">
+        </field>
+		<field title="Chemical usage NC details" type="varchar" hide="1.6 Are only approved chemicals used and in accordance with manufacturers instructions?=Yes" disabled="true">
+        </field>
+		<field title="1.7 Are chemicals applied at the correct time and proper intervals before harvest adhered to?" type="boolean" code="1.7" nc="minor" detail="Chemical application NC details">
+        </field>
+		<field title="Chemical application NC details" type="varchar" hide="1.7 Are chemicals applied at the correct time and proper intervals before harvest adhered to?=Yes" disabled="true">
+        </field>
+		<field title="1.8 Are all husbandry and management operations carried out with due regard to health, safety and the environment?" type="boolean" code="1.8" nc="minor" detail="Husbandry operations NC details">
+        </field>
+		<field title="Husbandry operations NC details" type="varchar" hide="1.8 Are all husbandry and management operations carried out with due regard to health, safety and the environment?=Yes" disabled="true">
+        </field>
+		<field title="1.9 HGCA Guide to Minimise Risk of Fusarium Mycotoxins available?" type="boolean" code="1.9" nc="minor">
+        </field>
+		</fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">2.0 Grain Stores</name>
+      <fields hide="Farm Details#Is grain stored on farm?=No">
+        <field title="Type of Grain Stores" type="memo">
+        </field>
+		<field title="Specialist store for grain" type="checkbox">
+        </field>
+        <field title="Bin used for grain storage" type="checkbox">
+        </field>
+        <field title="Moist grain silo" type="checkbox">
+        </field>
+        <field title="Silo used for grain storage" type="checkbox">
+        </field>
+        <field title="General purpose building for grain" type="checkbox">
+        </field>
+        <field title="Other store type" type="checkbox">
+        </field>
+        <field title="If Other give details" type="varchar" disabled="true" hide="Other store type=No">
+        </field>
+		<field title="2.1 Are stores weather-proof and impervious to water?" type="boolean" code="2.1" nc="minor" detail="Weather-proofing NC details">
+        </field>
+        <field title="Weather-proofing NC details" type="varchar" hide="2.1 Are stores weather-proof and impervious to water?=Yes" disabled="true">
+        </field>
+        <field title="2.2 Are stores free from birds and controlled against vermin?" type="boolean" code="2.2" nc="minor" detail="Vermin Control NC details">
+        </field>
+        <field title="Vermin Control NC details" type="varchar" hide="2.2 Are stores free from birds and controlled against vermin?=Yes" disabled="true">
+        </field>
+		<field title="2.3 Are stores thoroughly cleaned each season prior to filling?" type="boolean" code="2.3" nc="minor" detail="Store cleanliness NC details">
+        </field>
+        <field title="Store cleanliness NC details" type="varchar" hide="2.3 Are stores thoroughly cleaned each season prior to filling?=Yes" disabled="true">
+        </field>
+		<field title="2.4 Are stores routinely sanitised against Salmonella contamination?" type="boolean" code="2.4" nc="minor" detail="Store sanitisation NC details">
+        </field>
+        <field title="Store sanitisation NC details" type="varchar" hide="2.4 Are stores routinely sanitised against Salmonella contamination?=Yes" disabled="true">
+        </field>
+		</fields>
+    </section>
+	<section>
+      <name freq="once" colour="#A0ACFC">3.0 Harvesting Equipment</name>
+      <fields hide="Farm Details#Is a contractor used for harvesting?=Yes">
+        <field title="3.1 Does participant ensure that all harvesting equipment is safe and properly guarded?" type="boolean" code="3.1" nc="minor" detail="Harvesting equipment safety NC details">
+        </field>
+        <field title="Harvesting equipment safety NC details" type="varchar" hide="3.1 Does participant ensure that all harvesting equipment is safe and properly guarded?=Yes" disabled="true">
+        </field>	
+		<field title="3.2 Does participant ensure that all harvesting equipment is correctly adjusted?" type="boolean" code="3.2" nc="minor" detail="Harvesting equipment adjustment NC details">
+        </field>
+        <field title="Harvesting equipment adjustment NC details" type="varchar" hide="3.2 Does participant ensure that all harvesting equipment is correctly adjusted?=Yes" disabled="true">
+        </field>
+		<field title="3.3 Is all harvesting equipment thoroughly cleaned before use?" type="boolean" code="3.3" nc="minor" detail="Harvesting equipment cleanliness NC details">
+        </field>
+        <field title="Harvesting equipment cleanliness NC details" type="varchar" hide="3.3 Is all harvesting equipment thoroughly cleaned before use?=Yes" disabled="true">
+        </field>
+		<field title="3.4 Is all harvesting equipment free from all possible contamination before use?" type="boolean" code="3.4" nc="minor" detail="Harvesting equipment contamination NC details">
+        </field>
+        <field title="Harvesting equipment contamination NC details" type="varchar" hide="3.4 Is all harvesting equipment free from all possible contamination before use?=Yes" disabled="true">
+        </field>
+		</fields>
+    </section>
+	<section>
+      <name freq="once" colour="#A0ACFC">4.0 Transport and Handling Equipment </name>
+      <fields>
+        <field title="4.1 Is all transport and handling equipment thoroughly cleansed before harvest?" type="boolean" code="4.1" nc="minor" detail="Transport equipment cleansing NC details">
+        </field>
+        <field title="Transport equipment cleansing NC details" type="varchar" hide="4.1 Is all transport and handling equipment thoroughly cleansed before harvest?=Yes" disabled="true">
+        </field>
+        <field title="4.2 Is all transport and handling equipment free from all possible contamination before use?" type="boolean" code="4.2" nc="minor" detail="Transport equipment contamination NC details">
+        </field>
+        <field title="Transport equipment contamination NC details" type="varchar" hide="4.2 Is all transport and handling equipment free from all possible contamination before use?=Yes" disabled="true">
+        </field>
+		</fields>
+	</section>
+    <section>
+      <name freq="once" colour="#A0ACFC">5.0 Drying </name>
+      <fields hide="Farm Details#Is a grain drier used?=No">
+        <field title="5.1 Are grain drying facilities thoroughly cleaned prior to use each season?" type="boolean" code="5.1" nc="minor" detail="Grain drier cleanliness NC details">
+        </field>
+        <field title="Grain drier cleanliness NC details" type="varchar" hide="5.1 Are grain drying facilities thoroughly cleaned prior to use each season?=Yes" disabled="true">
+        </field>
+        <field title="5.2 Are grain drying facilities available as required?" type="boolean" code="5.2" nc="minor" detail="Grain drier availability NC details">
+        </field>
+		<field title="Grain drier availability NC details" type="varchar" hide="5.2 Are grain drying facilities available as required?=Yes" disabled="true">
+        </field>
+		<field title="5.3 Is the grain drier adjusted so that fumes do not contaminate the grain?" type="boolean" code="5.3" nc="minor" detail="Grain drier fumes NC details">
+        </field>
+		<field title="Grain drier fumes NC details" type="varchar" hide="5.3 Is the grain drier adjusted so that fumes do not contaminate the grain?=Yes" disabled="true">
+        </field>
+        <field title="5.4 Is the grain drier managed to ensure grain is dried to the appropriate moisture content and allowed to cool before storage?" type="boolean" code="5.4" nc="minor" detail="Grain drier management NC details">
+        </field>
+		<field title="Grain drier management NC details" type="varchar" hide="5.4 Is the grain drier managed to ensure grain is dried to the appropriate moisture content and allowed to cool before storage?=Yes" disabled="true">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">6.0 Grain Treatments</name>
+      <fields hide="Farm Details#Are any post harvest grain treatments used?=No">
+        <field title="6.1 Are only approved preservatives or pesticides used according to grain type, grain condition and end use?" type="boolean" code="6.1" nc="minor" detail="Grain treatment approval NC details">
+        </field>
+        <field title="Grain treatment approval NC details" type="varchar" code="6.1" disabled="true" hide="6.1 Are only approved preservatives or pesticides used according to grain type, grain condition and end use?=Yes">
+        </field>
+		<field title="6.2 Are grain treatments applied uniformly and in accordance with manufacturers instructions?" type="boolean" code="6.2" nc="minor" detail="Grain treatment application NC details">
+        </field>
+        <field title="Grain treatment application NC details" type="varchar" code="6.2" hide="6.2 Are grain treatments applied uniformly and in accordance with manufacturers instructions?=Yes" disabled="true">
+        </field>
+		<field title="6.3 Are pesticide withdrawal periods observed before grain is sold?" type="boolean" code="6.3" nc="minor" detail="Pesticide withdrawal periods NC details">
+        </field>
+        <field title="Pesticide withdrawal periods NC details" type="varchar" code="6.3" hide="6.3 Are pesticide withdrawal periods observed before grain is sold?=Yes" disabled="true">
+        </field>
+      </fields>
+    </section>
+	<section>
+      <name freq="once" colour="#A0ACFC">7.0 Grain Store Operation</name>
+      <fields hide="Farm Details#Is grain stored on farm?=No">
+        <field title="7.1 Are floors kept clean and dry?" type="boolean" code="7.1" nc="minor" detail="Floor condition NC details">
+        </field>
+        <field title="Floor condition NC details" type="varchar" hide="7.1 Are floors kept clean and dry?=Yes" disabled="true">
+        </field>
+		<field title="7.2 Are store doors kept shut when not in use?" type="boolean" code="7.2" nc="minor" detail="Store doors NC details">
+        </field>
+        <field title="Store doors NC details" type="varchar" hide="7.2 Are store doors kept shut when not in use?=Yes" disabled="true">
+        </field>
+        <field title="7.3 Are toilet and washing facilities provided?" type="boolean" code="7.3" nc="minor" detail="Toilet/Washing facilities NC details">
+        </field>
+        <field title="Toilet/Washing facilities NC details" type="varchar" hide="7.3 Are toilet and washing facilities provided?=Yes" disabled="true">
+        </field>
+        <field title="7.4 Do operators wear clean overalls?" type="boolean" code="7.4" nc="minor" detail="Clothing NC details">
+        </field>
+        <field title="Clothing NC details" type="varchar" hide="7.4 Do operators wear clean overalls?=Yes" disabled="true">
+        </field>
+        <field title="7.5 Are different batches of grain types separated and identified?" type="boolean" code="7.5" nc="minor" default="Grain ID NC details">
+        </field>
+        <field title="Grain ID NC details" type="varchar" hide="7.5 Are different batches of grain types separated and identified?=Yes" disabled="true">
+        </field>
+        <field title="7.6 Are fishmeal and other animal by-products kept separate from grain?" type="boolean" code="7.6" nc="minor" detail="Animal by-products NC details">
+        </field>
+        <field title="Animal by-products NC details" type="varchar" hide="7.6 Are fishmeal and other animal by-products kept separate from grain?=Yes" disabled="true">
+        </field>
+        <field title="7.7 Is there a system in place to prevent livestock/farm pets/pests from contaminating grain?" type="boolean" code="7.7" nc="minor" detail="Contamination NC details">
+        </field>
+        <field title="Contamination NC details" type="varchar" hide="7.7 Is there a system in place to prevent livestock/farm pets/pests from contaminating grain?=Yes" disabled="true">
+        </field>
+		<field title="7.7.1 Is there a fully completed bait plan which covers all handling and storage areas?" type="boolean" code="7.7.1" nc="minor" detail="Bait plan NC details">
+        </field>
+        <field title="Bait plan NC details" type="varchar" hide="7.7.1 Is there a fully completed bait plan which covers all handling and storage areas?=Yes" disabled="true">
+        </field>
+		<field title="7.7.2 Are Data Sheets available for all types of bait used?" type="boolean" code="7.7.2" nc="minor" detail="Data Sheets NC details">
+        </field>
+        <field title="Data Sheets NC details" type="varchar" hide="7.7.2 Are Data Sheets available for all types of bait used?=Yes" disabled="true">
+        </field>
+		<field title="7.7.3 Is there a fully completed Rodent and Bird Survey and Treatment Record?" type="boolean" code="7.7.3" nc="minor" detail="Rodent/Bird Survey NC details">
+        </field>
+        <field title="Rodent/Bird Survey NC details" type="varchar" hide="7.7.3 Is there a fully completed Rodent and Bird Survey and Treatment Record?=Yes" disabled="true">
+        </field>
+        <field title="7.8 Is there a system in place to prevent grain contamination/damage from vehicle wheels?" type="boolean" code="7.8" nc="minor" detail="Wheel Damage NC details">
+        </field>
+        <field title="Wheel Damage NC details" type="varchar" hide="7.8 Is there a system in place to prevent grain contamination/damage from vehicle wheels?=Yes" disabled="true">
+        </field>
+        <field title="7.9 Is grain/seed regularly inspected and monitored to detect signs of deterioration or contamination?" type="boolean" code="7.9" nc="minor" detail="Store Inspection NC details">
+        </field>
+        <field title="Store Inspection NC details" type="varchar" hide="7.9 Is grain/seed regularly inspected and monitored to detect signs of deterioration or contamination?=Yes" disabled="true">
+        </field>
+		<field title="7.10 Is any material which is found not to meet the standard immediately isolated and removed?" type="boolean" code="7.10" nc="minor" detail="Isloation NC details">
+        </field>
+        <field title="Isolation NC details" type="varchar" hide="7.10 Is any material which is found not to meet the standard immediately isolated and removed?=Yes" disabled="true">
+        </field>
+		</fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">8.0 Transport Out of store</name>
+      <fields hide="Farm Details#Is any grain sold?=No">
+        <field title="Are own vehicles used for transportation out of store?" type="boolean">
+        </field>
+        <field title="8.1 Are transport vehicles inspected for cleanliness before loading?" type="boolean" code="8.1" nc="minor" disabled="true" hide="Are own vehicles used for transportation out of store?=No" detail="Transport Cleanliness NC details">
+        </field>
+        <field title="Transport Cleanliness NC details" type="varchar" hide="8.1 Are transport vehicles inspected for cleanliness before loading?=Yes" disabled="true">
+        </field>
+        <field title="8.2 Are loads protected at all times using clean sheeting or close fitting covers?" type="boolean" code="8.2" nc="minor" disabled="true" hide="Are own vehicles used for transportation out of store?=No" detail="Loads Covered NC details">
+        </field>
+        <field title="Loads Covered NC details" type="varchar" hide="8.2 Are loads protected at all times using clean sheeting or close fitting covers?=Yes" disabled="true">
+        </field>
+		<field title="8.3 Do all grain trailers have an easily recognisable unique identification?" type="boolean" code="8.3" nc="minor" disabled="true" hide="Are own vehicles used for transportation out of store?=No" detail="Trailer identification NC details">
+        </field>
+        <field title="Trailer identification NC details" type="varchar" hide="8.3 Do all grain trailers have an easily recognisable unique identification?=Yes" disabled="true">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">9.0 Grain Passports</name>
+      <fields hide="Farm Details#Is any grain sold?=No">
+        <field title="9.1 Are grain passports completed for all consignments and copies retained?" type="boolean" code="9.1" nc="minor" detail="Grain passport NC details">
+        </field>
+        <field title="Grain passport NC details" type="varchar" hide="9.1 Are grain passports completed for all consignments and copies retained?=Yes" disabled="true">
+        </field>
+		<field title="9.1.1 Is there a supply of passport stickers for the most recent harvest available? (2014 Harvest should have Red Stickers)" type="boolean" code="9.1.1" nc="minor" detail="Grain passport stickers NC details">
+        </field>
+        <field title="Grain passport stickers NC details" type="varchar" hide="9.1.1 Is there a supply of passport stickers for the most recent harvest available? (2014 Harvest should have Red Stickers)=Yes" disabled="true">
+        </field>
+       </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">Recommendation</name>
+      <fields>
+        <field title="Recommended:" type="memo">
+        </field>
+        <field title="Records and store are satisfactory" type="info">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Recommended with reservations:" type="memo">
+        </field>
+        <field title="Store is satisfactory but, records are not satisfactory" type="info">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="On hold:" type="memo">
+        </field>
+        <field title="Pending improvements to the store please note that records may/may not be satisfactory" type="info">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Not recommended:" type="memo">
+        </field>
+        <field title="Does not intend to make necessary improvements" type="info">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Please indicate the recommendation" type="radio">
+          <options>
+            <option nc="false">Recommended</option>
+            <option nc="false">Recommended with reservations</option>
+            <option nc="false">On hold</option>
+            <option nc="false">Not recommended</option>
+          </options>
+        </field>
+        <field title="Additional Comments" type="textarea" required="false">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A0ACFC">Participant's Declaration</name>
+      <fields>
+        <field title="Participants Declaration" type="memo">
+        </field>
+        <field title="1.	I confirm that all the information given in this document is correct to the best of my knowledge." type="info">
+        </field>
+        <field title="2.	I agree to abide by the requirements of the Northern Ireland Farm Quality Assured Cereals Scheme Code of Practice." type="info">
+        </field>
+        <field title="3.	I agree to inform Northern Ireland Food Chain Certification of any changes in my circumstances to those declared in this document." type="info">
+        </field>
+        <field title="Producers Name" type="varchar">
+        </field>
+        <field title="Position" type="varchar">
+        </field>
+        <field title="Date" type="datetime">
+        </field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+        <field title="Time of Arrival" type="varchar" hide="FQACS Inspection#Inspection Scope=Linked">
+        </field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30" hide="FQACS Inspection#Inspection Scope=Linked">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

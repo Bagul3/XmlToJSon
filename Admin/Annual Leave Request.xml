@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Annual Leave Request Form</title>
+    <officeuse>
+      <field   title="To be completed by HQ" type="info">
+      </field>
+      <field   title="Total Annual leave taken to date =" type="info">
+      </field>
+      <field   title="Remaining Annual Leave =" type="info">
+      </field>
+      <field   title="Approved By  ___________________" type="info">
+      </field>
+      <field   title="Date   _________________" type="info">
+      </field>
+      <field   title="Form must be submitted prior to leaves being taken" type="info">
+      </field>
+      </officeuse>
+    </head>
+  <savefilename>Annual Leave Request Form</savefilename>
+  <type>Leave Form</type>
+  <form>
+
+
+ 
+    <section>
+      <name freq="start" colour="#F0E68C">Annual Leave Request Form</name>
+      <fields>
+        <field required="true"  title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+        <field   required="true" title="Staff Number" type="int">
+        </field>
+        <field  required="true" title="Date" type="datetime">
+        </field>
+        <field    title="If Part-time are you requesting for: " type="info">
+        </field>
+        <field    title="Annual Leave" type="checkbox">
+        </field>
+        <field    title="Public Holidays" type="checkbox">
+        </field>
+        <field  required="true" title="Leave Required from first day of holiday" type="datetime">
+        </field>
+        <field  required="true" title="To last day of holiday" type="datetime">
+        </field>
+        <field   required="true" title="Total days being taken (Max of 7 days)" type="int">
+        </field>
+        <field   title="If leave requested falls over 2 seperate weeks then 2 seperate  forms are required" type="info">
+        </field>
+
+      
+        
+       </fields>
+      </section>
+
+   
+
+  </form>
+</QAConfig>

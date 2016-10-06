@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>M+S Omagh Inspection Form</title>
+	<print>
+      <showrectified>true</showrectified>
+      <chars>45</chars>
+      <height>40</height>
+      <heading>M+S Omagh: NC Summary</heading>
+      <fields>
+        <field title="FQAS Ref. No." section="Marks and Spencer Omagh Inspection" field="FQAS Ref. No."></field>
+        <field title="Name:" section="Marks and Spencer Omagh Inspection" field="Surname"></field>
+        <field title="Date:" section="Marks and Spencer Omagh Inspection" field="Inspection Date"></field>
+        <field title="Inspector:" section="Marks and Spencer Omagh Inspection" field="Inspector Name"></field>
+        <field title="Staff No:" section="Marks and Spencer Omagh Inspection" field="Staff No."></field>
+      </fields>
+      <standard>
+      </standard>
+    </print>
+  </head>
+  <savefilename>M+S Omagh Inspection Form</savefilename>
+  <type>M+S Omagh</type>
+  <form>
+    <section>
+      <name freq="start" colour="#A1FBAC">Marks and Spencer Omagh Inspection</name>
+      <fields>
+        <field title="Distance from last location" type="int"  ></field>
+        <field title="Herd Number" type="varchar" hide="Inspection Category=Sheep">
+        </field>
+        <field title="Flock Number" type="varchar" hide="Inspection Category=Beef">
+        </field>
+        <field title="Forename" type="varchar" linked="false">
+        </field>
+        <field title="Surname" type="varchar" linked="false">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  required="true">
+        </field>
+        <field title="FQAS Ref. No." type="varchar" required="false" linked="false">
+        </field>
+        <field title="Email Address" type="varchar" required="false" linked="false">
+        </field>
+        <field  linked="false" title="Inspection Date" type="datetime">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" >
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" >
+        </field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">General Requirements</name>
+      <fields>
+        <field title="MS1 Has provision been made for fire/evacuation procedures?" type="boolean" code="MS1" nc="minor" detail="Evacuation Procedures NC details">
+        </field>
+        <field title="Evacuation Procedures NC details" type="varchar" hide="MS1 Has provision been made for fire/evacuation procedures?=Yes" disabled="true">
+        </field>
+        <field title="MS2 If electric fences are used, is it ensured that they only cause momentary discomfort?" type="radio" code="MS2" detail="Electric Fence NC details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Electric Fence NC details" type="varchar" hide="MS2 If electric fences are used, is it ensured that they only cause momentary discomfort?!=No" disabled="true">
+        </field>
+        <field title="MS3 Is there a system of vermin control operating on the farm? (i.e. a plan of buildings with bait sites marked)" type="boolean" code="MS3" nc="minor" detail="Vermin Control NC details">
+        </field>
+        <field title="Vermin Control NC details" type="varchar" hide="MS3 Is there a system of vermin control operating on the farm? (i.e. a plan of buildings with bait sites marked)!=No" disabled="true">
+        </field>
+        <field title="MS4 Where loaders are used for non-feed use, are they cleaned and dry?" type="boolean" code="MS4" nc="minor" detail="Loader Cleanliness NC details">
+        </field>
+        <field title="Loader Cleanliness NC details" type="varchar" hide="MS4 Where loaders are used for non-feed use, are they cleaned and dry?!=No" disabled="true">
+        </field>
+        <field title="MS5 Is there a procedure for identifying treated animals which is understood by all working with the stock?" type="boolean" code="MS5" nc="minor" detail="Animals ID NC Details">
+        </field>
+        <field title="Animals ID NC Details" type="varchar" hide="MS5 Is there a procedure for identifying treated animals which is understood by all working with the stock?!=No" disabled="true">
+        </field>
+        <field title="MS6 Is there a written feed plan detailing the current rations which are fed to all cattle?" type="boolean" code="MS6" nc="minor" detail="Feed Plan NC Details">
+        </field>
+        <field title="Feed Plan NC Details" type="varchar" hide="MS6 Is there a written feed plan detailing the current rations which are fed to all cattle?!=No" disabled="true">
+        </field>
+        <field title="MS7 Name of person responsible for giving careful thought to ease of calving:" type="varchar" code="MS7">
+        </field>
+        <field title="MS8 Is the general appearance of this farmyard and housing of a sufficiently high for inclusion in the M and S Select Farm Scheme?" type="boolean" detail="Farmyard Appearance NC Details" code="MS8" nc="minor">
+        </field>
+        <field title="Farmyard Appearance NC Details" type="varchar" hide="MS8 Is the general appearance of this farmyard and housing of a sufficiently high for inclusion in the M and S Select Farm Scheme?!=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Give details of the Breeds of Sire:" type="varchar">
+        </field>
+        <field title="Give details of the Breeds of Dam: (must be at least 50% Beef Breeding)" type="varchar">
+        </field>
+        <field title="Give details of the Sex of Beef Animal" type="radio">
+          <options>
+            <option>Steer</option>
+            <option>Heifer</option>
+            <option>Steers and Heifers</option>
+          </options>
+        </field>
+        <field title="MS9 Do cattle from this farm meet the finished beef specification for Marks and Spencer" type="boolean" code="MS9" nc="minor" detail="Finished Cattle Specifcation NC Details">
+        </field>
+        <field title="Finished Cattle Specifcation NC Details" type="varchar" hide="MS9 Do cattle from this farm meet the finished beef specification for Marks and Spencer!=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="MS10 Are the disallowed new technologies avoided (i.e. embryo transfer, In-vitro fertilisation, induced twinning, embryo/semen sexing, cloning, genetic modification)?" type="radio" code="MS10" detail="Disallowed Technologies NC Details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Disallowed Technologies NC Details" type="varchar" hide="MS10 Are the disallowed new technologies avoided (i.e. embryo transfer, In-vitro fertilisation, induced twinning, embryo/semen sexing, cloning, genetic modification)?!=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="MS11 Does the water supply meet the requirements of the cattle during peak demand?" type="boolean" code="MS10" nc="minor" detail="Water Supply NC Details">
+        </field>
+        <field title="Water Supply NC Details" type="varchar" hide="MS11 Does the water supply meet the requirements of the cattle during peak demand?!=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="MS12 If bull accommodation is provided, are adequate restraining facilities available and can the bull see, smell and hear other cattle?" type="radio" code="MS12" detail="Bull Accommodation NC details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Bull Accommodation NC details" type="varchar" hide="MS12 If bull accommodation is provided, are adequate restraining facilities available and can the bull see, smell and hear other cattle?!=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="MS13 Is the farmer aware that it is essential that cattle are free from faecal contamination when presented to the abattoir?" type="boolean" code="MS13" nc="minor" detail="Cattle Faecal Contamination NC Details">
+        </field>
+        <field title="Cattle Faecal Contamination NC Details" type="varchar" hide="MS13 Is the farmer aware that it is essential that cattle are free from faecal contamination when presented to the abattoir?!=No" disabled="true">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Participant's Declaration</name>
+      <fields>
+        <field title="Participant's Declaration" type="memo">
+        </field>
+        <field title="1. I confirm that all information presented in this document is correct to the best of my knowledge." type="info">
+        </field>
+        <field title="2. I agree to abide by the Codes of Practice of the Marks and Spencer Select Farm Scheme." type="info">
+        </field>
+        <field title="3. I agree that the information contained in this document may be recorded by NIFCC on behalf of LMC/Omagh Meats and Marks and Spencer for purposes of the Select Farm Scheme.  I understand that the information will not be disclosed to any other party without my consent." type="info">
+        </field>
+        <field title="4. I agree to inform Omagh Meats of any changes in my circumstances to those declared in this document." type="info">
+        </field>
+        <field title="Producers Name" type="varchar" required="true">
+        </field>
+        <field title="Position" type="varchar" required="true">
+        </field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30"></field>
+        <field title="Date" type="datetime" required="true">
+        </field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Demo Form</title>
+  </head>
+  <savefilename>Demo Save</savefilename>
+  <type>Inspection</type>
+  <form>
+    <section>
+      <name freq="start" colour="#cccccc">Demo 1</name>
+      <fields>
+        <field title="Forename" type="varchar" systemvalue="logon">
+        </field>
+        <field title="Surname" type="varchar">
+        </field>
+        <field title="Do you like ice cream" type="radio" detail="Why not?">
+          <options>
+            <option nc="Major">No</option>
+            <option nc="Minor">Winter</option>
+            <option nc="false">Summer</option>
+          </options>
+        </field>
+        <field title="Why not?" type="varchar" required="true" disabled="true" hide="Do you like ice cream!=No">
+        </field>
+        <field title="Whats your fav flavour" type="radio" disabled="true" hide="Do you like ice cream=No">
+          <options>
+            <option>Chocolate</option>
+            <option>Rum and Rasin</option>
+            <option>Pooh Bear</option>
+          </options>
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#cccccc">Section 2</name>
+      <fields>
+        <field title="Date Signed Off" type="datetime">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

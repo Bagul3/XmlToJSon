@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>ABP Trad Beef Inspection Form</title>
+  </head>
+  <savefilename>ABP Trad Beef Inspection Form</savefilename>
+  <type>ABP Trad</type>
+  <form>
+    <section>
+      <name freq="start" colour="#FCBB98">ABP Trad Beef - Inspection Form</name>
+      <fields>
+        <field title="Distance from last location" type="int"  ></field>
+        <field title="Forename" type="varchar" linked="false">
+        </field>
+        <field title="Surname" type="varchar" linked="false">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  required="true">
+        </field>
+        <field title="Herd Number" type="varchar" linked="false">
+        </field>
+        <field title="FQAS Ref. No." type="varchar" linked="false">
+        </field>
+        <field title="Email Address" type="varchar" required="false" linked="false">
+        </field>
+        <field  linked="false" title="Inspection Date" type="datetime">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" >
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" >
+        </field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 2 Origin of Stock</name>
+      <fields>
+        <field title="2.0 Origin of Stock" type="memo">
+        </field>
+        <field title="2.1 Are all ABP Traditional Beef cattle produced from recognised beef breed sires? (dairy breeds e.g. Friesian, Holstein, Ayrshire, Jersey are not acceptable)" type="boolean" code="2.1" nc="minor">
+        </field>
+        <field title="Beef Breeds Used" type="textarea">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 3 Health</name>
+      <fields>
+        <field title="3.0 Health" type="memo">
+        </field>
+        <field title="3.1 Are cattle bought-in?" type="boolean" code="3.1">
+        </field>
+        <field title="3.1 Are bought-in cattle always quarantined and/or treated for endo/ecto parasites (e.g. wormed) in accordance with the Herd Health Plan before introduction into the herd?" type="boolean" code="3.1" nc="minor" disabled="true" hide="3.1 Are cattle bought-in?=No" detail="Quarantine NC details">
+        </field>
+        <field title="Quarantine NC details" type="varchar" code="3.1" disabled="true" hide="3.1 Are bought-in cattle always quarantined and/or treated for endo/ecto parasites (e.g. wormed) in accordance with the Herd Health Plan before introduction into the herd?=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="3.2 Are all sudden deaths, disease outbreaks and cattle humanely killed as unfit recorded and, if cause unknown, reported to a vet, investigated and the outcome and action recorded" type="boolean" code="3.2" nc="minor" detail="Sudden Death/Disease NC details">
+        </field>
+        <field title="Sudden Death/Disease NC details" type="varchar" code="3.1" disabled="true" hide="3.2 Are all sudden deaths, disease outbreaks and cattle humanely killed as unfit recorded and, if cause unknown, reported to a vet, investigated and the outcome and action recorded=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="3.3 Is the routine induction of parturition avoided (e.g. to ensure that in-calf heifers abort if they are unintentionally mated)?" type="boolean" code="3.3" nc="minor" detail="Induced Parturition NC details">
+        </field>
+        <field title="Induced Parturition NC details" type="varchar" code="3.3" disabled="true" hide="3.3 Is the routine induction of parturition avoided (e.g. to ensure that in-calf heifers abort if they are unintentionally mated)?=Yes">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 4 Nutrition</name>
+      <fields>
+        <field title="4.0 Nutrition" type="memo">
+        </field>
+        <field title="4.1 Do cattle spend at least one season grazing?" type="boolean" code="4.1" nc="minor" detail="Grazing NC details">
+        </field>
+        <field title="Grazing NC details" type="varchar" code="4.1" disabled="true" hide="4.1 Do cattle spend at least one season grazing?=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="4.2 Is grass or silage fed at all times either alone or with concentrates? (The bulk of the diet must be forage-based.  Intensive barley systems are not permitted)" type="boolean" code="4.2" nc="minor" detail="Forage Diet NC details">
+        </field>
+        <field title="Forage Diet NC details" type="varchar" code="4.2" disabled="true" hide="4.2 Is grass or silage fed at all times either alone or with concentrates? (The bulk of the diet must be forage-based.  Intensive barley systems are not permitted)=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="4.3 Is the proportion of fibre in the diet adequate to prevent acidosis?  (Visually assess the diet for quality and dietary fibre)." type="boolean" code="4.3" nc="minor" detail="Dietary Fibre NC details">
+        </field>
+        <field title="Dietary Fibre NC details" type="varchar" code="4.3" disabled="true" hide="4.3 Is the proportion of fibre in the diet adequate to prevent acidosis?  (Visually assess the diet for quality and dietary fibre).=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="4.4 Are sudden changes in diet avoided (e.g. when calves are weaned)?" type="boolean" tcode="4.4" nc="minor" detail="Dietary Change NC details">
+        </field>
+        <field title="Dietary Change NC details" type="varchar" code="4.4" disabled="true" hide="4.4 Are sudden changes in diet avoided (e.g. when calves are weaned)?=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Are calves reared on the farm?" type="boolean">
+        </field>
+        <field title="4.5 Are calves reared on liquid feed until at least 5 weeks of age and until they are eating at least 1kg per day of calf starter ration?" type="boolean" code="4.5" nc="minor" disabled="true" hide="Are calves reared on the farm?=No" detail="Liquid Feed NC details">
+        </field>
+        <field title="Liquid Feed NC details" type="varchar" code="4.5" disabled="true" hide="4.5 Are calves reared on liquid feed until at least 5 weeks of age and until they are eating at least 1kg per day of calf starter ration?=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="4.6 Is silage produced on the farm?" type="boolean" code="4.6">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 5 Feedstuffs</name>
+      <fields>
+        <field title="5.0 Feedstuffs" type="memo">
+        </field>
+        <field title="5.1 Is the use of all feed additives (e.g. antibiotics, enzymes, probiotics) for growth promoting / digestive enhancement purposes prohibited?  This does not preclude any therapeutic treatment prescribed by a veterinary surgeon in the interests of cattle welfare" type="boolean" code="5.1" nc="minor" detail="Feed additives used">
+        </field>
+        <field title="Feed additives used" type="textarea" disabled="true" hide="5.1 Is the use of all feed additives (e.g. antibiotics, enzymes, probiotics) for growth promoting / digestive enhancement purposes prohibited?  This does not preclude any therapeutic treatment prescribed by a veterinary surgeon in the interests of cattle welfare=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="The following requirement does not apply to young bulls." type="memo">
+        </field>
+        <field title="5.2 Are genetically modified (GM) ingredients excluded from the diet in the last 60 days prior to slaughter?  (Check ingredient declarations to see if they contain soya, maize or rapemeal.  If they do, ensure that the supplier has confirmed that no GM materials are in the product)." type="boolean" code="5.2" nc="minor" detail="GM ingredients in diet">
+        </field>
+        <field title="GM ingredients in diet" type="textarea" disabled="true" hide="5.2 Are genetically modified (GM) ingredients excluded from the diet in the last 60 days prior to slaughter?  (Check ingredient declarations to see if they contain soya, maize or rapemeal.  If they do, ensure that the supplier has confirmed that no GM materials are in the product).=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 6 Housing</name>
+      <fields>
+        <field title="6.0 Housing" type="memo">
+        </field>
+        <field title="Are cattle housed?" type="boolean">
+        </field>
+        <field title="The following requirement does not apply to young bulls." type="memo">
+        </field>
+        <field title="6.1 When housed, do all ABP Traditional Beef cattle have access to a solid-floored, bedded lying area? (i.e. slatted feeding areas are acceptable but fully slatted sheds are not permitted, nor are wood chip corrals). Make a note of the approx. stocking density of housed cattle" type="boolean" code="6.1" disabled="true" hide="Are cattle housed?=No" nc="minor">
+        </field>
+        <field title="Bedding material used" type="varchar" disabled="true" hide="6.1 When housed, do all ABP Traditional Beef cattle have access to a solid-floored, bedded lying area? (i.e. slatted feeding areas are acceptable but fully slatted sheds are not permitted, nor are wood chip corrals). Make a note of the approx. stocking density of housed cattle=No">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Pen Width in Metres" type="int" disabled="true" hide="Are cattle housed?=No">
+        </field>
+        <field title="Pen Length in Metres" type="int" disabled="true" hide="Are cattle housed?=No">
+        </field>
+        <field title="No of Cattle" type="int" disabled="true" hide="Are cattle housed?=No">
+        </field>
+        <field title="Stocking density (m2/head)" type="int" calc="(Pen Width in Metres * Pen Length in Metres) / No of Cattle" disabled="true" hide="Are cattle housed?=No">
+        </field>
+        <field title="Stocking density additional info" type="textarea" required="false" disabled="true" hide="Are cattle housed?=No">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 7 Training</name>
+      <fields>
+        <field title="7.0 Training" type="memo">
+        </field>
+        <field title="7.1 Is a copy of the DARD cattle welfare codes available on farm?" type="boolean" code="7.1" nc="minor">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Section 8 Handling and Transport</name>
+      <fields>
+        <field title="8.0 Handling and Transport" type="memo">
+        </field>
+        <field title="Are calves bought-in?" type="boolean">
+        </field>
+        <field title="8.1 Are bought-in calves (i.e. 2 – 3 weeks of age) sourced from a farm assured farm and, if bought through a livestock market, have visited a market only once?" type="boolean" code="8.1" nc="minor" disabled="true" hide="Are calves bought-in?=No">
+        </field>
+        <field title="Suppliers of drop calves" type="textarea" code="8.1" disabled="true" hide="Are calves bought-in?=No">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#FCBB98">Participant's Declaration</name>
+      <fields>
+        <field title="Participant's Declaration" type="memo">
+        </field>
+        <field title="1. I confirm that all the information given in this document is correct to the best of my knowledge." type="info">
+        </field>
+        <field title="2. I agree to abide by the requirements of the ABP Traditional Beef Specification." type="info">
+        </field>
+        <field title="3. I agree that the information contained in this document may be recorded by NIFCC on behalf of ABP Ltd. and/or J Sainsbury plc for the purposes of the Traditional Beef specification.  I understand that this information will not be disclosed to any other party without my consent." type="info">
+        </field>
+        <field title="4. I agree to inform NIFCC and/or ABP Ltd. of any changes in my circumstances to those declared in this document." type="info">
+        </field>
+        <field title="Producers Name" type="varchar">
+        </field>
+        <field title="Position" type="varchar">
+        </field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30"></field>
+        <field title="Date" type="datetime">
+        </field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

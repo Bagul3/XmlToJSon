@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Appointments record form</title>
+  </head>
+  <line>Appointment Record form</line>
+  <savefilename>Appointments record form</savefilename>
+  <type>Appointment Record form</type>
+  <form>
+
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Appointments</name>
+      <fields>
+        <field linked="false"  title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+        <field   linked="false" title="Staff Number" type="int">
+        </field>
+        <field  linked="false" title="Date" type="datetime">
+        </field>
+        <field linked="false"  title="Week Number" type="int">
+        </field>
+        <field linked="false"  title="Week Commencing (Monday)" type="datetime">
+        </field>
+        <field linked="false"  title="Do you have inspections on Monday" type="boolean">
+        </field>
+        <field linked="false"  title="Do you have inspections on Tuesday" type="boolean">
+        </field>
+        <field linked="false"  title="Do you have inspections on Wednesday" type="boolean">
+        </field>
+        <field linked="false"  title="Do you have inspections on Thursday" type="boolean">
+        </field>
+        <field linked="false"  title="Do you have inspections on Friday" type="boolean">
+        </field>
+        <field linked="false"  title="Do you have inspections on Saturday" type="boolean">
+        </field>
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Monday</name>
+      <fields hide="Appointments#Do you have inspections on Monday=No">
+        <field linked="false"  title="Date of Appointment" type="datetime">
+    </field>
+
+    <field   title="Appointment 1" type="memo">
+        </field>
+        <field  linked="false" title="1. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+        <field  linked="false" title="1. Ref No" type="int">
+        </field>
+        <field  linked="false" title="1. Surname" type="varchar">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 2" type="memo">
+        </field>
+        <field  linked="false" title="2. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="2. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="2. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 3" type="memo">
+        </field>
+        <field  linked="false" title="3. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="3. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="3. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 4" type="memo">
+        </field>
+        <field  linked="false" title="4. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="4. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="4. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+
+
+        <field   title="Appointment 5" type="memo">
+        </field>
+        <field  linked="false" title="5. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="5. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="5. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+      </fields>
+    </section>
+
+
+
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Tuesday</name>
+      <fields hide="Appointments#Do you have inspections on Tuesday=No">
+        <field linked="false"  title="Date of Appointment" type="datetime">
+        </field>
+
+        <field   title="Appointment 1" type="memo">
+        </field>
+        <field  linked="false" title="1. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+        <field  linked="false" title="1. Ref No" type="int">
+        </field>
+        <field  linked="false" title="1. Surname" type="varchar">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 2" type="memo">
+        </field>
+        <field  linked="false" title="2. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="2. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="2. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 3" type="memo">
+        </field>
+        <field  linked="false" title="3. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="3. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="3. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 4" type="memo">
+        </field>
+        <field  linked="false" title="4. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="4. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="4. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+
+
+        <field   title="Appointment 5" type="memo">
+        </field>
+        <field  linked="false" title="5. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="5. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="5. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Wednesday</name>
+      <fields hide="Appointments#Do you have inspections on Wednesday=No">
+        <field linked="false"  title="Date of Appointment" type="datetime">
+        </field>
+
+        <field   title="Appointment 1" type="memo">
+        </field>
+        <field  linked="false" title="1. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+        <field  linked="false" title="1. Ref No" type="int">
+        </field>
+        <field  linked="false" title="1. Surname" type="varchar">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 2" type="memo">
+        </field>
+        <field  linked="false" title="2. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="2. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="2. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 3" type="memo">
+        </field>
+        <field  linked="false" title="3. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="3. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="3. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 4" type="memo">
+        </field>
+        <field  linked="false" title="4. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="4. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="4. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+
+
+        <field   title="Appointment 5" type="memo">
+        </field>
+        <field  linked="false" title="5. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="5. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="5. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Thursday</name>
+      <fields hide="Appointments#Do you have inspections on Thursday=No">
+        <field linked="false"  title="Date of Appointment" type="datetime">
+        </field>
+
+        <field   title="Appointment 1" type="memo">
+        </field>
+        <field  linked="false" title="1. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+        <field  linked="false" title="1. Ref No" type="int">
+        </field>
+        <field  linked="false" title="1. Surname" type="varchar">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 2" type="memo">
+        </field>
+        <field  linked="false" title="2. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="2. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="2. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 3" type="memo">
+        </field>
+        <field  linked="false" title="3. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="3. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="3. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 4" type="memo">
+        </field>
+        <field  linked="false" title="4. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="4. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="4. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+
+
+        <field   title="Appointment 5" type="memo">
+        </field>
+        <field  linked="false" title="5. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="5. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="5. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Friday</name>
+      <fields hide="Appointments#Do you have inspections on Friday=No">
+        <field linked="false"  title="Date of Appointment" type="datetime">
+        </field>
+
+        <field   title="Appointment 1" type="memo">
+        </field>
+        <field  linked="false" title="1. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+        <field  linked="false" title="1. Ref No" type="int">
+        </field>
+        <field  linked="false" title="1. Surname" type="varchar">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 2" type="memo">
+        </field>
+        <field  linked="false" title="2. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="2. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="2. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 3" type="memo">
+        </field>
+        <field  linked="false" title="3. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="3. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="3. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 4" type="memo">
+        </field>
+        <field  linked="false" title="4. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="4. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="4. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+
+
+        <field   title="Appointment 5" type="memo">
+        </field>
+        <field  linked="false" title="5. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="5. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="5. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="start" colour="#F0E68C">Saturday</name>
+      <fields hide="Appointments#Do you have inspections on Saturday=No">
+        <field linked="false"  title="Date of Appointment" type="datetime">
+        </field>
+
+        <field   title="Appointment 1" type="memo">
+        </field>
+        <field  linked="false" title="1. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+        <field  linked="false" title="1. Ref No" type="int">
+        </field>
+        <field  linked="false" title="1. Surname" type="varchar">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 2" type="memo">
+        </field>
+        <field  linked="false" title="2. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="2. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="2. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 3" type="memo">
+        </field>
+        <field  linked="false" title="3. Scheme" type="list" options="FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC,N/A"></field>
+		<field  linked="false" title="3. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="3. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+        <field   title="Appointment 4" type="memo">
+        </field>
+        <field  linked="false" title="4. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="4. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="4. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+
+
+
+        <field   title="Appointment 5" type="memo">
+        </field>
+        <field  linked="false" title="5. Scheme" type="list" options="N/A,FQAS,FQACS,Dairy,Chicken,Transport,Markets,TASCC"></field>
+		<field  linked="false" title="5. Ref No" type="int" required="false">
+        </field>
+        <field  linked="false" title="5. Surname" type="varchar" required="false">
+        </field>
+        <field   title=" " type="info">
+        </field>
+      </fields>
+    </section>
+
+
+  </form>
+</QAConfig>

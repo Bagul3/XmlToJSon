@@ -1,0 +1,2176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QAConfig>
+  <connection>
+    User ID=liveqa;Password=liveqa;Initial Catalog=LiveQMobile;Data Source=cms.killercontent.net;Connection Timeout=360
+  </connection>
+  <lookupconnection>
+    User ID=sa;Password=2001space;Initial Catalog=LiveQMobile;Data Source=cranmore;Connection Timeout=360
+  </lookupconnection>
+  <savefilename>
+    RT_Poultry_Broiler_Inspection_Checklist
+  </savefilename>
+  <line>RT Poultry Broiler Inspection Checklist</line>
+  <type>Poultry-B</type>
+  <head>
+    <title>RT Poultry Broiler Inspection Checklist</title>
+    <print>
+      <showrectified>true</showrectified>
+      <chars>45</chars>
+      <height>40</height>
+      <heading>RT Poultry: NC Summary</heading>
+      <fields>
+        <field title="Reg. No:" section="Inspection Scope" field="Reg No."></field>
+        <field title="Name:" section="Inspection Scope" field="Producer Name"></field>
+        <field title="Date:" section="Inspection Scope" field="Inspection Date"></field>
+        <field title="Inspector:" section="Inspection Scope" field="Inspector Name"></field>
+        <field title="Staff No:" section="Inspection Scope" field="Inspector Number"></field>
+      </fields>
+      <standard>
+        <nc>LMC Farm Liaison Officer Tel: 028 9263 3024</nc>
+        <nc>PLEASE NOTE, YOU CAN NOW SEND PHOTOGRAPHIC EVIDENCE TO THE FOLLOWING NUMBER 07561391543. PLEASE ENSURE THAT YOU INCLUDE YOUR REFERENCE NUMBER WITH ALL PHOTOGRAPHS</nc>
+        <nc>All non-conformances must be recififed within 28 days from the date of the inspection.</nc>
+        <nc>I acknowledge that the inspector has carried out an inspection and has brought to my attention areas where non-conformances have been identified. I understand that these inspection results are provided for information only at this stage. This report does not indicate wether or not I will be awarded a certificate.</nc>
+      </standard>
+    </print>
+  </head>
+  <correctiveaction>
+    <action>Contact Farm</action>
+    <action>Contact Manager</action>
+  </correctiveaction>
+  <form>
+    <section>
+      <name freq="start">Inspection Scope</name>
+      <fields>
+        <field title="Distance from last location" type="int" mapcode="Is.1" ></field>
+        <field title="Producer Name" type="varchar" required="true" mapcode="Is.2"></field>
+        <field title="Reg No." type="varchar" required="true" mapcode="Is.3"></field>
+        <field title="E-mail address" type="varchar" required="true" mapcode="Is.4"></field>
+        <field title="Company" type="list" required="true" options="Moy Park Dungannon,Moy Park Ballymena" mapcode="Is.5"></field>
+        <field title="Postcode" type="varchar"  required="true" mapcode="Is.6"></field>
+        <field title="Field Officer" type="varchar" required="true" mapcode="Is.7"></field>
+        <field title="" type="info"></field>
+        <field title="Total No. Bird Places" type="int" required="true" mapcode="Is.8"></field>
+        <field title="No. Houses" type="radio" required="true">
+          <options>
+            <option>1</option>
+            <option>2</option>
+            <option>More than 2</option>
+          </options>
+        </field>
+        <field title="Additional Houses" type="radio" disabled="true" hide="No. Houses!=More than 2">
+          <options>
+            <option>3</option>
+            <option>4</option>
+          </options>
+        </field>
+        <field title="" type="info"></field>
+        <field title="Inspection Type" type="list" required="true" options="Annual,Initial,Spot-Check,Re-Inspection" mapcode="Is.9"></field>
+        <field title="Person Responsible For Stock" type="memo"></field>
+        <field title="Name" type="varchar" required="true" mapcode="Is.10"></field>
+        <field title="No. Of Years Experience" type="int" required="true" mapcode="Is.11"></field>
+        <field title="Qualifications (eg. NVQ,ND,HND)" type="varchar" required="true" mapcode="Is.12"></field>
+        <field title="No. Staff (Include Family Members)" type="int" required="true" mapcode="Is.13"></field>
+        <field title="" type="info"></field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon" required="true" mapcode="Is.14"></field>
+        <field title="Inspector Number" type="int" required="true" mapcode="Is.15"></field>
+        <field title="Inspection Date" type="datetime" required="true" mapcode="Is.16"></field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field title="" type="info"></field>
+        <field title="Supplementary Inspection Checklists:" type="memo">
+        </field>
+        <field title="Are there any supplementary inspections required?" type="boolean" >
+        </field>
+        <field title="Moy Park High Welfare Supplementary" type="checkbox" openform="Poultry\Moy Park High Welfare Supplementary Broiler.xml" disabled="true" hide="Are there any supplementary inspections required?=No">
+        </field>
+      </fields>
+    </section>
+
+    <section>
+      <name freq="once">Confirm Participant Details</name>
+      <fields>
+        <field title="Are the details held by headquarters still current/correct?" type="boolean">
+        </field>
+        <field title="Please select details which are incorrect" type="memo">
+        </field>
+        <field title="Participant's Name" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Address 1" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Address 2" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Town" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Postcode" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Phone" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Mobile" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Unit Type (Breeder Layer, Rearer etc.)" type="checkbox" hide="Are the details held by headquarters still current/correct?=Yes" disabled="true">
+        </field>
+        <field title="Amendments" type="textarea" hide="Are the details held by headquarters still current/correct?=Yes">
+        </field>
+      </fields>
+    </section>
+
+    <section>
+      <name freq="once">Traceability and Assurance Status (TI)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Is there an Effective Traceability System in Place? (K)" type="boolean" nc="select" required="true" code="CB.TI.a" detail="Traceability System NC detail"></field>
+        <field title="Traceability System NC detail" type="varchar" hide="Is there an Effective Traceability System in Place? (K)=Yes" disabled="true">
+        </field>
+
+        <field title="Is Supplying Farm/Hatchery Scheme Reg No. Available?" code="CB.TI.b" required="true" type="boolean" nc="major"></field>
+        <field title="Farm/Hatchery Scheme Reg No." type="varchar" hide="Is Supplying Farm/Hatchery Scheme Reg No. Available?=No" disabled="true">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Staff and Labour Providers (SC)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Are new staff effectively trained and deemed competent to carry out the tasks they are asked to do? (K)" type="boolean" code="CB.SC.a" nc="minor" detail="Staff competency NC details">
+        </field>
+        <field title="Staff competency NC details" type="varchar" disabled="true" hide="Are new staff effectively trained and deemed competent to carry out the tasks they are asked to do? (K)=Yes">
+        </field>
+
+        <field title="Is staff competency regularly reviewed and refresher training provided as required? (New)" type="boolean" code="CB.SC.b" nc="minor" detail="Staff competency review NC details">
+        </field>
+        <field title="Staff competency review NC details" type="varchar" disabled="true" hide="Is staff competency regularly reviewed and refresher training provided as required? (New)=Yes">
+        </field>
+
+        <field title="Staff Training Records" type="radio" required="true" code="CB.SC.c" detail="Staff Training Records NC detail">
+          <options>
+            <option nc="false">Fully Complete/Up-to-date</option>
+            <option nc="minor">Not Fully Complete/Up-to-date</option>
+            <option nc="minor">Does not include all staff</option>
+            <option nc="minor">On-going Competency Not Assessed/Recorded</option>
+            <option nc="minor">Training not regularly reviewed/updated</option>
+          </options>
+        </field>
+        <field title="Staff Training Records: Date last entry" type="datetime"></field>
+        <field title="Staff Training Records NC detail" type="varchar" hide="Staff Training Records=Fully Complete/Up-to-date" disabled="true">
+        </field>
+
+        <field title="Is the Producer Registered with the Poultrymeat Training Initiative (Poultry Passport)?" nc="major" type="boolean" required="true" code="CB.SC.c.1.1">
+        </field>
+        <field title="Is Confirmation Letter Available" type="boolean" nc="minor" code="CB.SC.c.1.2" hide="Is the Producer Registered with the Poultrymeat Training Initiative (Poultry Passport)?=No" disabled="true">
+        </field>
+
+
+        <field title="Labour provider agreements are (New)" type="radio" code="CB.SC.d" detail="Labour provider agreement NC details" ncoverride="false">
+          <options>
+            <option nc="false">Not applicable</option>
+            <option nc="false">Available and fully complete</option>
+            <option nc="minor">Not fully complete</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Labour provider agreement NC details" code="DR.SC.dnc" type="varchar" hide="Labour provider agreements are (New)!=Not fully complete" disabled="true">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Animal Health and Welfare (AH)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Stock Welfare Requirements (K)" type="radio" required="true" code="CB.AH.d" detail="Stock Welfare Requirements NC detail">
+          <options>
+            <option nc="false">Met at all times</option>
+            <option nc="select">Not met at all times</option>
+          </options>
+        </field>
+        <field title="Stock Welfare Requirements NC detail" type="varchar" hide="Stock Welfare Requirements (K)=Met at all times" disabled="true">
+        </field>
+
+        <field title="Does the farmer explore different forms of environmental enrichment? (Recommendation)" type="boolean" required="true" code="CB.AH.d.1" nc="minor">
+        </field>
+
+        <field title="Birds Are (K)" type="radio" required="true" code="CB.AH.f" detail="Bird Handling NC detail">
+          <options>
+            <option nc="false">Handled in a Compassionate/Positive manner</option>
+            <option nc="select">Not Handled in a Compassionate/Positive manner</option>
+          </options>
+        </field>
+        <field title="Bird Handling NC detail" type="varchar" hide="Birds Are (K)=Handled in a Compassionate/Positive manner" disabled="true">
+        </field>
+
+        <field title="Is the Farm under the routine care of a named Vet practice/surgeon (K)" nc="major" type="boolean" required="true" code="CB.AH.h">
+        </field>
+
+        <field title="Name of Vet practice/surgeon" hide="Is the Farm under the routine care of a named Vet practice/surgeon (K)=No" type="list" required="true" options="St. Davids,A Gibson">
+        </field>
+
+        <field title="Written Flock Health Plan (K)" type="radio" required="true" code="CB.AH.a.1" detail="Health Plan NC detail">
+          <options>
+            <option nc="false">Fully Complete/Up-to-date/Implemented</option>
+            <option nc="minor">Not Fully Complete/Up-to-date</option>
+            <option nc="minor">Not Fully Implemented</option>
+            <option nc="minor">Not Farm Specific</option>
+            <option nc="minor">Not Reviewed at least annually</option>
+            <option nc="minor">Not available to relevant staff</option>
+          </options>
+        </field>
+        <field title="Flock Health Plan Date Last reviewed: Date last entry" type="datetime"></field>
+        <field title="Health Plan NC detail" type="varchar" hide="Written Flock Health Plan (K)=Fully Complete/Up-to-date/Implemented" disabled="true">
+        </field>
+
+
+        <field title="Salmonella Testing" type="radio" required="true" code="CB.AH.c.1" detail="Salmonella Testing NC detail">
+          <options>
+            <option nc="false">All Relevant Controls Fully implemented</option>
+            <option nc="select">Not tested within 3 weeks of 1st slaughter</option>
+            <option nc="select">Slaughter programme not implemented</option>
+            <option nc="select">C and D not implemented</option>
+            <option nc="select">Test not completed by approved lab</option>
+            <option nc="select">Test Results not retained/available</option>
+            <option nc="major">Not carried out</option>
+          </options>
+        </field>
+        <field title="Salmonella Test results: Date last entry" type="datetime" hide="Salmonella Testing=Not carried out"></field>
+        <field title="Salmonella Testing NC detail" type="varchar" hide="Salmonella Testing=All Relevant Controls Fully implemented" disabled="true">
+        </field>
+
+
+        <field title="AI Contingency Plan" type="radio" required="true" code="CB.DP.b.1" detail="AI Contingency Plan NC detail">
+          <options>
+            <option nc="false">Fully Complete/Up-to-date/Available</option>
+            <option nc="minor">Not Fully Complete/Up-to-date</option>
+            <option nc="minor">Not Reviewed at least annually</option>
+          </options>
+        </field>
+        <field title="AI Contingency Plan NC detail" type="varchar" hide="AI Contingency Plan=Fully Complete/Up-to-date/Available" disabled="true">
+        </field>
+
+        <field title="Vaccination Programmes" type="radio" required="true" code="CB.AH.a.2" detail="Vaccination Programme NC detail">
+          <options>
+            <option nc="false">Appropriate and Implemented as necessary</option>
+            <option nc="minor">Not developed with Vet</option>
+            <option nc="minor">Not Farm specific</option>
+          </options>
+        </field>
+        <field title="Vaccination Programme NC detail" type="varchar" hide="Vaccination Programmes=Appropriate and Implemented as necessary" disabled="true">
+        </field>
+
+        <field title="Stock Inspection" type="radio" required="true" code="CB.AH.e.0.1" detail="Stock Inspection NC detail">
+          <options>
+            <option nc="false">Carried out regularly and appropriately</option>
+            <option nc="select">Not at required frequency</option>
+            <option nc="select">Doesn't include checks for illness,injury,stress</option>
+            <option nc="select">Not within 3m of every bird</option>
+            <option nc="select">Expert advice not sought for problems</option>
+          </options>
+        </field>
+        <field title="Stock Inspection NC detail" type="varchar" hide="Stock Inspection=Carried out regularly and appropriately" disabled="true">
+        </field>
+
+        <field title="Stock Inspection Records" type="radio" required="true" code="CB.AH.e.0.2" detail="Stock Inspection Records NC detail">
+          <options>
+            <option nc="false">Complete and Fully Up-to-date</option>
+            <option nc="minor">Not Fully Complete</option>
+            <option nc="minor">Not Up-to-date</option>
+          </options>
+        </field>
+        <field title="Stock Inspection Records: Date of Last Test" type="datetime" required="true"></field>
+        <field title="Stock Inspection Records NC detail" type="varchar" hide="Stock Inspection Records=Complete and Fully Up-to-date" disabled="true">
+        </field>
+
+        <field title="Is Chick behaviour closely monitored on arrival" nc="select" type="boolean" required="true" code="CB.AH.e.0.3" detail="Chick behaviour NC detail">
+        </field>
+        <field title="Chick behaviour NC detail" type="varchar" hide="Is Chick behaviour closely monitored on arrival=Yes" disabled="true">
+        </field>
+
+        <field title="Health and Performance Records" type="radio" required="true" code="CB.AH.b.1" detail="Health and Performance Records NC detail">
+          <options>
+            <option nc="false">Complete and Fully Up-to-date</option>
+            <option nc="minor">Not Fully Complete</option>
+            <option nc="minor">Not Up-to-date</option>
+            <option nc="minor">Not available for previous crop</option>
+          </options>
+        </field>
+        <field title="Health and Performance Records: Date of Last Entry" type="datetime" required="true"></field>
+        <field title="Health and Performance Records NC detail" type="varchar" hide="Health and Performance Records=Complete and Fully Up-to-date" disabled="true">
+        </field>
+
+        <field title="Health and Performance Records monitoring" type="radio" required="true" code="CB.AH.c.0.1" detail="Health and Performance Records monitoring NC detail">
+          <options>
+            <option nc="false">Records Routinely Monitored for Signs of problems</option>
+            <option nc="minor">Vet not informed if tolerance limits exceeded</option>
+          </options>
+        </field>
+        <field title="Health and Performance Records monitoring NC detail" type="varchar" hide="Health and Performance Records monitoring=Records Routinely Monitored for Signs of problems" disabled="true">
+        </field>
+
+        <field title="Health and Performance Records maintenance" type="radio" required="true" code="CB.AH.b.2" detail="Health and Performance Records maintenance NC detail">
+          <options>
+            <option nc="false">Fully Complete and Up-to-date</option>
+            <option nc="minor">Not Fully Complete and Up-to-date</option>
+            <option nc="minor">Mortality/Culls not recorded</option>
+            <option nc="minor">Weekly alarm test not recorded</option>
+            <option nc="minor">Fire extinguisher checks not recorded</option>
+            <option nc="minor">Temperature records not recorded</option>
+            <option nc="minor">Non-mains water tests not recorded</option>
+            <option nc="minor">Lighting Regime not recorded</option>
+            <option nc="minor">Floor/litter type not recorded</option>
+          </options>
+        </field>
+        <field title="Health and Performance Records maintenance NC detail" type="varchar" hide="Health and Performance Records maintenance=Fully Complete and Up-to-date" disabled="true">
+        </field>
+
+        <field title="Production Report" type="radio" required="true" code="CB.AH.b.3" detail="Production Report NC detail">
+          <options>
+            <option nc="false">Fully Complete and Up-to-date</option>
+            <option nc="minor">Not Fully Complete and Up-to-date</option>
+            <option nc="minor">Daily mortality not recorded</option>
+            <option nc="minor">Cumulative daily mortality not recorded</option>
+            <option nc="minor">Culls not recorded</option>
+            <option nc="minor">Water consumption not recorded</option>
+            <option nc="minor">Max/Min house temperature not recorded</option>
+            <option nc="minor">Average weights not recorded</option>
+          </options>
+        </field>
+        <field title="Production Report: Date of Last Entry" type="datetime" required="true"></field>
+        <field title="Production Report NC detail" type="varchar" hide="Production Report=Fully Complete and Up-to-date" disabled="true">
+        </field>
+
+        <field title="Hockburn/Pododermatitis" type="radio" required="true" code="CB.AH.e.1" detail="Hockburn/Pododermatitis NC detail">
+          <options>
+            <option nc="false">Monitored correctly</option>
+            <option nc="minor">Not monitored correctly</option>
+            <option nc="minor">Hockburn not monitored</option>
+            <option nc="minor">Pododermatitis not monitored</option>
+            <option nc="major">Not monitored</option>
+          </options>
+        </field>
+        <field title="Hockburn/Pododermatitis NC detail" type="varchar" hide="Hockburn/Pododermatitis=Monitored correctly" disabled="true">
+        </field>
+
+        <field title="Mortality/Culls/Hockburn/PMI rejects" type="radio" required="true" code="CB.AH.c.0.2" detail="Mortality/Culls/Hockburn/PMI rejects NC detail">
+          <options>
+            <option nc="false">Monitored and recorded correctly</option>
+            <option nc="minor">Not monitored correctly</option>
+            <option nc="minor">Not recorded correctly</option>
+            <option nc="minor">Mortality exceeds 5%</option>
+            <option nc="minor">PMI's exceed 1.5%</option>
+            <option nc="minor">Hockburn exceeds 15%</option>
+            <option nc="major">Not monitored/recorded</option>
+          </options>
+        </field>
+        <field title="Mortality/Culls/Hockburn/PMI rejects: Date of Last Entry" type="datetime" required="true" hide="Mortality/Culls/Hockburn/PMI rejects=Not monitored/recorded"></field>
+        <field title="Mortality/Culls/Hockburn/PMI rejects NC detail" type="varchar" hide="Mortality/Culls/Hockburn/PMI rejects=Monitored and recorded correctly" disabled="true">
+        </field>
+
+        <field title="Stock Suffering Ill Health/Injury (K)" type="radio" required="true" code="CB.AH.i" detail="Ill Health/Injury NC detail">
+          <options>
+            <option nc="false">Receive appropriate attention immediately</option>
+            <option nc="select">Ill/injured/lame birds not culled immediately</option>
+            <option nc="minor">System-induced injuries not investigated/remedied</option>
+            <option nc="minor">Environmental problems not remedied before restocking</option>
+            <option nc="minor">Mortality exceeding 0.3 percent in 24hr not investigated</option>
+            <option nc="minor">Mortality exceeding 0.3 percent in 24hr no Vet advice</option>
+            <option nc="minor">Incidence and outcomes not recorded</option>
+            <option nc="minor">Leg culls not recorded/assessed/trended/no Vet advice</option>
+          </options>
+        </field>
+        <field title="Ill Health/Injury NC detail" type="varchar" hide="Stock Suffering Ill Health/Injury (K)=Receive appropriate attention immediately" disabled="true">
+        </field>
+
+        <field title="Birds Not Responding to Treatment/Treatment Inappropriate" type="radio" required="true" code="CB.AH.j" detail="Culling NC detail">
+          <options>
+            <option nc="false">Humanely culled by trained stockperson</option>
+            <option nc="select">Culled by untrained stockperson</option>
+            <option nc="major">Culled by unapproved method</option>
+            <option nc="major">Chicks not culled by neck dislocation</option>
+          </options>
+        </field>
+        <field title="Culling NC detail" type="varchar" hide="Birds Not Responding to Treatment/Treatment Inappropriate=Humanely culled by trained stockperson" disabled="true">
+        </field>
+
+        <field title="Staff responsible for birds" type="radio" required="true" code="CB.AH.g" detail="Stockmanship Training NC detail">
+          <options>
+            <option nc="false">Appropriately trained in Stockmanship</option>
+            <option nc="select">Not appropriately trained</option>
+            <option nc="select">Do not appear to be competent</option>
+          </options>
+        </field>
+        <field title="Stockmanship Training NC detail" type="varchar" hide="Staff responsible for birds=Appropriately trained in Stockmanship" disabled="true">
+        </field>
+
+
+      </fields>
+    </section>
+
+    <section>
+      <name freq="once">Biosecurity and Disease Control (BI)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Biosecurity Measures (K)" type="radio" code="CB.BI.a" detail="Biosecurity Measures NC detail" required="true">
+          <options>
+            <option nc="false">Established and fully implemented</option>
+            <option nc="minor">Not fully established</option>
+            <option nc="minor">Not fully implemented</option>
+          </options>
+        </field>
+        <field title="Biosecurity Measures NC detail" type="varchar" hide="Biosecurity Measures (K)=Established and fully implemented" disabled="true">
+        </field>
+
+
+        <field title="Visitors" type="radio" code="CB.BI.b" detail="Visitors NC detail" required="true">
+          <options>
+            <option nc="false">Procedure fully established and implemented</option>
+            <option nc="minor">Visitor records not fully complete</option>
+            <option nc="minor">Visitor records not up-to-date</option>
+            <option nc="minor">Visitor health declaration not complete</option>
+            <option nc="minor">Non essential visitors allowed access</option>
+            <option nc="minor">Entry not refused when bird health/welfare at risk</option>
+          </options>
+        </field>
+        <field title="Visitors NC detail" type="varchar" hide="Visitors=Procedure fully established and implemented" disabled="true">
+        </field>
+        <field title="Visitor Records: Date last Entry" type="datetime" required="true"></field>
+        <field title="Name of most recent Visitor" type="varchar" required="true"></field>
+
+        <field title="Foot Dips (K)" type="radio" code="CB.BI.d" detail="Foot Dips NC detail" required="true">
+          <options>
+            <option nc="false">Available and used by all personnel</option>
+            <option nc="minor">Facilities not provided at all building entrances</option>
+            <option nc="minor">Non DARD approved disinfectant used</option>
+            <option nc="minor">Disinfectant solutions not replaced as prescribed</option>
+            <option nc="minor">Disinfectant solutions replacement records not complete</option>
+            <option nc="minor">Footwear not always dipped at each entry/exit</option>
+          </options>
+        </field>
+        <field title="Foot Dips NC detail" type="varchar" hide="Foot Dips (K)=Available and used by all personnel" disabled="true">
+        </field>
+        <field title="Footbath Disinfectant Name" type="varchar" required="true">
+        </field>
+
+        <field title="Footwear (K)" type="radio" code="CB.BI.e" detail="Footwear NC detail" required="true">
+          <options>
+            <option nc="false">All personnel use dedicated footwear/overshoes</option>
+            <option nc="major">Dedicated footwear not provided</option>
+            <option nc="minor">Dedicated footwear not clean</option>
+            <option nc="minor">Boots not suitable for foot dips</option>
+          </options>
+        </field>
+        <field title="Footwear NC detail" type="varchar" hide="Footwear (K)=All personnel use dedicated footwear/overshoes" disabled="true">
+        </field>
+
+        <field title="Barrier Footwear System (K)" type="radio" code="CB.BI.f" detail="Barrier Footwear System NC detail" required="true">
+          <options>
+            <option nc="false">Procedure fully established and implemented</option>
+            <option nc="minor">Dedicated footwear/overshoes not use on entry to farm</option>
+            <option nc="minor">Physical barrier not at least 30cm high</option>
+            <option nc="minor">Barrier area does not facilitate cleaning</option>
+            <option nc="minor">Biosecure area not provided in every poultry house</option>
+            <option nc="minor">Procedure not always implemented correctly</option>
+            <option nc="minor">No seating provided for changing boots</option>
+          </options>
+        </field>
+        <field title="Barrier Footwear System NC detail" type="varchar" hide="Barrier Footwear System (K)=Procedure fully established and implemented" disabled="true">
+        </field>
+
+        <field title="Handwashing/sanitising Facilities (K)" type="radio" code="CB.BI.g" detail="Handwashing/sanitising Facilities NC detail" required="true">
+          <options>
+            <option nc="false">Available at each biosecure area</option>
+            <option nc="minor">Not properly maintained</option>
+            <option nc="minor">Not available at each house</option>
+            <option nc="minor">Personnel do not always sanitise hands as required</option>
+          </options>
+        </field>
+        <field title="Handwashing/sanitising Facilities NC detail" type="varchar" hide="Handwashing/sanitising Facilities (K)=Available at each biosecure area" disabled="true">
+        </field>
+
+        <field title="Toilet/Handwashing Facilities (K)" type="radio" code="CB.BI.i" detail="Toilet/Handwashing Facilities NC detail" required="true">
+          <options>
+            <option nc="false">Available in dwelling house with unrestricted access</option>
+            <option nc="false">Available and properly maintained</option>
+            <option nc="minor">Hot water not available</option>
+            <option nc="minor">Bactericidal soap not available</option>
+            <option nc="minor">Hand drying facilities not available</option>
+            <option nc="minor">Access is restricted</option>
+            <option nc="minor">Handwash/sanitiser not available at each house</option>
+            <option nc="minor">Personnel do not always wash hands as required</option>
+          </options>
+        </field>
+        <field title="Toilet/Handwashing Facilities NC detail" type="varchar" hide="Toilet/Handwashing Facilities (K)=Available and properly maintained|Toilet/Handwashing Facilities (K)=Available in dwelling house with unrestricted access" disabled="true">
+        </field>
+
+
+
+        <field title="Dedicated Protective Clothing (K)" type="radio" code="CB.BI.h" detail="Protective Clothing NC detail" required="true">
+          <options>
+            <option nc="false">Supplied for all personnel</option>
+            <option nc="major">Not dedicated to poultry unit</option>
+            <option nc="major">Not washed/discarded between flocks</option>
+            <option nc="minor">Not provided for visitors</option>
+          </options>
+        </field>
+        <field title="Protective Clothing NC detail" type="varchar" hide="Dedicated Protective Clothing (K)=Supplied for all personnel" disabled="true">
+        </field>
+
+
+        <field title="Livestock-Free Period (K)" type="radio" code="CB.BI.j" detail="Livestock-Free Period NC detail" required="true">
+          <options>
+            <option nc="false">Always operated between flock cycles</option>
+            <option nc="major">Not always operated between flock cycles</option>
+          </options>
+        </field>
+        <field title="Livestock-Free Period NC detail" type="varchar" hide="Livestock-Free Period (K)=Always operated between flock cycles" disabled="true">
+        </field>
+
+
+        <field title="Farm vehicles" type="radio" code="CB.BI.k" detail="Farm vehicles NC detail" required="true">
+          <options>
+            <option nc="false">Maintained in a clean condition</option>
+            <option nc="minor">Not always maintained in a clean condition</option>
+            <option nc="major">No cleaning/disinfection facilities available</option>
+            <option nc="minor">Cleaning/disinfection facilities not always used</option>
+          </options>
+        </field>
+        <field title="Farm vehicles NC detail" type="varchar" hide="Farm vehicles=Maintained in a clean condition" disabled="true">
+        </field>
+
+        <field title="Contact with Other Poultry/Avian Species" type="radio" code="CB.BI.n" detail="Contact with Other Poultry NC detail" required="true">
+          <options>
+            <option nc="false">Prohibited for all staff</option>
+            <option nc="minor">Not prohibited for all staff</option>
+          </options>
+        </field>
+        <field title="Contact with Other Poultry NC detail" type="varchar" hide="Contact with Other Poultry/Avian Species=Prohibited for all staff" disabled="true">
+        </field>
+
+
+        <field title="Auxillary Buildings" type="radio" code="CB.BI.o" detail="Auxillary Buildings NC detail" required="true">
+          <options>
+            <option nc="false">All kept clean and tidy</option>
+            <option nc="minor">Not all kept clean and tidy</option>
+          </options>
+        </field>
+        <field title="Auxillary Buildings NC detail" type="varchar" hide="Auxillary Buildings=All kept clean and tidy" disabled="true">
+        </field>
+
+        <field title="Smoking, Food/Drink Consumption" type="radio" code="CB.BI.p" detail="Smoking, Food/Drink Consumption NC detail" required="true">
+          <options>
+            <option nc="false">Restricted to designated areas/prohibited in bird houses</option>
+            <option nc="minor">Not restricted to designated areas</option>
+            <option nc="minor">Not prohibited in bird houses</option>
+          </options>
+        </field>
+        <field title="Smoking, Food/Drink Consumption NC detail" type="varchar" hide="Smoking, Food/Drink Consumption=Restricted to designated areas/prohibited in bird houses" disabled="true">
+        </field>
+
+        <field title="Defined Biosecure Disinfecting Area" type="radio" code="CB.BI.c" detail="Defined Biosecure Disinfecting Area NC detail" required="true">
+          <options>
+            <option nc="false">Facilities available and used correctly</option>
+            <option nc="minor">Facilities available but not used correctly</option>
+            <option nc="minor">Facilities not used by all personnel</option>
+            <option nc="minor">Facilities not used for all vehicles</option>
+            <option nc="major">Facilities not available</option>
+          </options>
+        </field>
+        <field title="Defined Biosecure Disinfecting Area NC detail" type="varchar" hide="Defined Biosecure Disinfecting Area=Facilities available and used correctly" disabled="true">
+        </field>
+
+        <field title="Cleansing and Disinfection Point" type="radio" code="CB.AM.11.11" detail="Cleansing and Disinfection Point NC detail" required="true">
+          <options>
+            <option nc="false">Facilities available and used correctly</option>
+            <option nc="minor">Inadequate facilities available</option>
+            <option nc="minor">Facilities available but not used correctly</option>
+            <option nc="minor">Inadequate pressure wash facilities</option>
+            <option nc="minor">Inadequate boot cleaning facilities</option>
+            <option nc="minor">Inadequate disinfection facilities</option>
+            <option nc="major">Facilities not available</option>
+          </options>
+        </field>
+        <field title="Cleansing and Disinfection Point NC detail" type="varchar" hide="Cleansing and Disinfection Point=Facilities available and used correctly" disabled="true">
+        </field>
+
+        <field title="Site Access Area" type="radio" code="CB.BI.l" detail="Site Access Area NC details">
+          <options>
+            <option nc="false">Clean concrete/hardcore</option>
+            <option nc="minor">Not clean concrete/hardcore</option>
+            <option nc="minor">Insufficient area for lorries</option>
+          </options>
+        </field>
+        <field title="Site Access Area NC details" type="varchar" disabled="true" hide="Site Access Area=Clean concrete/hardcore">
+        </field>
+
+        <field title="Permanent Standing Water" type="radio" code="CB.BI.m" detail="Standing Water NC details">
+          <options>
+            <option nc="false">None seen on farm</option>
+            <option nc="minor">Area of standing water present</option>
+          </options>
+        </field>
+        <field title="Standing Water NC details" type="varchar" disabled="true" hide="Permanent Standing Water=None seen on farm">
+        </field>
+
+
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="once">Animal Medicines and Husbandry (AM)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Beak Trimming/Castration" type="radio" code="CB.AM.h" detail="Beak Trimming/Castration NC details">
+          <options>
+            <option nc="false">Prohibited</option>
+            <option nc="major">Not prohibited</option>
+          </options>
+        </field>
+        <field title="Beak Trimming/Castration NC details" type="varchar" hide="Beak Trimming/Castration=Prohibited" disabled="true">
+        </field>
+
+        <field title="Withdrawal periods are (K)" type="radio" code="CB.AM.g" detail="Withdrawal periods NC details">
+          <options>
+            <option nc="false">All recorded correctly</option>
+            <option nc="minor">Not always recorded correctly</option>
+            <option nc="minor">Not recorded correctly</option>
+            <option nc="major">Not recorded at all</option>
+            <option nc="major">Not completed before slaughter</option>
+            <option nc="minor">Treated birds not adequately identified</option>
+          </options>
+        </field>
+        <field title="Withdrawal periods NC details" type="varchar" hide="Withdrawal periods are (K)=All recorded correctly|Withdrawal periods are (K)=Not recorded at all" disabled="true">
+        </field>
+
+        <field title="Approved/Licensed Substances (K)" type="radio" code="CB.AM.a" detail="Medicine approval NC details">
+          <options>
+            <option nc="false">Only approved/licensed substances used</option>
+            <option nc="false">No Medication used within the past 5 years</option>
+            <option nc="major">Unapproved substances used</option>
+            <option nc="major">Products not licensed in the UK</option>
+            <option nc="major">Unidentifiable medicine seen at inspection</option>
+            <option nc="major">Company approved drugs list not available</option>
+            <option nc="minor">Company approved drugs list not fully complete</option>
+          </options>
+        </field>
+        <field title="Medicine approval NC details" type="varchar" hide="Approved/Licensed Substances (K)=Only approved/licensed substances used|Approved/Licensed Substances (K)=No Medication used within the past 5 years" disabled="true">
+        </field>
+
+
+        <field title="Storage Type" type="radio" code="CB.AM.c.1" detail="If Other - Give Details">
+          <options>
+            <option nc="false">No medicine stored on site</option>
+            <option nc="false">Cabinet</option>
+            <option nc="false">Fridge</option>
+            <option nc="false">Store Room</option>
+            <option nc="select">Manufacturer instruction not adhered to</option>
+            <option nc="select">Other</option>
+            <option nc="major">None</option>
+          </options>
+        </field>
+        <field title="If Other - Give Details" type="varchar" hide="Storage Type!=Other" disabled="true">
+        </field>
+        <field title="Is there a lock fitted" type="boolean" hide="Storage Type=None|Storage Type=No medicine stored on site" nc="major" code="CB.AM.c.2" disabled="true">
+        </field>
+        <field title="Is it locked at inspection" type="boolean" hide="Is there a lock fitted=No" nc="minor" code="CB.AM.c.3" disabled="true">
+        </field>
+        <field title="Is it tidy" type="boolean" hide="Storage Type=None|Storage Type=No medicine stored on site" nc="minor" code="CB.AM.c.4" disabled="true">
+        </field>
+        <field title="Are all medicines stored in it" type="boolean" hide="Storage Type=None|Storage Type=No medicine stored on site" nc="minor" disabled="true" code="CB.AM.c.5" detail="Medicine Storage NC details">
+        </field>
+        <field title="Medicine Storage NC details" type="varchar" hide="Are all medicines stored in it=Yes" disabled="true">
+        </field>
+        <field title="Is medicine access restricted to trained staff" type="boolean" hide="Storage Type=None" nc="minor" disabled="true" code="CB.AM.c.6" detail="Medicine access NC details">
+        </field>
+        <field title="Medicine access NC details" type="varchar" hide="Is medicine access restricted to trained staff=Yes" disabled="true">
+        </field>
+
+
+        <field title="Unusable Medicine" type="radio" code="CB.AM.d.1" detail="Unusable Medicine NC detail" required="true">
+          <options>
+            <option nc="false">None stored on site</option>
+            <option nc="false">Stored and disposed correctly</option>
+            <option nc="minor">Stored incorrectly</option>
+            <option nc="minor">Disposed incorrectly</option>
+          </options>
+        </field>
+        <field title="Unusable Medicine NC detail" type="varchar" hide="Unusable Medicine=Stored and disposed correctly|Unusable Medicine=None stored on site" disabled="true">
+        </field>
+
+
+        <field title="Sharp/Empty Medicine Containers" type="radio" code="CB.AM.d.2" required="true" detail="Sharp/Empty Medicine Containers NC detail">
+          <options>
+            <option nc="false">None stored on site</option>
+            <option nc="false">Stored and disposed correctly</option>
+            <option nc="minor">Stored incorrectly</option>
+            <option nc="minor">Disposed incorrectly</option>
+            <option nc="minor">Disposal records not complete</option>
+          </options>
+        </field>
+        <field title="Sharp/Empty Medicine Containers NC detail" type="varchar" hide="Sharp/Empty Medicine Containers=Stored and disposed correctly|Sharp/Empty Medicine Containers=None stored on site" disabled="true">
+        </field>
+
+        <field title="Medicine Purchase Records (K)" type="radio" code="CB.AM.e" detail="Purchase Records NC detail" required="true">
+          <options>
+            <option nc="false">Complete/Up-to-date/Retained 5 yrs</option>
+            <option nc="minor">Not fully complete</option>
+            <option nc="minor">Not up-to-date</option>
+            <option nc="minor">Purchase not up-to-date</option>
+            <option nc="minor">Not retained for 5 yrs</option>
+            <option nc="false">No medicines purchased</option>
+          </options>
+        </field>
+        <field title="Purchase Records NC detail" type="varchar" hide="Medicine Purchase Records (K)=Complete/Up-to-date/Retained 5 yrs|Medicine Purchase Records (K)=No medicines purchased" disabled="true">
+        </field>
+
+
+        <field title="Medicine Usage Records (K)" type="radio" code="CB.AM.f" detail="Medicine Records NC detail" required="true">
+          <options>
+            <option nc="false">Complete/Up-to-date/Retained 5 yrs</option>
+            <option nc="minor">Not fully complete</option>
+            <option nc="minor">Not up-to-date</option>
+            <option nc="minor">Not retained for 5 yrs</option>
+            <option nc="minor">Disposal records not maintained</option>
+          </options>
+        </field>
+        <field title="Medicine Records NC detail" type="varchar" hide="Medicine Usage Records (K)=Complete/Up-to-date/Retained 5 yrs" disabled="true">
+        </field>
+        <field title="Medicine Records: Date last Entry" type="datetime" required="true"></field>
+
+        <field title="Total antibiotic use (New)" type="radio" code="CB.AM.f.1" detail="Antibiotic use NC detail" required="true">
+          <options>
+            <option nc="false">Recorded for each flock (mg active/kg Lwt)</option>
+            <option nc="minor">Not recorded for each flock</option>
+          </options>
+        </field>
+        <field title="Antibiotic use NC detail" type="varchar" hide="Total antibiotic use (New)=Recorded for each flock (mg active/kg Lwt)" disabled="true">
+        </field>
+
+        <field title="Fluoroquinolones (New)" type="radio" code="CB.AM.f.2" detail="Fluoroquinolones NC detail" required="true">
+          <options>
+            <option nc="false">Not used</option>
+            <option nc="false">Only used with vet recommendation</option>
+            <option nc="select">Used routinely</option>
+            <option nc="select">3rd/4th gen cephalosporins used</option>
+            <option nc="select">Antibiotics used routinely in day olds</option>
+          </options>
+        </field>
+        <field title="Fluoroquinolones NC detail" type="varchar" hide="Fluoroquinolones (New)=Not used|Fluoroquinolones (New)=Only used with vet recommendation" disabled="true">
+        </field>
+
+        <field title="Medicated Feed Prescriptions" type="radio" code="CB.AM.e.1" detail="Feed Prescriptions NC detail" required="true">
+          <options>
+            <option nc="false">Retained for 5 yrs</option>
+            <option nc="minor">Not retained for 5 yrs</option>
+            <option nc="false">No medicated feed used in past 5 yrs</option>
+          </options>
+        </field>
+        <field title="Feed Prescriptions NC detail" type="varchar" hide="Medicated Feed Prescriptions!=Not retained for 5 yrs" disabled="true">
+        </field>
+        <field title="Date of most recent prescription" type="datetime" required="true" hide="Medicated Feed Prescriptions=No medicated feed used in past 5 yrs"></field>
+        <field title="Name of product used" type="varchar" required="true" hide="Medicated Feed Prescriptions=No medicated feed used in past 5 yrs"></field>
+        <field title="Reason for use" type="varchar" required="true" hide="Medicated Feed Prescriptions=No medicated feed used in past 5 yrs"></field>
+
+
+        <field title="Medicine Administrators" type="radio" code="CB.AM.b" detail="Medicine Administrators NC detail" required="true">
+          <options>
+            <option nc="false">Producer competent based on experience/training</option>
+            <option nc="false">Field staff only</option>
+            <option nc="minor">Do not appear competent</option>
+          </options>
+        </field>
+        <field title="Medicine Administrators NC detail" type="varchar" hide="Medicine Administrators!=Do not appear competent" disabled="true">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Housing Shelter and Handling Facilities (HF)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Housing Construction and Maintenance" type="radio" code="CB.HF.a.0.1" required="true" detail="Housing Construction and Maintenance NC details">
+          <options>
+            <option nc="false">All housing properly constructed/maintained</option>
+            <option nc="minor">Housing not regularly checked for hazards</option>
+            <option nc="minor">Remedial action not always taken to repair hazards</option>
+            <option nc="minor">Electrical installations accessible to birds</option>
+            <option nc="minor">Toxic substances used on livestock accessible surfaces</option>
+          </options>
+        </field>
+        <field title="Housing Construction and Maintenance NC details" type="varchar" disabled="true" hide="Housing Construction and Maintenance=All housing properly constructed/maintained">
+        </field>
+
+        <field title="Insulation" type="radio" code="CB.HF.a.0.2" detail="Insulation NC details" required="true">
+          <options>
+            <option nc="false">All houses properly insulated</option>
+            <option nc="minor">Not all houses properly insulated</option>
+          </options>
+        </field>
+        <field title="Insulation NC details" type="varchar" disabled="true" hide="Insulation=All houses properly insulated">
+        </field>
+
+        <field title="Electrical Installations" type="radio" code="CB.HF.j" detail="Electrical Installations NC details" required="true">
+          <options>
+            <option nc="false">Properly earthed/tested every 5yrs/competent person</option>
+            <option nc="minor">Not all properly earthed</option>
+            <option nc="minor">In need of repair</option>
+            <option nc="minor">Not tested every 5yrs by competent person</option>
+          </options>
+        </field>
+        <field title="Electrical Installations NC details" type="varchar" disabled="true" hide="Electrical Installations=Properly earthed/tested every 5yrs/competent person">
+        </field>
+        <field title="Electrical Installations: Date of last test" type="datetime" required="true" lowerlimit="1825" nc="select">
+        </field>
+        <field title="Electrical Installations tested by" type="varchar" required="true">
+        </field>
+
+        <field title="Sound Levels" type="radio" code="CB.HF.a.1" detail="Sound Levels NC details" required="true">
+          <options>
+            <option nc="false">Minimised</option>
+            <option nc="minor">Not minimised</option>
+          </options>
+        </field>
+        <field title="Sound Levels NC details" type="varchar" disabled="true" hide="Sound Levels=Minimised">
+        </field>
+
+        <field title="Ventilation appears" type="radio" code="CB.HF.b.0.1" required="true" detail="Ventilation NC details">
+          <options>
+            <option nc="false">Adequate</option>
+            <option nc="minor">Inadequate</option>
+          </options>
+        </field>
+        <field title="Ventilation NC details" type="varchar" disabled="true" hide="Ventilation appears=Adequate">
+        </field>
+
+
+        <field title="Controlled Environment" type="radio" code="CB.HF.b.2" required="true" detail="Controlled Environment NC details">
+          <options>
+            <option nc="false">Properly maintained for each house</option>
+            <option nc="minor">Not properly maintained for each house</option>
+            <option nc="minor">Humidity not monitored/recorded</option>
+            <option nc="minor">Heat/cold stress policy not available</option>
+          </options>
+        </field>
+        <field title="Controlled Environment NC details" type="varchar" disabled="true" hide="Controlled Environment=Properly maintained for each house">
+        </field>
+
+        <field title="House Temperature" type="radio" code="CB.HF.b.1" required="true" detail="House Temperature NC details">
+          <options>
+            <option nc="false">Monitored/controlled/recorded correctly</option>
+            <option nc="minor">Not monitored correctly</option>
+            <option nc="minor">Not controlled correctly</option>
+            <option nc="minor">Not recorded correctly</option>
+          </options>
+        </field>
+        <field title="House Temperature NC details" type="varchar" disabled="true" hide="House Temperature=Monitored/controlled/recorded correctly">
+        </field>
+        <field title="Temperature Record for previous day" type="varchar" required="true">
+        </field>
+        <field title="Min House Temp" type="varchar" required="true">
+        </field>
+        <field title="Max House Temp" type="varchar" required="true">
+        </field>
+
+        <field title="Ventilation/Heating/Cooling Systems" type="radio" code="CB.HF.b.0.2" required="true" detail="Ventilation/Heating/Cooling Systems NC details">
+          <options>
+            <option nc="false">Available and effective</option>
+            <option nc="minor">Available but not adequate</option>
+            <option nc="minor">NH3 exceeds 20ppm</option>
+            <option nc="minor">CO2 exceeds 3000ppm</option>
+            <option nc="minor">Inside temp >3 deg of outside temp in hot weather </option>
+            <option nc="minor">RH >70% when outside temp below 10 deg</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Ventilation/Heating/Cooling Systems NC details" type="varchar" disabled="true" hide="Ventilation/Heating/Cooling Systems=Available and effective">
+        </field>
+
+        <field title="Documented Minimum Ventilation Plan" type="radio" code="CB.HF.b.0.3" required="true" detail="Ventilation Plan NC details">
+          <options>
+            <option nc="false">Available and fully complete</option>
+            <option nc="minor">Not fully complete</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Ventilation Plan NC details" type="varchar" disabled="true" hide="Documented Minimum Ventilation Plan=Available and fully complete">
+        </field>
+
+
+        <field title="Ventilation Equipment Alarm System" type="radio" code="CB.HF.k" required="true" detail="Ventilation Equipment Alarm System NC details">
+          <options>
+            <option nc="false">Installed/fully operational/checked/recorded daily</option>
+            <option nc="minor">Not fully operational</option>
+            <option nc="minor">Not checked daily</option>
+            <option nc="minor">Daily checks not all recorded</option>
+            <option nc="minor">Malfunctions not recorded</option>
+            <option nc="select">Malfunctions not fixed immediately</option>
+            <option nc="major">Does not work without mains power</option>
+            <option nc="minor">Does not monitor all electrical phases</option>
+          </options>
+        </field>
+        <field title="Ventilation Equipment Alarm System NC details" type="varchar" disabled="true" hide="Ventilation Equipment Alarm System=Installed/fully operational/checked/recorded daily">
+        </field>
+
+
+        <field title="Automatic Equipment" type="radio" code="CB.HF.h" required="true" detail="Automatic Equipment NC details">
+          <options>
+            <option nc="false">Inspected daily/defects rectified/other measures taken</option>
+            <option nc="minor">Not inspected daily</option>
+            <option nc="minor">Defects not rectified immediately</option>
+            <option nc="minor">Birds not safeguarded appropriately</option>
+            <option nc="minor">Checks/malfunctions/remedial action not recorded</option>
+          </options>
+        </field>
+        <field title="Automatic Equipment NC details" type="varchar" disabled="true" hide="Automatic Equipment=Inspected daily/defects rectified/other measures taken">
+        </field>
+        <field title="Automatic Equipment Inspection: Date of last entry" type="datetime" required="true">
+        </field>
+
+        <field title="Details of Most recent Malfunction" type="varchar"  required="true">
+        </field>
+
+        <field title="Generator" type="radio" code="CB.HF.i" required="true" detail="Generator NC details">
+          <options>
+            <option nc="false">Tested weekly on load and recorded</option>
+            <option nc="minor">Not tested weekly on load</option>
+            <option nc="minor">Tests not fully recorded</option>
+            <option nc="minor">Not working properly</option>
+            <option nc="major">None on site</option>
+          </options>
+        </field>
+        <field title="Generator NC details" type="varchar" disabled="true" hide="Generator=Tested weekly on load and recorded">
+        </field>
+        <field title="Generator Test: Date of last entry" type="datetime" required="true" hide="Generator=None on site">
+        </field>
+
+        <field title="Humidity" type="radio" code="CB.HF.b.0.4" required="true" detail="Humidity Monitoring NC details">
+          <options>
+            <option nc="false">Carefully monitored and recorded daily</option>
+            <option nc="minor">Not carefully monitored</option>
+            <option nc="minor">Not recorded daily</option>
+          </options>
+        </field>
+        <field title="Humidity Monitoring NC details" type="varchar" disabled="true" hide="Humidity=Carefully monitored and recorded daily">
+        </field>
+        <field title="Humidity Reading for previous day" type="varchar" required="true">
+        </field>
+
+        <field title="Housing Cleanliness" type="radio" code="CB.HF.d" required="true" detail="Housing Cleanliness NC details">
+          <options>
+            <option nc="false">All housing maintained in clean/hygienic condition</option>
+            <option nc="minor">Not all housing maintained in clean/hygienic condition</option>
+            <option nc="minor">Written C and D policy not fully complete</option>
+            <option nc="minor">Written C and D policy not fully implemented</option>
+            <option nc="minor">Houses not fully C and D between flocks</option>
+            <option nc="minor">C and D procedures not effective</option>
+            <option nc="major">Swabs not taken</option>
+            <option nc="minor">Swabs not tested by approved lab</option>
+            <option nc="minor">Equipment not C and D after operation/before storage</option>
+          </options>
+        </field>
+        <field title="Housing Cleanliness NC details" type="varchar" disabled="true" hide="Housing Cleanliness=All housing maintained in clean/hygienic condition">
+        </field>
+        <field title="Date of most recent swab test result" type="datetime" required="true" hide="Housing Cleanliness=Swabs not taken">
+        </field>
+        <field title="Name of Swab Test Lab" type="varchar" required="true" hide="Housing Cleanliness=Swabs not taken">
+        </field>
+        <field title="Housing Disinfectant name" type="varchar" required="true">
+        </field>
+
+        <field title="Housing Surfaces" type="radio" code="CB.HF.d.1" detail="Housing Surfaces NC details" required="true">
+          <options>
+            <option nc="false">All in good condition, can be C and D</option>
+            <option nc="minor">Not all in good condition</option>
+            <option nc="minor">Doors/walls/lining boards/ceilings damaged</option>
+            <option nc="minor">Cannot be C and D</option>
+          </options>
+        </field>
+        <field title="Housing Surfaces NC details" type="varchar" disabled="true" hide="Housing Surfaces=All in good condition, can be C and D">
+        </field>
+
+
+        <field title="Floor Condition" type="radio" code="CB.HF.c.1" detail="Floor NC details" required="true">
+          <options>
+            <option nc="false">Well maintained and well drained</option>
+            <option nc="minor">Not all well maintained</option>
+          </options>
+        </field>
+        <field title="Floor NC details" type="varchar" disabled="true" hide="Floor Condition=Well maintained and well drained">
+        </field>
+
+
+        <field title="Floor Type" type="radio" code="CB.HF.c.2" detail="Floor Type NC details" required="true">
+          <options>
+            <option nc="false">Concrete/hygienically managed/above ground level</option>
+            <option nc="minor">Not concrete</option>
+            <option nc="minor">Not all well drained</option>
+            <option nc="minor">Not hygienically managed</option>
+            <option nc="minor">Below outside ground level</option>
+          </options>
+        </field>
+        <field title="Floor Type NC details" type="varchar" disabled="true" hide="Floor Type=Concrete/hygienically managed/above ground level">
+        </field>
+
+
+        <field title="Litter Depth" type="radio" code="CB.HF.d.2" detail="Litter depth NC details" required="true">
+          <options>
+            <option nc="false">2cm fresh, clean litter for all flocks</option>
+            <option nc="minor">Inadequeate depth</option>
+          </options>
+        </field>
+        <field title="Litter depth NC details" type="varchar" disabled="true" hide="Litter Depth=2cm fresh, clean litter for all flocks">
+        </field>
+
+
+        <field title="Litter Condition" type="radio" code="CB.HF.d.3" detail="Litter condition NC details" required="true">
+          <options>
+            <option nc="false">Dry/friable in all houses</option>
+            <option nc="minor">Not dry/friable in all houses</option>
+            <option nc="minor">Wet/capped litter is not managed appropriately</option>
+          </options>
+        </field>
+        <field title="Litter condition NC details" type="varchar" disabled="true" hide="Litter Condition=Dry/friable in all houses">
+        </field>
+
+
+        <field title="Litter Storage" type="radio" code="CB.HF.d.4" detail="Litter storage NC details" required="true">
+          <options>
+            <option nc="false">Stored inside at all times</option>
+            <option nc="false">Stored outside on pallets and covered</option>
+            <option nc="minor">Stored outside not on pallets</option>
+            <option nc="minor">Stored outside not covered</option>
+            <option nc="minor">Damaged bales are used</option>
+          </options>
+        </field>
+        <field title="Litter storage NC details" type="varchar" disabled="true" hide="Litter Storage=Stored inside at all times|Litter Storage=Stored outside on pallets and covered">
+        </field>
+
+        <field title="House Lighting" type="radio" code="CB.HF.e.0.1" detail="House Lighting NC details" required="true">
+          <options>
+            <option nc="false">Allows normal behaviour/rest/inspection</option>
+            <option nc="minor">Does not allow normal behaviour/rest/inspection</option>
+          </options>
+        </field>
+        <field title="House Lighting NC details" type="varchar" disabled="true" hide="House Lighting=Allows normal behaviour/rest/inspection">
+        </field>
+
+        <field title="Lighting Intensity" type="radio" code="CB.HF.e.0.2" detail="Lighting Intensity NC details" required="true">
+          <options>
+            <option nc="false">Minimum 20 lux at bird level in 80% of area</option>
+            <option nc="select">Lighting not at least 20 lux</option>
+            <option nc="select">Less than 80% of area has 20 lux</option>
+          </options>
+        </field>
+        <field title="Lighting Intensity NC details" type="varchar" disabled="true" hide="Lighting Intensity=Minimum 20 lux at bird level in 80% of area">
+        </field>
+
+        <field title="Lighting Provision" type="radio" code="CB.HF.e.1" detail="Lighting Provision NC details" required="true">
+          <options>
+            <option nc="false">Minimum 6hrs dark with continuous 4hrs</option>
+            <option nc="select">Not minimum 6hrs dark with continuous 4hrs</option>
+            <option nc="select">Not implemented within 7 days of placing</option>
+            <option nc="select">Not maintained until 3 days of slaughter</option>
+          </options>
+        </field>
+        <field title="Lighting Provision NC details" type="varchar" disabled="true" hide="Lighting Provision=Minimum 6hrs dark with continuous 4hrs">
+        </field>
+        <field title="Daily Darkness Period Duration (hrs)" type="int" required="true">
+        </field>
+
+        <field title="Lighting Patterns" type="radio" code="CB.HF.e.0.3" detail="Lighting Patterns NC details" required="true">
+          <options>
+            <option nc="false">All recorded</option>
+            <option nc="minor">Not all recorded</option>
+          </options>
+        </field>
+        <field title="Lighting Patterns NC details" type="varchar" disabled="true" hide="Lighting Patterns=All recorded">
+        </field>
+        <field title="Lighting record for previous day" type="varchar" required="true">
+        </field>
+
+        <field title="Windows (Recommendation)" type="radio" code="CB.HF.e.2" detail="Windows NC details" required="true">
+          <options>
+            <option nc="false">Fitted in all houses, conform to spec</option>
+            <option nc="minor">Glass area less than 3% of floor area</option>
+            <option nc="minor">Not evenly distributed along sides</option>
+            <option nc="minor">Not double glazed</option>
+            <option nc="minor">Not toughened on inside</option>
+            <option nc="minor">No shutters fitted</option>
+            <option nc="minor">None fitted</option>
+          </options>
+        </field>
+        <field title="Windows NC details" type="varchar" disabled="true" hide="Windows (Recommendation)=Fitted in all houses, conform to spec|Windows (Recommendation)=None fitted">
+        </field>
+
+        <field title="House size" type="radio" code="CB.HF.f.0.1" detail="House size NC details" required="true">
+          <options>
+            <option nc="false">Appropriate for type/age/size of stock</option>
+            <option nc="select">Not appropriate for type/age/size of stock</option>
+          </options>
+        </field>
+        <field title="House size NC details" type="varchar" disabled="true" hide="House size=Appropriate for type/age/size of stock">
+        </field>
+
+        <field title="House Plates" type="radio" code="CB.HF.f.1" detail="House Plates NC details" required="true">
+          <options>
+            <option nc="false">All required information displayed</option>
+            <option nc="select">All required information not displayed</option>
+          </options>
+        </field>
+        <field title="House Plates NC details" type="varchar" disabled="true" hide="House Plates=All required information displayed">
+        </field>
+
+        <field title="Stocking Density (K)" type="memo"></field>
+
+        <field title="House 1" type="memo"></field>
+
+        <field title="House 1 No. Birds" type="int" required="true"></field>
+        <field title="House 1 Ave. Wt Birds (kg)" type="varchar" required="true"></field>
+        <field title="House 1 Total Wt Birds (kg)" type="varchar" required="true" calc="House 1 No. Birds*House 1 Ave. Wt Birds (kg)"></field>
+
+        <field title="House 1 Floor space (sqm)" type="varchar" required="true"></field>
+
+        <field title="House 1 Stocking Density (kg/Sqm)" type="varchar" required="true" code="CB.HF.f.0.2" calc="ROUND(((House 1 Total Wt Birds (kg))*1.00/House 1 Floor space (sqm)),2)"></field>
+
+        <field title=" " type="info"></field>
+
+        <field title="House 2" type="memo" hide="Inspection Scope#No. Houses=1"></field>
+        <field title="House 2 No. Birds" type="int" required="false" hide="Inspection Scope#No. Houses=1"></field>
+        <field title="House 2 Ave. Wt Birds (kg)" type="varchar" required="false" hide="Inspection Scope#No. Houses=1"></field>
+        <field title="House 2 Total Wt Birds (kg)" type="varchar" required="false" calc="House 2 No. Birds*House 2 Ave. Wt Birds (kg)" hide="Inspection Scope#No. Houses=1"></field>
+
+        <field title="House 2 Floor space (sqm)" type="varchar" required="false" hide="Inspection Scope#No. Houses=1"></field>
+
+        <field title="House 2 Stocking Density (kg/Sqm)" type="varchar" required="false" code="CB.HF.f.0.3" calc="ROUND(((House 2 Total Wt Birds (kg))*1.00/House 2 Floor space (sqm)),2)" hide="Inspection Scope#No. Houses=1"></field>
+
+
+        <field title=" " type="info"></field>
+
+        <field title="House 3" type="memo" hide="Inspection Scope#No. Houses!=More than 2"></field>
+        <field title="House 3 No. Birds" type="int" required="false" hide="Inspection Scope#No. Houses!=More than 2"></field>
+        <field title="House 3 Ave. Wt Birds (kg)" type="varchar" required="false" hide="Inspection Scope#No. Houses!=More than 2"></field>
+        <field title="House 3 Total Wt Birds (kg)" type="varchar" required="false" calc="House 3 No. Birds*House 3 Ave. Wt Birds (kg)" hide="Inspection Scope#No. Houses!=More than 2"></field>
+        <field title="House 3 Floor space (sqm)" type="varchar" required="false" hide="Inspection Scope#No. Houses!=More than 2"></field>
+
+        <field title="House 3 Stocking Density (kg/Sqm)" type="varchar" required="false" code="CB.HF.f.0.4" calc="ROUND(((House 3 Total Wt Birds (kg))*1.00/House 3 Floor space (sqm)),2)" hide="Inspection Scope#No. Houses!=More than 2"></field>
+
+
+
+
+        <field title=" " type="info"></field>
+
+        <field title="House 4" type="memo" hide="Inspection Scope#Additional Houses!=4"></field>
+        <field title="House 4 No. Birds" type="int" required="false" hide="Inspection Scope#Additional Houses!=4"></field>
+        <field title="House 4 Ave. Wt Birds (kg)" type="varchar" required="false" hide="Inspection Scope#Additional Houses!=4"></field>
+        <field title="House 4 Total Wt Birds (kg)" type="varchar" required="false" calc="House 4 No. Birds*House 4 Ave. Wt Birds (kg)" hide="Inspection Scope#Additional Houses!=4"></field>
+        <field title="House 4 Floor space (sqm)" type="varchar" required="false" hide="Inspection Scope#Additional Houses!=4"></field>
+
+        <field title="House 4 Stocking Density (kg/Sqm)" type="varchar" required="false" code="CB.HF.f.0.5" calc="ROUND(((House 4 Total Wt Birds (kg))*1.00/House 4 Floor space (sqm)),2)" hide="Inspection Scope#Additional Houses!=4"></field>
+
+
+        <field title=" " type="info"></field>
+
+        <field title="Are the calculated stocking densities for all houses less than/equal to 38kg/m2 (K)" type="boolean" nc="select" required="true" code="CB.HF.f" mapcode="Sd.1" detail="Stocking Density NC detail"></field>
+        <field title="Stocking Density NC detail" type="varchar" hide="Are the calculated stocking densities for all houses less than/equal to 38kg/m2 (K)=Yes" mapcode="Sd.2nc" disabled="true">
+        </field>
+
+        <field title=" " type="info"></field>
+
+        <field title="House pre-heat" type="radio" code="CB.HF.g" detail="House pre-heat NC details" required="true">
+          <options>
+            <option nc="false">All houses adequately pre-heated for chick arrival</option>
+            <option nc="select">Not all adequately pre-heated for chick arrival</option>
+          </options>
+        </field>
+        <field title="House pre-heat NC details" type="varchar" disabled="true" hide="House pre-heat=All houses adequately pre-heated for chick arrival">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Feed and Water (FW)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Daily Diet (K)" type="radio" code="CB.FW.a" required="true" detail="Daily Diet NC details">
+          <options>
+            <option nc="false">Sufficient to maintain health/vigour/production</option>
+            <option nc="select">Insufficient to maintain health/vigour/production</option>
+            <option nc="select">Access to 2 feed bins not available for every shed</option>
+          </options>
+        </field>
+        <field title="Daily Diet NC details" type="varchar" disabled="true" hide="Daily Diet (K)=Sufficient to maintain health/vigour/production">
+        </field>
+
+
+        <field title="Feed Access" type="radio" code="CB.FW.b.1" required="true" detail="Feed Access NC details">
+          <options>
+            <option nc="false">Sufficient for all stock appropriate to feeding system</option>
+            <option nc="major">Insufficient for all stock</option>
+            <option nc="minor">Travel distance greater than 4m</option>
+            <option nc="minor">Feed system not adequately maintained</option>
+          </options>
+        </field>
+        <field title="Feed Access NC details" type="varchar" disabled="true" hide="Feed Access=Sufficient for all stock appropriate to feeding system">
+        </field>
+        <field title="Type of Feeding System" type="varchar" required="true">
+        </field>
+
+        <field title="Sample Feed Space and Drinkers Calculation" type="memo">
+        </field>
+        <field title="House Number" type="int" required="true">
+        </field>
+        <field title="Number of Birds" type="int" required="true">
+        </field>
+        <field title="Total Feeding Space Available (cm)" type="varchar" required="true">
+        </field>
+        <field title="Feeding Space per Bird (cm)" code="CB.FW.b.2" type="varchar" required="true" calc="Total Feeding Space Available (cm)/Number of Birds">
+        </field>
+        <field title="Total Number of Drinkers" type="int" required="true">
+        </field>
+        <field title="Number of Birds per Drinker" code="CB.FW.c.0.2" type="varchar" required="true" calc="Number of Birds/Total Number of Drinkers">
+        </field>
+        <field title="Previous Day Water Consumption (ltrs)" type="varchar" required="true">
+        </field>
+
+        <field title="Water Access (K)" type="radio" code="CB.FW.c.0.1" required="true" detail="Water Access NC details">
+          <options>
+            <option nc="false">Adequate/clean/correct height for all birds</option>
+            <option nc="minor">Not adequate/clean/correct height for all birds</option>
+            <option nc="major">Water provision restricted</option>
+            <option nc="minor">Water drinkers are fouled</option>
+          </options>
+        </field>
+        <field title="Water Access NC details" type="varchar" disabled="true" hide="Water Access (K)=Adequate/clean/correct height for all birds">
+        </field>
+
+        <field title="Travel Distance to Water" type="radio" code="CB.FW.c.0.3" required="true" detail="Travel Distance to Water NC details">
+          <options>
+            <option nc="false">Does not exceed 3m</option>
+            <option nc="select">Exceeds 3m</option>
+          </options>
+        </field>
+        <field title="Travel Distance to Water NC details" type="varchar" disabled="true" hide="Travel Distance to Water=Does not exceed 3m">
+        </field>
+
+        <field title="Water Consumption" type="radio" code="CB.FW.c.0.4" required="true" detail="Water Consumption NC details">
+          <options>
+            <option nc="false">Recorded daily for each house</option>
+            <option nc="minor">Not recorded daily for each house</option>
+          </options>
+        </field>
+        <field title="Water Consumption NC details" type="varchar" disabled="true" hide="Water Consumption=Recorded daily for each house">
+        </field>
+
+
+        <field title="Header Tanks" type="radio" code="CB.FW.c.0.5" required="true" detail="Header Tanks NC details">
+          <options>
+            <option nc="false">All covered and hygienically managed</option>
+            <option nc="minor">Not all covered completely</option>
+            <option nc="minor">Not all hygienically managed</option>
+            <option nc="minor">Tanks not regularly C and D</option>
+            <option nc="minor">Drinking lines not regularly C and D</option>
+          </options>
+        </field>
+        <field title="Header Tanks NC details" type="varchar" disabled="true" hide="Header Tanks=All covered and hygienically managed">
+        </field>
+
+
+        <field title="Non-Mains Water" type="radio" code="CB.FW.c.0.6" required="true" detail="Non-Mains Water NC details">
+          <options>
+            <option nc="false">Not used</option>
+            <option nc="false">Tested and recorded every 6 months</option>
+            <option nc="minor">Not tested every 6 months</option>
+            <option nc="minor">Recent test records not available</option>
+          </options>
+        </field>
+        <field title="Non-Mains Water NC details" type="varchar" disabled="true" hide="Non-Mains Water=Not used|Non-Mains Water=Tested and recorded every 6 months">
+        </field>
+        <field title="Name of Non-Mains Water Test Lab" type="varchar" required="true" hide="Non-Mains Water=Not used">
+        </field>
+        <field title="Non-Mains Water: Date last Tested" type="datetime" lowerlimit="183" required="true" nc="minor" hide="Non-Mains Water=Not used"></field>
+
+
+        <field title="Drinker Heights" type="radio" code="CB.FW.c.0.7" required="true" detail="Drinker Heights NC details">
+          <options>
+            <option nc="false">Checked daily</option>
+            <option nc="minor">Not checked daily</option>
+          </options>
+        </field>
+        <field title="Drinker Heights NC details" type="varchar" disabled="true" hide="Drinker Heights=Checked daily">
+        </field>
+
+        <field title="Continuous Water Supply" type="radio" code="CB.FW.c.0.8" required="true" detail="Continuous Water Supply NC details">
+          <options>
+            <option nc="false">Available up to depopulation</option>
+            <option nc="minor">Not available up to depopulation</option>
+          </options>
+        </field>
+        <field title="Continuous Water Supply NC details" type="varchar" disabled="true" hide="Continuous Water Supply=Available up to depopulation">
+        </field>
+
+        <field title="Water Supply Type" type="radio" code="CB.FW.c.0.9" required="true" detail="Water Supply Type NC details">
+          <options>
+            <option nc="false">1 bell per 150 birds</option>
+            <option nc="false">1 nipple/cup per 10-20 birds</option>
+            <option nc="false">1 large cup per 60 birds</option>
+            <option nc="select">Water supply not adequate</option>
+          </options>
+        </field>
+        <field title="Water Supply Type NC details" type="varchar" disabled="true" hide="Water Supply Type!=Water supply not adequate">
+        </field>
+
+        <field title="Water Supply Problems" type="radio" code="CB.FW.c.1" required="true" detail="Water Supply Problems NC details">
+          <options>
+            <option nc="false">Adequate system in place</option>
+            <option nc="select">Inadequate system in place</option>
+          </options>
+        </field>
+        <field title="Water Supply Problems NC details" type="varchar" disabled="true" hide="Water Supply Problems=Adequate system in place">
+        </field>
+
+        <field title="Feed Ingredients (K)" type="radio" code="CB.FW.d" detail="Feed Ingredients NC details">
+          <options>
+            <option nc="false">Diets do not include animal products/illegal supplements</option>
+            <option nc="major">Diets include animal products or illegal supplements</option>
+            <option nc="minor">Ingredient composition details not available</option>
+          </options>
+        </field>
+        <field title="Feed Ingredients NC details" type="varchar" hide="Feed Ingredients (K)=Diets do not include animal products/illegal supplements" disabled="true">
+        </field>
+
+        <field title="Feed Supplier" type="radio" code="CB.FW.e.1" detail="Feed Supplier: Other">
+          <options>
+            <option nc="false">J Thompson and Sons</option>
+            <option nc="false">GE McLarnon Ltd</option>
+            <option nc="select">Other-Verified by HQ</option>
+          </options>
+        </field>
+        <field title="Feed Supplier: Other" type="varchar" hide="Feed Supplier!=Other-Verified by HQ" disabled="true">
+        </field>
+
+        <field title="Feed Samples" type="radio" code="CB.FW.f.1" detail="Feed Samples NC details">
+          <options>
+            <option nc="false">Retained for 3 months</option>
+            <option nc="select">Not retained for 3 months</option>
+            <option nc="false">Not applicable, new applicant</option>
+          </options>
+        </field>
+        <field title="Feed Samples NC details" type="varchar" hide="Feed Samples!=Not retained for 3 months" disabled="true">
+        </field>
+
+        <field title="Other Feed Materials" type="radio" code="CB.FW.e.2" detail="Other Feed Materials NC details">
+          <options>
+            <option nc="false">None used</option>
+            <option nc="false">All sourced from assured suppliers</option>
+            <option nc="select">Not all sourced from assured suppliers</option>
+          </options>
+        </field>
+        <field title="Other Feed Materials NC details" type="varchar" hide="Other Feed Materials!=Not all sourced from assured suppliers" disabled="true">
+        </field>
+
+
+        <field title="CB.FW.f Feed Records" type="memo">
+        </field>
+        <field title="Are there Feed Records available" type="radio" code="CB.FW.f.2">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="major">No</option>
+          </options>
+        </field>
+        <field title="Feed record format" type="radio" hide="Are there Feed Records available!=Yes" code="CB.FW.f.3" disabled="true">
+          <options>
+            <option nc="false">Invoices/delivery notes</option>
+            <option nc="false">Feed record book</option>
+            <option nc="false">On Computer</option>
+          </options>
+        </field>
+        <field title="Are the records complete" type="boolean" nc="minor" code="CB.FW.f.4" hide="Are there Feed Records available!=Yes" disabled="true" detail="Feed Records complete NC Details">
+        </field>
+        <field title="Feed Records complete NC Details" type="varchar" hide="Are the records complete=Yes" disabled="true">
+        </field>
+        <field title="Records available for 2 years" type="radio" code="CB.FW.f.5" hide="Are there Feed Records available!=Yes" disabled="true">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">Not applicable, new applicant</option>
+          </options>
+        </field>
+        <field title="Date of last entry/last invoice" type="datetime" hide="Are there Feed Records available!=Yes" disabled="true">
+        </field>
+        <field title="Are the records up to date" type="boolean" nc="minor" code="CB.FW.f.6" detail="Date of last entry" hide="Are there Feed Records available!=Yes" disabled="true">
+        </field>
+        <field title="Is medicated feed used" type="boolean" code="CB.FW.f.7">
+        </field>
+        <field title="Are prescriptions retained" type="boolean" nc="minor" code="CB.FW.f.8" hide="Is medicated feed used!=Yes" disabled="true" detail="Prescriptions NC details">
+        </field>
+        <field title="Prescriptions NC details" type="varchar" hide="Are prescriptions retained=Yes" disabled="true">
+        </field>
+
+        <field title="Are records available for 5 years" type="boolean" nc="minor" code="CB.FW.f.9" hide="Is medicated feed used!=Yes" disabled="true">
+        </field>
+
+
+        <field title="Home Mixing" type="memo">
+        </field>
+        <field title="Does producer home mix" type="boolean">
+        </field>
+
+        <field title="Home Mix Records" type="radio" hide="Does producer home mix!=Yes" disabled="true" code="CB.FW.g" detail="Home Mix Records NC details">
+          <options>
+            <option nc="false">All maintained</option>
+            <option nc="minor">Not all maintained</option>
+          </options>
+        </field>
+        <field title="Home Mix Records NC details" type="varchar" hide="Home Mix Records=All maintained" disabled="true">
+        </field>
+
+        <field title="Home Mix Samples" type="radio" hide="Does producer home mix!=Yes" disabled="true" code="CB.FW.h" detail="Home Mix Samples NC details">
+          <options>
+            <option nc="false">All maintained</option>
+            <option nc="minor">Not all maintained</option>
+          </options>
+        </field>
+        <field title="Home Mix Samples NC details" type="varchar" hide="Home Mix Samples=All maintained" disabled="true">
+        </field>
+
+        <field title="Local Authority Obligations" type="radio" hide="Does producer home mix!=Yes" disabled="true" code="CB.FW.i" detail="Local Authority Obligations NC details">
+          <options>
+            <option nc="false">All met</option>
+            <option nc="minor">Not all met</option>
+          </options>
+        </field>
+        <field title="Local Authority Obligations NC details" type="varchar" hide="Local Authority Obligations=All met" disabled="true">
+        </field>
+
+        <field title="Mobile Feed Mixers" type="radio" hide="Does producer home mix!=Yes" disabled="true" code="CB.FW.j">
+          <options>
+            <option nc="false">Assured</option>
+            <option nc="major">Not Assured</option>
+          </options>
+        </field>
+
+        <field title="Feed Mixing Equipment" type="radio" hide="Does producer home mix!=Yes" disabled="true" code="CB.FW.k" detail="Feed Mixing Equipment NC details">
+          <options>
+            <option nc="false">Well maintained and good condition</option>
+            <option nc="minor">Not well maintained and good condition</option>
+          </options>
+        </field>
+        <field title="Feed Mixing Equipment NC details" type="varchar" hide="Feed Mixing Equipment=Well maintained and good condition" disabled="true">
+        </field>
+
+        <field title="" type="info"></field>
+
+        <field title="Feed Storage (K)" type="radio" code="CB.FW.l" detail="Feed Storage NC details">
+          <options>
+            <option nc="false">Properly identified/clean/no contamination</option>
+            <option nc="minor">Not Properly identified/clean/no contamination</option>
+            <option nc="minor">Medicated feed not identified/separate</option>
+            <option nc="minor">Evidence of feed spillage</option>
+            <option nc="minor">Feed bins not numbered/identifiable</option>
+          </options>
+        </field>
+        <field title="Feed Storage NC details" type="varchar" hide="Feed Storage (K)=Properly identified/clean/no contamination" disabled="true">
+        </field>
+
+
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Vermin Control (VC)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Is there an effective vermin control system in place? (K)" type="boolean" nc="select" code="CB.VC.a.1" detail="Vermin Control System NC detail">
+        </field>
+        <field title="Vermin Control System NC detail" type="varchar" hide="Is there an effective vermin control system in place? (K)=Yes" disabled="true">
+        </field>
+        <field title="Vermin Control Undertaken" type="radio" required="true" code="CB.VC.a.2">
+          <options>
+            <option nc="false">In-House by trained personnel</option>
+            <option nc="false">Licensed Contractor</option>
+            <option nc="minor">In-House by untrained personnel</option>
+          </options>
+        </field>
+        <field title="Vermin Control Contractor Name" type="varchar" required="true" hide="Vermin Control Undertaken=In-House by trained personnel|Vermin Control Undertaken=In-House by untrained personnel">
+        </field>
+        <field title="Access to Houses by Pets/Other Animals" type="radio" required="true" code="CB.VC.c" detail="Pet Access NC detail">
+          <options>
+            <option nc="false">Prohibited</option>
+            <option nc="minor">Not Prohibited</option>
+          </options>
+        </field>
+        <field title="Pet Access NC detail" type="varchar" hide="Access to Houses by Pets/Other Animals!=Not Prohibited" disabled="true">
+        </field>
+
+        <field title="Pesticides" type="radio" required="true" code="CB.VC.b.1" detail="Pesticide Accessibility NC detail">
+          <options>
+            <option nc="false">Inaccessible to Poultry/Wild Birds</option>
+            <option nc="minor">Accessible to Poultry/Wild Birds</option>
+          </options>
+        </field>
+        <field title="Pesticide Accessibility NC detail" type="varchar" hide="Pesticides!=Accessible to Poultry/Wild Birds" disabled="true">
+        </field>
+
+        <field title="Were Bait Boxes Checked During Inspection" type="boolean" required="true"></field>
+
+        <field title="Name Of Bait Used" type="varchar" required="true"></field>
+
+        <field title="Bait Boxes" type="radio" required="true" code="CB.VC.b.2" detail="Bait Box NC detail">
+          <options>
+            <option nc="false">Tamper-Proof</option>
+            <option nc="minor">Not Tamper-Proof</option>
+          </options>
+        </field>
+        <field title="Bait Box NC detail" type="varchar" hide="Bait Boxes!=Not Tamper-Proof" disabled="true">
+        </field>
+
+        <field title="Bait Programme" type="radio" required="true" code="CB.VC.b.3" detail="Bait Programme NC detail">
+          <options>
+            <option nc="false">Fully Complete/Up-to-date</option>
+            <option nc="minor">Not Fully Complete/Up-to-date</option>
+            <option nc="minor">Bait Points Not Numbered</option>
+          </options>
+        </field>
+        <field title="Bait Programme: Date last entry" required="true" type="datetime"></field>
+        <field title="Bait Programme NC detail" type="varchar" hide="Bait Programme=Fully Complete/Up-to-date" disabled="true">
+        </field>
+
+        <field title="Bait Records" type="radio" required="true" code="CB.VC.b.4" detail="Bait Records NC detail">
+          <options>
+            <option nc="false">Fully Complete/Up-to-date</option>
+            <option nc="minor">Not Fully Complete/Up-to-date</option>
+          </options>
+        </field>
+        <field title="Bait Records: Date last entry" type="datetime"></field>
+        <field title="Bait Records NC detail" type="varchar" hide="Bait Records!=Not Fully Complete/Up-to-date" disabled="true">
+        </field>
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Fallen Stock (FS)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Dead Birds" type="radio" required="true" code="CB.FS.a" detail="Dead Birds Removal NC detail">
+          <options>
+            <option nc="false">Removed promptly</option>
+            <option nc="select">Not removed promptly</option>
+          </options>
+        </field>
+        <field title="Dead Birds Removal NC detail" type="varchar" hide="Dead Birds=Removed promptly" disabled="true">
+        </field>
+
+        <field title="Carcass Store" required="true" type="list" options="Wheelie bin,Skip,Other" detail="Carcass Store Other"></field>
+        <field title="Carcass Store Other" type="varchar" hide="Carcass Store!=Other" disabled="true">
+        </field>
+
+        <field title="Carcasses are stored" type="radio" required="true" code="CB.FS.b" detail="Carcass storage NC detail">
+          <options>
+            <option nc="false">Appropriately and securely</option>
+            <option nc="minor">Inappropriately,Unlocked Container</option>
+          </options>
+        </field>
+        <field title="Carcass storage NC detail" type="varchar" hide="Carcasses are stored!=Inappropriately,Unlocked Container" disabled="true">
+        </field>
+
+
+        <field title="Carcasses are Disposed" type="radio" required="true" code="CB.FS.c" detail="Carcass Disposal NC detail">
+          <options>
+            <option nc="false">Appropriately and promptly</option>
+            <option nc="minor">Inappropriately</option>
+          </options>
+        </field>
+        <field title="Carcass Disposal NC detail" type="varchar" hide="Carcasses are Disposed!=Inappropriately" disabled="true">
+        </field>
+
+
+        <field title="Carcass Disposal" required="true" type="radio" detail="NFSS No." hide="Carcasses are Disposed=Inappropriately" disabled="true">
+          <options>
+            <option>NFSS</option>
+            <option>On-site Incineration</option>
+          </options>
+        </field>
+
+        <field title="NFSS No." type="varchar" hide="Carcass Disposal!=NFSS" disabled="true">
+        </field>
+
+        <field title="Incinerator DARD Approval No." type="varchar" hide="Carcass Disposal!=On-site Incineration" disabled="true">
+        </field>
+
+
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Environmental Protection and Contamination Control (EC)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Site Tidiness" type="radio" code="CB.EC.a" detail="Site Tidiness NC details">
+          <options>
+            <option nc="false">All areas clean/tidy</option>
+            <option nc="minor">Not all areas clean/tidy</option>
+            <option nc="minor">Vegetation not kept short</option>
+            <option nc="minor">Not clear of debris/non-essential equip</option>
+          </options>
+        </field>
+        <field title="Site Tidiness NC details" type="varchar" disabled="true" hide="Site Tidiness=All areas clean/tidy">
+        </field>
+
+        <field title="Pesticide store (K)" type="radio" code="CB.EC.e" detail="Pesticide store NC details">
+          <options>
+            <option nc="false">No pesticides stored on farm</option>
+            <option nc="false">Pesticides are securely stored</option>
+            <option nc="minor">Pesticides are  not stored securely</option>
+            <option nc="minor">Emergency facilities not in place for spillages</option>
+          </options>
+        </field>
+        <field title="Pesticide store NC details" type="varchar" disabled="true" hide="Pesticide store (K)=Pesticides are securely stored|Pesticide store (K)=No pesticides stored on farm">
+        </field>
+
+        <field title="Fertiliser storage (K)" type="radio" code="CB.EC.k" detail="Fertiliser storage NC details">
+          <options>
+            <option nc="false">No fertiliser stored on farm</option>
+            <option nc="false">Fertiliser stored away from watercourse</option>
+            <option nc="minor">Fertiliser is not suitably stored</option>
+          </options>
+        </field>
+        <field title="Fertiliser storage NC details" type="varchar" disabled="true" hide="Fertiliser storage (K)!=Fertiliser is not suitably stored">
+        </field>
+
+        <field title="Fertiliser Security" type="radio" code="CB.EC.j" detail="Fertiliser Security NC details" hide="Fertiliser storage (K)=No fertiliser stored on farm">
+          <options>
+            <option nc="false">Fertiliser stored securely</option>
+            <option nc="minor">Fertiliser not stored securely</option>
+          </options>
+        </field>
+        <field title="Fertiliser Security NC details" type="varchar" disabled="true" hide="Fertiliser Security=Fertiliser stored securely">
+        </field>
+
+        <field title="Poultry Litter/Other Waste (K)" type="radio" code="CB.EC.b.1" detail="Poultry Waste NC details">
+          <options>
+            <option nc="false">Stored to prevent pollution/disease</option>
+            <option nc="minor">Not stored to prevent pollution/disease</option>
+          </options>
+        </field>
+        <field title="Poultry Waste NC details" type="varchar" disabled="true" hide="Poultry Litter/Other Waste (K)=Stored to prevent pollution/disease">
+        </field>
+
+        <field title="Farm Chemical Storage (K)" type="radio" code="CB.EC.b.2" detail="Farm Chemical Storage NC details">
+          <options>
+            <option nc="false">Stored securely</option>
+            <option nc="minor">Not stored securely</option>
+          </options>
+        </field>
+        <field title="Farm Chemical Storage NC details" type="varchar" disabled="true" hide="Farm Chemical Storage (K)=Stored securely">
+        </field>
+
+        <field title="Herbicide/Pesticide Application (K)" type="memo">
+        </field>
+        <field title="Herbicides and pesticides are applied (K)" type="boolean" code="CB.EC.f.0.1">
+        </field>
+
+        <field title="Are only UK-approved herbicides and pesticides used?" type="boolean" code="CB.EC.d" nc="select" detail="Herbicide/pesticide approval NC details" hide="Herbicides and pesticides are applied (K)=No" disabled="true">
+        </field>
+        <field title="Herbicide/pesticide approval NC details" type="varchar" disabled="true" hide="Are only UK-approved herbicides and pesticides used?=Yes">
+        </field>
+
+        <field title="Herbicides and pesticides used correctly" type="boolean" code="CB.EC.f.0.2" nc="minor" detail="Herbicides and pesticides NC details" hide="Herbicides and pesticides are applied (K)=No" disabled="true">
+        </field>
+        <field title="Herbicides and pesticides NC details" type="varchar" disabled="true" hide="Herbicides and pesticides used correctly=Yes">
+        </field>
+
+        <field title="Are alternative methods of weed/pest control considered? (Recommendation)" type="boolean" code="CB.EC.f.1" nc="minor">
+        </field>
+
+        <field title="Herbicide/Pesticide equipment operators" type="radio" code="CB.EC.g.0.1" detail="Herbicide/Pesticide equipment operators NC details" hide="Herbicides and pesticides are applied (K)=No" disabled="true">
+          <options>
+            <option nc="false">Appear to be competent</option>
+            <option nc="minor">Do not appear to be competent</option>
+            <option nc="false">Contractor used</option>
+          </options>
+        </field>
+        <field title="Herbicide/Pesticide equipment operators NC details" type="varchar" disabled="true" hide="Herbicide/Pesticide equipment operators=Appear to be competent|EC.g Herbicide/Pesticide equipment operators=Contractor used">
+        </field>
+
+        <field title="Operator competency" type="radio" code="CB.EC.g.0.2" hide="Herbicides and pesticides are applied (K)=No" disabled="true">
+          <options>
+            <option nc="false">Grandfather Rights</option>
+            <option nc="false">Certificate of Competence</option>
+            <option nc="false">Contractor used</option>
+            <option nc="major">No G'father Rights/Cert of Competence</option>
+          </options>
+        </field>
+
+
+        <field title="Do operators who hold Grandfather Rights also hold a relevant certificate of competence? (Recommendation)" type="boolean" code="CB.EC.g.1" nc="minor" hide="Operator competency!=Grandfather Rights" disabled="true">
+        </field>
+
+
+        <field title="Herbicide/Pesticide records" type="radio" code="CB.EC.h" detail="Herbicide/Pesticide records NC details" hide="Herbicides and pesticides are applied (K)=No" disabled="true">
+          <options>
+            <option nc="false">Fully complete/up to date</option>
+            <option nc="minor">Not fully complete</option>
+            <option nc="minor">Not up to date</option>
+            <option nc="minor">Not retained for 3 years</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Herbicide/Pesticide records NC details" type="varchar" disabled="true" hide="Herbicide/Pesticide records=Fully complete/up to date|Herbicide/Pesticide records=Not available">
+        </field>
+        <field title="Herbicide/Pesticide records:Date last entry" type="datetime" required="true" hide="Herbicide/Pesticide records=Not available">
+        </field>
+
+        <field title="Spraying Equipment Maintained" code="CB.EC.i"  hide="Herbicides and pesticides are applied (K)=No" disabled="true" type="radio">
+          <options>
+            <option nc="false">Spraying by contractor</option>
+            <option nc="false">Checked regularly</option>
+            <option nc="minor">Not checked regularly</option>
+          </options>
+        </field>
+
+        <field title="Calibration records (Recommendation)" code="CB.EC.i.1" hide="Herbicides and pesticides are applied (K)=No" disabled="true" type="radio">
+          <options>
+            <option nc="false">Spraying by contractor</option>
+            <option nc="false">Are up to date</option>
+            <option nc="minor">Are not fully complete</option>
+            <option nc="major">Are not available</option>
+          </options>
+        </field>
+
+
+        <field title="Fertilisers/Manures/Litter/Composts (K)" type="memo">
+        </field>
+        <field title="Are Fertilisers/Manures/Litter/Composts used" type="boolean">
+        </field>
+        <field title="Are only approved Fertilisers/Manures/Litter/Composts used" type="boolean" code="CB.EC.l" disabled="true" nc="minor" hide="Are Fertilisers/Manures/Litter/Composts used=No" detail="Approved Fertilisers/Manures/Litter/Composts NC details">
+        </field>
+        <field title="Approved Fertilisers/Manures/Litter/Composts NC details" type="varchar" disabled="true" hide="Are only approved Fertilisers/Manures/Litter/Composts used=Yes">
+        </field>
+        <field title="Are Ferts/Manures/Litter/Composts applied correctly" type="boolean" code="CB.EC.m.0.1" nc="minor" detail="Ferts/Manures/Litter/Composts application NC details" hide="Are Fertilisers/Manures/Litter/Composts used=No" disabled="true">
+        </field>
+        <field title="Ferts/Manures/Litter/Composts application NC details" type="varchar" disabled="true" hide="Are Ferts/Manures/Litter/Composts applied correctly=Yes">
+        </field>
+
+
+        <field title="Fertiliser Spreader Checking (Recommendation)" code="CB.EC.m.1" detail="Fertiliser Spreader Checking NC details" type="radio" hide="Are Fertilisers/Manures/Litter/Composts used=No" disabled="true">
+          <options>
+            <option nc="false">Checked regularly</option>
+            <option nc="minor">Not checked regularly</option>
+          </options>
+        </field>
+
+        <field title="Manure Management Plan (map and calculations)" type="radio" code="CB.EC.m.0.2" detail="Manure Management Plan NC details" hide="Are Fertilisers/Manures/Litter/Composts used=No" disabled="true">
+          <options>
+            <option nc="false">Plan available</option>
+            <option nc="minor">Plan is not complete</option>
+            <option nc="major">Plan not available</option>
+          </options>
+        </field>
+        <field title="Manure Management Plan NC details" type="varchar" disabled="true" hide="Manure Management Plan (map and calculations)=Plan available|Manure Management Plan (map and calculations)=Plan not available">
+        </field>
+
+        <field title="Farm Waste Disposal (plastics, containers etc.) (K)" type="radio" code="CB.EC.c" detail="Farm waste disposal NC details">
+          <options>
+            <option nc="false">All wastes disposed correctly/receipts available</option>
+            <option nc="select">Wastes disposed incorrectly</option>
+            <option nc="select">Plastics burned on farm</option>
+            <option nc="minor">Waste disposal receipts not maintained</option>
+          </options>
+        </field>
+        <field title="Farm waste disposal NC details" type="varchar" disabled="true" hide="Farm Waste Disposal (plastics, containers etc.) (K)=All wastes disposed correctly/receipts available">
+        </field>
+
+        <field title="Place of last Litter Disposal" type="varchar" required="true">
+        </field>
+
+        <field title="Litter Disposal: Date of Last Entry" type="datetime" required="true">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Depopulation (DE)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Light Levels" type="radio" code="CB.DE.c" detail="Light Levels NC details">
+          <options>
+            <option nc="false">Always kept low during depop</option>
+            <option nc="minor">Not always kept low during depop</option>
+            <option nc="minor">Catching curtain(s) not properly maintained</option>
+            <option nc="minor">Catching curtain(s) not C/D between farms</option>
+          </options>
+        </field>
+        <field title="Light Levels NC details" type="varchar" disabled="true" hide="Light Levels=Always kept low during depop">
+        </field>
+
+
+        <field title="Responsible Person" type="radio" code="CB.DE.e" detail="Responsible Person NC details">
+          <options>
+            <option nc="false">Always present during depop</option>
+            <option nc="minor">Not always present during depop</option>
+          </options>
+        </field>
+        <field title="Responsible Person NC details" type="varchar" disabled="true" hide="Responsible Person=Always present during depop">
+        </field>
+
+
+
+        <field title="Loading Area" type="radio" code="CB.DE.f" detail="Loading Area NC details">
+          <options>
+            <option nc="false">Clean/tidy/hygienically managed</option>
+            <option nc="minor">Not clean/tidy/hygienically managed</option>
+          </options>
+        </field>
+        <field title="Loading Area NC details" type="varchar" disabled="true" hide="Loading Area=Clean/tidy/hygienically managed">
+        </field>
+
+
+        <field title="Sick Birds" type="radio" code="CB.DE.h" detail="Sick Birds NC details">
+          <options>
+            <option nc="false">Humanely culled immediately and recorded</option>
+            <option nc="minor">Not humanely culled immediately</option>
+            <option nc="minor">Not recorded</option>
+          </options>
+        </field>
+        <field title="Sick Birds NC details" type="varchar" disabled="true" hide="Sick Birds=Humanely culled immediately and recorded">
+        </field>
+
+        <field title="Mechanical Harvesting (New)" type="memo"></field>
+
+        <field title="Are mechanical harvesters used?" type="boolean"></field>
+
+        <field title="Do house operators clear a space, in a calm and controlled manner, to allow machinery to enter?" type="boolean" code="CB.DE.o" detail="Mechanical Harvesting NC details" nc="minor" hide="Are mechanical harvesters used?=No"></field>
+
+        <field title="Mechanical Harvesting NC details" type="varchar" disabled="true" hide="Do house operators clear a space, in a calm and controlled manner, to allow machinery to enter?=Yes">
+        </field>
+
+        <field title="Farm Biosecurity Policy (Key)" type="radio" code="CB.DE.x" detail="Catchers Biosecurity NC details">
+          <options>
+            <option nc="false">Adhered to by catching teams</option>
+            <option nc="select">Not adhered to by catching teams</option>
+          </options>
+        </field>
+        <field title="Catchers Biosecurity NC details" type="varchar" disabled="true" hide="Farm Biosecurity Policy (Key)=Adhered to by catching teams">
+        </field>
+
+        <field title="Catchers Facilities" type="radio" code="CB.DE.y" detail="Catchers Facilities NC details">
+          <options>
+            <option nc="false">Available/clean/tidy</option>
+            <option nc="minor">Not clean/tidy</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Catchers Facilities NC details" type="varchar" disabled="true" hide="Catchers Facilities=Available/clean/tidy">
+        </field>
+
+        <field title="DE:Feed access" type="radio" code="CB.DE.j" detail="DE:Feed access NC details">
+          <options>
+            <option nc="false">Available up to 9 hrs before depop</option>
+            <option nc="minor">Not available up to 9 hrs before depop</option>
+          </options>
+        </field>
+        <field title="DE:Feed access NC details" type="varchar" disabled="true" hide="DE:Feed access=Available up to 9 hrs before depop">
+        </field>
+
+
+        <field title="DE:Water access" type="radio" code="CB.DE.k" detail="DE:Water access NC details">
+          <options>
+            <option nc="false">Available right up to depop</option>
+            <option nc="minor">Not available right up to depop</option>
+          </options>
+        </field>
+        <field title="DE:Water access NC details" type="varchar" disabled="true" hide="DE:Water access=Available right up to depop">
+        </field>
+
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="once">Documents And Procedures (DP)</name>
+      <fields hide="Inspection Scope#Inspection Type=Spot-Check">
+
+        <field title="Red Tractor Poultry (Broiler) Standard (v3.0 Oct 2014), hard copy or electronic, available?" type="boolean" code="CB.DP.a" nc="minor"></field>
+
+
+        <field title="Emergency plan" code="CB.DP.b.0.1" detail="Emergency plan NC details" type="radio">
+          <options>
+            <option nc="false">Complete/available/prominently displayed</option>
+            <option nc="minor">Not complete</option>
+            <option nc="minor">Not prominently displayed</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Emergency plan NC details" type="varchar" disabled="true" hide="Emergency plan=Complete/available/prominently displayed|Emergency plan=Not available">
+        </field>
+
+
+        <field title="Are the following Fire Prevention Measures taken" type="memo"></field>
+
+        <field title="Safe use/storage of flammable materials" type="boolean"></field>
+        <field title="Two doors in every building over 30m" type="boolean"></field>
+        <field title="Restrict access and secure buildings" type="boolean"></field>
+        <field title="Restrict smoking to designated areas" type="boolean"></field>
+        <field title="Routine machinery maintenance" type="boolean"></field>
+        <field title="Escape routes/passages kept clear" type="boolean"></field>
+        <field title="Notices displayed locating nearest telephone" type="boolean"></field>
+
+        <field title="Are all required Fire Prevention Measures taken?" type="boolean" code="CB.HF.l" nc="select" detail="Fire Prevention Measures NC details"></field>
+
+        <field title="Fire Prevention Measures NC details" type="varchar" disabled="true" hide="Are all required Fire Prevention Measures taken?=Yes">
+        </field>
+
+
+        <field title="Alternative Power Supply" code="CB.DP.b.0.3.1" detail="Alternative Power Supply NC details" type="radio">
+          <options>
+            <option nc="false">Available/can supply all essential systems</option>
+            <option nc="minor">Available/cannot supply all essential systems</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Alternative Power Supply NC details" type="varchar" disabled="true" hide="Alternative Power Supply!=Available/cannot supply all essential systems">
+        </field>
+
+
+
+
+        <field title="Alternative Power Supply Malfunctions" code="CB.DP.b.0.3.2" detail="Alternative Power Supply Malfunctions NC details" type="radio">
+          <options>
+            <option nc="false">Rectified immediately</option>
+            <option nc="minor">Not rectified immediately</option>
+          </options>
+        </field>
+        <field title="Alternative Power Supply Malfunctions NC details" type="varchar" disabled="true" hide="Alternative Power Supply Malfunctions=Rectified immediately">
+        </field>
+
+
+
+
+        <field title="Emergency Water Supply" code="CB.DP.b.2" detail="Emergency Water Supply NC details" type="radio">
+          <options>
+            <option nc="false">Available/all staff aware</option>
+            <option nc="minor">Available/not all staff aware</option>
+            <option nc="select">Emergency water cannot supply 24hrs</option>
+            <option nc="major">Not available</option>
+          </options>
+        </field>
+        <field title="Emergency Water Supply NC details" type="varchar" disabled="true" hide="Emergency Water Supply=Available/all staff aware">
+        </field>
+
+
+
+
+        <field title="Is complaints record available" type="boolean" code="CB.DP.c.0.1" nc="major">
+        </field>
+        <field title="Complaints Records" type="radio" code="CB.DP.c.0.2" disabled="true" hide="Is complaints record available=No" detail="Complaints record NC details">
+          <options>
+            <option nc="false">No complaints to date</option>
+            <option nc="false">Complaints fully documented</option>
+            <option nc="minor">Complaints not fully documented</option>
+            <option nc="minor">Complaints do not include action taken</option>
+            <option nc="major">Complaints not documented at all</option>
+          </options>
+        </field>
+        <field title="Complaints record NC details" type="varchar" disabled="true" hide="Complaints Records=No complaints to date|Complaints Records=Complaints fully documented|Complaints Records=Complaints not documented at all">
+        </field>
+
+
+        <field title="Positive coccidiostat residue results (New)" type="radio" disabled="false" code="CB.DP.c.1" detail="Residue results NC details">
+          <options>
+            <option nc="false">None to date</option>
+            <option nc="false">Notified to Cert Body</option>
+            <option nc="minor">Not notified to Cert Body</option>
+            <option nc="minor">On-farm investigation not undertaken</option>
+            <option nc="minor">Corrective action not implemented</option>
+          </options>
+        </field>
+        <field title="Residue results NC details" type="varchar" disabled="true" hide="Positive coccidiostat residue results (New)=None to date|Positive coccidiostat residue results (New)=Notified to Cert Body">
+        </field>
+
+
+        <field title="Suitability of new production sites" type="radio" code="CB.DP.d">
+          <options>
+            <option nc="false">New site suitability considered before use</option>
+            <option nc="minor">New site suitability not considered before use</option>
+            <option nc="minor">New site not notified to Cert Body</option>
+          </options>
+        </field>
+
+
+        <field title="Logos" type="radio" code="N/A" detail="Unapproved logos NC details">
+          <options>
+            <option nc="false">No logos used</option>
+            <option nc="false">Approved logo used (Red Tractor)</option>
+            <option nc="major">Unapproved logos used (NIFCC, UKAS)</option>
+          </options>
+        </field>
+        <field title="Unapproved logos NC details" type="varchar" disabled="true" hide="Logos!=Unapproved logos used (NIFCC, UKAS)">
+        </field>
+
+      </fields>
+    </section>
+
+
+    <section>
+      <name freq="once">Spot-Check</name>
+      <fields hide="Inspection Scope#Inspection Type!=Spot-Check">
+
+        <field title="Housing Construction and Maintenance" type="radio" code="CB.HF.a.0.1" required="true" detail="Housing Construction and Maintenance NC details">
+          <options>
+            <option nc="false">All housing properly constructed/maintained</option>
+            <option nc="minor">Housing not regularly checked for hazards</option>
+            <option nc="minor">Remedial action not always taken to repair hazards</option>
+            <option nc="minor">Electrical installations accessible to stock</option>
+            <option nc="minor">Toxic substances used on livestock accessible surfaces</option>
+          </options>
+        </field>
+        <field title="Housing Construction and Maintenance NC details" type="varchar" disabled="true" hide="Housing Construction and Maintenance=All housing properly constructed/maintained">
+        </field>
+
+        <field title="Housing Surfaces" type="radio" code="CB.HF.d.1" detail="Housing Surfaces NC details" required="true">
+          <options>
+            <option nc="false">All in good condition, can be C and D</option>
+            <option nc="minor">Not all in good condition</option>
+            <option nc="minor">Doors/walls/lining boards/ceilings damaged</option>
+            <option nc="minor">Cannot be C and D</option>
+          </options>
+        </field>
+        <field title="Housing Surfaces NC details" type="varchar" disabled="true" hide="Housing Surfaces=All in good condition, can be C and D">
+        </field>
+
+        <field title="Humidity" type="radio" code="CB.HF.b.0.4" required="true" detail="Humidity Monitoring NC details">
+          <options>
+            <option nc="false">Carefully monitored and recorded daily</option>
+            <option nc="minor">Not carefully monitored</option>
+            <option nc="minor">Not recorded daily</option>
+          </options>
+        </field>
+        <field title="Humidity Monitoring NC details" type="varchar" disabled="true" hide="Humidity=Carefully monitored and recorded daily">
+        </field>
+        <field title="Humidity Reading for previous day" type="varchar" required="true">
+        </field>
+
+        <field title="Litter Depth" type="radio" code="CB.HF.d.2" detail="Litter depth NC details" required="true">
+          <options>
+            <option nc="false">2cm fresh, clean litter for all flocks</option>
+            <option nc="minor">Inadequeate depth</option>
+          </options>
+        </field>
+        <field title="Litter depth NC details" type="varchar" disabled="true" hide="Litter Depth=2cm fresh, clean litter for all flocks">
+        </field>
+
+        <field title="Litter Condition" type="radio" code="CB.HF.d.3" detail="Litter condition NC details" required="true">
+          <options>
+            <option nc="false">Dry/friable in all houses</option>
+            <option nc="minor">Not dry/friable in all houses</option>
+            <option nc="minor">Wet/capped litter is not managed appropriately</option>
+          </options>
+        </field>
+        <field title="Litter condition NC details" type="varchar" disabled="true" hide="Litter Condition=Dry/friable in all houses">
+        </field>
+
+        <field title="Is the Producer Registered with the Poultrymeat Training Initiative (Poultry Passport)?" nc="major" type="boolean" required="true" code="CB.SC.c.1.1">
+        </field>
+        <field title="Is Confirmation Letter Available" type="boolean" nc="minor" code="CB.SC.c.1.2" hide="Is the Producer Registered with the Poultrymeat Training Initiative (Poultry Passport)?=No" disabled="true">
+        </field>
+
+        <field title="Hockburn/Pododermatitis" type="radio" required="true" code="CB.AH.e.1" detail="Hockburn/Pododermatitis NC detail">
+          <options>
+            <option nc="false">Monitored correctly</option>
+            <option nc="minor">Not monitored correctly</option>
+            <option nc="minor">Hockburn not monitored</option>
+            <option nc="minor">Pododermatitis not monitored</option>
+            <option nc="major">Not monitored</option>
+          </options>
+        </field>
+        <field title="Hockburn/Pododermatitis NC detail" type="varchar" hide="Hockburn/Pododermatitis=Monitored correctly" disabled="true">
+        </field>
+
+        <field title="Are the calculated stocking densities for all houses less than/equal to 38kg/m2 (K)" type="boolean" nc="select" required="true" code="CB.HF.f" detail="Housing Stocking Density NC detail">
+        </field>
+        <field title="Housing Stocking Density NC detail" type="varchar" hide="Are the calculated stocking densities for all houses less than/equal to 38kg/m2 (K)=Yes" disabled="true">
+        </field>
+
+
+        <field title="Site Tidiness" type="radio" code="CB.EC.a" detail="Site Tidiness NC details">
+          <options>
+            <option nc="false">All areas clean/tidy</option>
+            <option nc="minor">Not all areas clean/tidy</option>
+            <option nc="minor">Vegetation not kept short</option>
+            <option nc="minor">Not clear of debris/non-essential equip</option>
+          </options>
+        </field>
+        <field title="Site Tidiness NC details" type="varchar" disabled="true" hide="Site Tidiness=All areas clean/tidy">
+        </field>
+
+        <field title="Electrical Installations" type="radio" code="CB.HF.j" detail="Electrical Installations NC details" required="true">
+          <options>
+            <option nc="false">Properly earthed/tested every 5yrs/competent person</option>
+            <option nc="minor">Not all properly earthed</option>
+            <option nc="minor">In need of repair</option>
+            <option nc="minor">Not tested every 5yrs by competent person</option>
+          </options>
+        </field>
+        <field title="Electrical Installations NC details" type="varchar" disabled="true" hide="Electrical Installations=Properly earthed/tested every 5yrs/competent person">
+        </field>
+
+        <field title="" type="memo">
+        </field>
+        <field title="Inspector's Declaration:" type="memo" >
+        </field>
+        <field title="All non conformances raised at previous inspections rectified" type="boolean" nc="select" required="true" code="CB.EC.6" detail="Outstanding NC Details">
+        </field>
+        <field title="Outstanding NC Details" type="varchar" disabled="true" code="CB.EC.6nc" hide="All non conformances raised at previous inspections rectified=Yes">
+        </field>
+        <field title="Does this Spot Check cover all NCs noted at inspection" type="boolean" nc="select" required="true" code="CB.EC.7" detail="Additional NC Details">
+        </field>
+        <field title="Additional NC Details" type="varchar" disabled="true" code="CB.EC.7nc" hide="Does this Spot Check cover all NCs noted at inspection=Yes" >
+        </field>
+
+      </fields>
+    </section>
+
+
+
+    <section>
+      <name freq="once">Participant's Declaration</name>
+      <fields>
+        <field title="Participant's Declaration" type="memo">
+        </field>
+        <field title="1. I confirm that all the information given in this document is correct to the best of my knowledge." type="memo" >
+        </field>
+        <field title="2. I agree to abide by the Red Tractor Assurance (RTA) Poultry Scheme Product Standard and Rules and NIFCC Scheme Operating Procedures." type="memo" >
+        </field>
+        <field title="3. I agree to the details contained in this inspection report being divulged to RTA." type="memo" >
+        </field>
+        <field title="4. I agree to inform Northern Ireland Food Chain Certification of any changes in my circumstances to those declared in this document." type="memo" >
+        </field>
+        <field title="" type="memo"></field>
+        <field title="Name" type="varchar" required="true" ></field>
+        <field title="Position" type="varchar" required="true" ></field>
+        <field title="Date" type="datetime" required="true" ></field>
+        <field title="" type="memo"></field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30"></field>
+        <field title="Additional Comments" type="textarea" required="false"></field>
+      </fields>
+    </section>
+
+
+
+  </form>
+</QAConfig>

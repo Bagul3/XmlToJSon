@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Staff Work Return Form</title>
+  </head>
+  <savefilename>Staff Work Return Form</savefilename>
+  <type>Staff Work Return Form</type>
+  <form>
+    <section>
+      <name freq="start" colour="#F0E68C">Information</name>
+      <fields>
+        <field linked="false" title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+        <field linked="false" title="Staff Number" type="int">
+        </field>
+        <field linked="false" title="Date" type="datetime">
+        </field>
+        <field linked="false" title="Week Number" type="int">
+        </field>
+        <field linked="false" title="Address" type="varchar">
+        </field>
+        <field linked="false" title="Post Town" type="varchar">
+        </field>
+        <field linked="false" title="Postcode" type="varchar">
+        </field>
+        <field linked="false" title="Week Commencing (Monday)" type="datetime">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name type="table">Activity Summary</name>
+      <fields>
+        <field title="Activities" type="table" required="true" caption="Daily Entry">
+          <column title="Day" width="70" editable="false" sortable="false">
+          </column>
+          <column title="Scheme" width="70" editable="false" sortable="false">
+          </column>
+          <column title="Ref. No." width="70" editable="false" sortable="false">
+          </column>
+          <column title="Surname" width="90" editable="false" sortable="false">
+          </column>
+          <column title="Road Name and Postcode" width="90" editable="false" sortable="false">
+          </column>
+          <column title="Start Time" width="90" editable="false" sortable="false">
+          </column>
+          <column title="End Time" width="90" editable="false" sortable="false">
+          </column>
+          <column title="Completed" width="60" editable="false" sortable="false">
+          </column>
+          <column title="Miles from HQ" width="90" editable="false" sortable="false">
+          </column>
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name type="datainput" table="Activities">Activity Summary</name>
+      <fields>
+        <field title="Select Day" type="list" tablecol="Day" required="true" options="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday">
+        </field>
+        <field title="Select Scheme" type="list" tablecol="Scheme" required="true" options="FQAS,FQACS,Dairy,Dairy/Cereals,FQAS/FQACS,BRC,Chicken,Transport,Markets,Annual Leave">
+        </field>
+        <field title="Ref. No." type="int" tablecol="Ref. No." required="true" hide="Select Scheme=Annual Leave">
+        </field>
+        <field title="Surname" type="varchar" required="true" tablecol="Surname" hide="Select Scheme=Annual Leave">
+        </field>
+        <field title="Road Name and Postcode" type="varchar" required="true" tablecol="Road Name and Postcode" hide="Select Scheme=Annual Leave">
+        </field>
+        <field title="Start Time" type="List" required="true" tablecol="Start Time" hide="Select Scheme=Annual Leave" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field title="End Time" type="List" required="true" tablecol="End Time" hide="Select Scheme=Annual Leave" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field title="Completed" type="Boolean" required="true" tablecol="Completed" hide="Select Scheme=Annual Leave">
+        </field>
+        <field title="Miles from HQ" type="int" required="true" tablecol="End Time" hide="Select Scheme=Annual Leave">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <fields>
+        <field required="True" title="Total Miles" type="int">
+        </field>
+        <field required="False" title="Total Hours" type="int">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Demo 2</title>
+  </head>
+  <savefilename>Demo 2</savefilename>
+  <type>Inspection</type>
+  <form>
+    <section>
+      <name freq="start" colour="#000000">Customer Details</name>
+      <fields>
+        <field title="Surname" type="varchar">
+        </field>
+        <field title="List" type="list" options="One,Two,Three" text="true">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>M+S Linden Inspection Form</title>
+	 <print>
+      <showrectified>true</showrectified>
+      <chars>45</chars>
+      <height>40</height>
+      <heading>M+S Linden: NC Summary</heading>
+      <fields>
+        <field title="Ref No:" section="Marks and Spencer Linden Inspection" field="Marks and Spencer Registration No."></field>
+        <field title="Name:" section="Marks and Spencer Linden Inspection" field="Surname"></field>
+        <field title="Date:" section="Marks and Spencer Linden Inspection" field="Inspection Date"></field>
+        <field title="Inspector:" section="Marks and Spencer Linden Inspection" field="Inspector Name"></field>
+        <field title="Staff No:" section="Marks and Spencer Linden Inspection" field="Staff No."></field>
+		<field title="Staff No:" section="Marks and Spencer Linden Inspection" field="Staff No."></field>
+      </fields>
+      <standard>
+        <nc>When remedial action has been completed, you are asked to provide documentary evidence of rectification of the above point(s). Documentary evidence will include photocopies of working documentation, photographs or other materials that verify conformance</nc>        
+      </standard>
+    </print>
+  </head>
+  <savefilename>M+S Linden Inspection Form</savefilename>
+  <type>M+S Linden</type>
+  <form>
+    <section>
+      <name freq="start" colour="#A1FBAC">Marks and Spencer Linden Inspection</name>
+      <fields>
+        <field title="Distance from last location" type="int"  ></field>
+        <field title="Inspection Category" type="list" text="false" options="Beef,Beef and Sheep,Sheep">
+        </field>
+        <field title="Marks and Spencer Registration No." type="varchar"  linked="false">
+        </field>
+        <field title="Forename" type="varchar" linked="false">
+        </field>
+        <field title="Surname" type="varchar" linked="false">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  required="true">
+        </field>
+        <field title="FQAS Ref. No." type="varchar" required="false" linked="false">
+        </field>
+        <field title="Email Address" type="varchar" required="false" linked="false">
+        </field>
+        <field  linked="false" title="Inspection Date" type="datetime">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" >
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" >
+        </field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Farm Details - Cattle Livestock</name>
+      <fields hide="Marks and Spencer Linden Inspection#Inspection Category=Sheep">
+        <field title="Cattle Livestock Numbers (annual basis):" type="memo">
+        </field>
+        <field title="No. breeding stock - Cows:" type="int" >
+        </field>
+        <field title="No. of finishing Beef stock:" type="int" >
+        </field>
+        <field title="Breed Types: please record e.g. Lim, AA:" type="varchar" >
+        </field>
+        <field title="Select Rearing System:" type="radio">
+          <options>
+            <option nc="false">Store to Beef</option>
+            <option nc="false">Calves to Beef</option>
+            <option nc="false">Calves and purchased stores to Beef</option>
+          </options>
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Farm Details - Cattle Housing and Feeding</name>
+      <fields hide="Marks and Spencer Linden Inspection#Inspection Category=Sheep">
+        <field title="Cattle Housing:" type="memo">
+        </field>
+        <field title="No. of Cattle houses" type="int" >
+        </field>
+        <field title="No. of Feed Stores" type="int" >
+        </field>
+        <field title="No. of Silos" type="int" >
+        </field>
+        <field title="No. of Buildings" type="int" calc="No. of Cattle houses+No. of Feed Stores+No. of Silos" >
+        </field>
+        <field title="Type of ventilation:" type="radio" >
+          <options>
+            <option nc="false">Natural</option>
+            <option nc="false">Artificial</option>
+            <option nc="false">Natural and Artificial</option>
+          </options>
+        </field>
+        <field title="Type of lighting:" type="radio" >
+          <options>
+            <option nc="false">Natural</option>
+            <option nc="false">Artificial</option>
+            <option nc="false">Natural and Artificial</option>
+          </options>
+        </field>
+        <field title="Floor Type:" type="radio" >
+          <options>
+            <option nc="false">Solid</option>
+            <option nc="false">Slatted</option>
+            <option nc="false">Solid and Slatted</option>
+          </options>
+        </field>
+        <field title="Bedding Type:" type="radio" >
+          <options>
+            <option nc="false">No Bedding Used</option>
+            <option nc="false">Straw</option>
+            <option nc="false">Wood-Chip</option>
+            <option nc="false">Other</option>
+          </options>
+        </field>
+        <field title="Other Bedding Details:" type="varchar" disabled="true" hide="Bedding Type:!=Other" >
+        </field>
+        <field title="Outwintering:" type="boolean" >
+        </field>
+        <field title="Feeding System:" type="memo">
+        </field>
+        <field title="Self-feed" type="checkbox">
+        </field>
+        <field title="Feeder Wagon" type="checkbox">
+        </field>
+        <field title="Easy-feed" type="checkbox">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Feed Type:" type="memo">
+        </field>
+        <field title="Silage" type="checkbox">
+        </field>
+        <field title="Straw" type="checkbox">
+        </field>
+        <field title="Meal" type="checkbox">
+        </field>
+        <field title="Waste food by-products" type="checkbox">
+        </field>
+        <field title="Vegetables" type="checkbox">
+        </field>
+        <field title="Other Feed Type" type="checkbox">
+        </field>
+        <field title="Other Details:" type="varchar" disabled="true" hide="Other Feed Type!=Yes">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Cattle Feeding Storage:" type="memo">
+        </field>
+        <field title="Meal Bin" type="checkbox">
+        </field>
+        <field title="Bagged Meal" type="checkbox">
+        </field>
+        <field title="Stored Bulk" type="checkbox">
+        </field>
+        <field title="None Needed" type="checkbox">
+        </field>
+        <field title=" " type="info">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Farm Details - Sheep Livestock</name>
+      <fields hide="Marks and Spencer Linden Inspection#Inspection Category=Beef">
+        <field title="Sheep Livestock Numbers (annual basis):" type="memo">
+        </field>
+        <field title="No. breeding ewes" type="int">
+        </field>
+        <field title="No. of rams" type="int">
+        </field>
+        <field title="No. of finished lambs" type="int">
+        </field>
+        <field title="Total sheep" type="int" calc="No. breeding ewes+No. of rams+No. of finished lambs">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Breed Types: please record e.g. Texel:" type="varchar" >
+        </field>
+        <field title="Rearing System:" type="radio">
+          <options>
+            <option nc="false">Homebred lambs to finish</option>
+            <option nc="false">Store lambs to finish</option>
+            <option nc="false">Homebred and Store lambs to finish</option>
+          </options>
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Farm Details - Sheep Housing and Feeding</name>
+      <fields hide="Marks and Spencer Linden Inspection#Inspection Category=Beef">
+        <field title="Bedding Type:" type="radio">
+          <options>
+            <option nc="false">Straw</option>
+            <option nc="false">None</option>
+            <option nc="false">Other</option>
+          </options>
+        </field>
+        <field title="Other Details:" type="varchar" disabled="true" hide="Bedding Type:!=Other">
+        </field>
+        <field title="Outwintering:" type="boolean">
+        </field>
+        <field title="Feeding system:" type="radio">
+          <options>
+            <option nc="false">Grass Fed</option>
+            <option nc="false">Concentrate Fed</option>
+            <option nc="false">Grass and Concentrate Fed</option>
+          </options>
+        </field>
+        <field title="Sheep Feeding Storage:" type="memo">
+        </field>
+        <field title="Meal Bin" type="checkbox">
+        </field>
+        <field title="Bagged Meal" type="checkbox">
+        </field>
+        <field title="Stored Bulk" type="checkbox">
+        </field>
+        <field title="None Needed" type="checkbox">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Other Farm Details </name>
+      <fields>
+        <field title="No. of staff employed on farm (in addition to family members):" type="int">
+        </field>
+        <field title="Water Source: " type="radio">
+          <options>
+            <option nc="false">Mains</option>
+            <option nc="false">Borehole</option>
+            <option nc="false">Mains and Borehole</option>
+          </options>
+        </field>
+        <field title="Water Metering:" type="boolean">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">General Requirements</name>
+      <fields>
+        <field title="MS1 Has provision been made for fire/evacuation procedures?" type="boolean" code="MS1" nc="minor" detail="Evacuation Procedures NC details">
+        </field>
+        <field title="Evacuation Procedures NC details" type="varchar" hide="MS1 Has provision been made for fire/evacuation procedures?=Yes" disabled="true">
+        </field>
+        <field title="MS2 Are electric fence warning signs displayed?" type="radio" code="MS2" detail="Electric Fence NC details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Electric Fence NC details" type="varchar" hide="MS2 Are electric fence warning signs displayed?!=No" disabled="true">
+        </field>
+        <field title="MS3 Is there a system of vermin control operating on the farm? (i.e. a record of specific bait sites in builings and around the farm)" type="boolean" code="MS3" nc="minor" detail="Cermin Control NC details">
+        </field>
+        <field title="Cermin Control NC details" type="varchar" hide="MS3 Is there a system of vermin control operating on the farm? (i.e. a record of specific bait sites in builings and around the farm)!=No" disabled="true">
+        </field>
+        <field title="MS4 Are all animals free of permanent tethering?" type="boolean" code="MS4" nc="minor" detail="Permanent Tethering NC details">
+        </field>
+        <field title="Permanent Tethering NC details" type="varchar" hide="MS4 Are all animals free of permanent tethering?!=No" disabled="true">
+        </field>
+        <field title="MS5 Is there a procedure for identifying treated animals which is understood by all working with the stock?" type="boolean" code="MS5" nc="minor" detail="Animals ID NC Details">
+        </field>
+        <field title="Animals ID NC Details" type="varchar" hide="MS5 Is there a procedure for identifying treated animals which is understood by all working with the stock?!=No" disabled="true">
+        </field>
+        <field title="MS6 Does the farmer wash and disinfect any hired or shared equipment before and after use?" type="radio" code="MS6" detail="C+D Shared equipment NC Details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="C+D Shared equipment NC Details" type="varchar" hide="MS6 Does the farmer wash and disinfect any hired or shared equipment before and after use?!=No" disabled="true">
+        </field>
+        <field title="MS7 If stock are clipped with electric clippers is there a RCD used?" type="radio" code="MS7">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="MS8 Is cat and/or dog food stored separately from ruminant feed?" type="radio" code="MS8" detail="Pet Food Storage NC Details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Pet Food Storage NC Details" type="varchar" hide="MS8 Is cat and/or dog food stored separately from ruminant feed?!=No" disabled="true">
+        </field>
+        <field title="AH3.1 Is there an Animal Health Plan which is reviewed at least annually and has been developed in conjunction with the responsible veterinary surgeon (ie a minimum of an annual farm visit)?" type="boolean" code="AH3.1" nc="minor">
+        </field>
+        <field title="AM9.1 Are needles used in accordance with manufacturer recommendations (e.g. are disposeable needles used only once)?" type="boolean" code="AM9.1" nc="minor">
+        </field>
+        <field title="AM11.2 Are visitors asked to declare any recording equipment before entering the site" type="boolean" code="AM11.2" nc="minor">
+        </field>
+        <field title="FW4.2 Are finishing cattle fed a grass, forage and cereal based diet? Are vegetable sources of dietry protein used in finishing cattle diets" type="boolean" code="FW4.2" nc="minor">
+        </field>
+
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Cattle Requirements</name>
+      <fields hide="Marks and Spencer Linden Inspection#Inspection Category=Sheep">
+        <field title="MS9 Is there a written feed plan detailing the current rations which are fed to all cattle?" type="boolean" code="MS9" nc="minor" detail="Feed Plan NC Details">
+        </field>
+        <field title="Feed Plan NC Details" type="varchar" hide="MS9 Is there a written feed plan detailing the current rations which are fed to all cattle?!=No" disabled="true">
+        </field>
+        <field title="MS10 Name of person responsible for giving careful thought to ease of calving:" type="varchar" code="MS10" hide="Farm Details - Cattle Livestock#Select Rearing System:=Calves and purchased stores to Beef">
+        </field>
+        <field title="MS11 Name of person responsible for ensuring all new born animals receive adequate colostrum:" type="varchar" code="MS11"  hide="Farm Details - Cattle Livestock#Select Rearing System:=Calves and purchased stores to Beef">
+        </field>
+        <field title="MS12 Is the general appearance of this farmyard and housing of a sufficiently high for inclusion in the M and S Select Farm Scheme?" type="boolean" code="MS12" nc="minor">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Give details of the Breeds of Sire:" type="varchar">
+        </field>
+        <field title="Give details of the Breeds of Dam: (must be at least 50% Beef Breeding)" type="varchar">
+        </field>
+        <field title="Give details of the Sex of Beef Animal" type="radio">
+          <options>
+            <option>Steer</option>
+            <option>Heifer</option>
+            <option>Steers and Heifers</option>
+          </options>
+        </field>
+        <field title="MS13 Do cattle from this farm meet the finished beef specification for Marks and Spencer" type="boolean" code="MS13" nc="minor" detail="Finished Cattle Specifcation NC Details">
+        </field>
+        <field title="Finished Cattle Specifcation NC Details" type="varchar" hide="MS13 Do cattle from this farm meet the finished beef specification for Marks and Spencer!=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="MS14 If artificial insemination is used, is it non-surgical? (i.e. standard AI procedure)" type="radio" code="MS14" detail="AI NC Details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="AI NC Details" type="varchar" hide="MS14 If artificial insemination is used, is it non-surgical? (i.e. standard AI procedure)!=No" disabled="true">
+        </field>
+        <field title="MS15 Are the disallowed new technologies avoided (i.e. embryo transfer, In-vitro fertilisation, induced twinning, embryo/semen sexing, cloning, genetic modification)?" type="radio" code="MS15" detail="Disallowed Technologies NC Details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Disallowed Technologies NC Details" type="varchar" hide="MS15 Are the disallowed new technologies avoided (i.e. embryo transfer, In-vitro fertilisation, induced twinning, embryo/semen sexing, cloning, genetic modification)?!=No" disabled="true">
+        </field>
+        <field title="MS16 Are signs displayed to indicate that there is bull accommodation?" type="radio" code="MS16" detail="Bull Signage NC Details">
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Bull Signage NC Details" type="varchar" hide="MS16 Are signs displayed to indicate that there is bull accommodation?!=No" disabled="true">
+        </field>
+        <field title="MS17 Is the farmer aware that it is essential that cattle are free from faecal contamination when presented to the abattoir?" type="boolean" code="MS17" nc="minor" detail="Cattle Faecal Contamination NC Details">
+        </field>
+        <field title="Cattle Faecal Contamination NC Details" type="varchar" hide="MS17 Is the farmer aware that it is essential that cattle are free from faecal contamination when presented to the abattoir?!=No" disabled="true">
+        </field>
+      
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Sheep Requirments</name>
+      <fields hide="Marks and Spencer Linden Inspection#Inspection Category=Beef">
+        <field title="MS18 Is the farmer aware that it is essential that lambs are dry and free from faecal contamination when presented to the abattoir?" type="boolean" code="MS18" nc="minor" detail="Sheep Faecal Contamination NC Details" >
+        </field>
+        <field title="Sheep Faecal Contamination NC Details" type="varchar" hide="MS18 Is the farmer aware that it is essential that lambs are dry and free from faecal contamination when presented to the abattoir?!=No" disabled="true" >
+        </field>
+        <field title="MS19 Is the farmer aware of condition scoring and scanning methods?" type="boolean" code="MS19" nc="minor" detail="Sheep Condition Scoring NC Details" >
+        </field>
+        <field title="Sheep Condition Scoring NC Details" type="varchar" hide="MS19 Is the farmer aware of condition scoring and scanning methods?!=No" disabled="true" >
+        </field>
+        <field title="MS20 Has tupping harness or other fitted devices been free from problems?" type="radio" code="MS20" nc="minor" >
+          <options>
+            <option nc="false">Yes</option>
+            <option nc="minor">No</option>
+            <option nc="false">N/A</option>
+          </options>
+        </field>
+        <field title="Tupping Harness Scoring NC Details" type="varchar" hide="MS20 Has tupping harness or other fitted devices been free from problems?!=No" disabled="true" >
+        </field>
+        <field title="MS21 Are all shearers experienced?" type="boolean" code="MS21" nc="minor" detail="Shearers Experienced NC Details" >
+        </field>
+        <field title="Shearers Experienced NC Details" type="varchar" hide="MS21 Are all shearers experienced?!=No" disabled="true" >
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Staff and Contractors</name>
+      <fields>
+        <field title="Does the farm have any staff/employees?" type="boolean" >
+        </field>
+        <field title="SC.3 Is a verbal induction programme provided for all new staff?" type="boolean" code="SC.3"  hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1 Does the producer work to the Marks and Spencer Responsible Employment Requirements?" type="boolean" code="EL.1" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1.1 Are all workers recorded and monitored?" type="boolean" code="EL.1.1" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1.2 Are all workers paid at least the appropriate minimum wage?" type="boolean" code="EL.1.1" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1.3 Are there safe working practices in place for all workers?" type="boolean" code="EL.1.3" nc="minor" hide="Does the farm have any staff/employees?=No">  
+        </field>
+        <field title="EL.1.4 Does the producer check that every worker who comes on site has the right to work? " type="boolean" code="EL.1.4" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1.5 Are payslips issued to all workers?" type="boolean" code="EL.1.5" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1.6 Do workers receive holiday and sick pay?" type="boolean" code="EL.1.6" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.1.7 Do workers receive a copy of their terms and conditions?" type="boolean" code="EL.1.7" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.2 If workers are provided by an agency, does the provider comply with all relevant legislation?" type="boolean" code="EL.2" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.3 Does the producer act as a responsible labour user?" type="boolean" code="EL.3" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.4 Does the producer have a system for checking workers ages prior to employment?" type="boolean" code="EL.4" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.5 Does the producer comply with EU Working Time Regulations?" type="boolean" code="EL.5" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+        <field title="EL.6 Has the producer completed an individual self assessment on SEDEX, which is updated annually? " type="boolean" code="EL.6" nc="minor" hide="Does the farm have any staff/employees?=No">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBAC">Participant's Declaration</name>
+      <fields>
+        <field title="Confirmation:" type="memo">
+        </field>
+        <field title="1 I confirm that all information presented in this document is correct to the best of my knowledge" type="info">
+        </field>
+        <field title="2 I do not feed:-" type="info">
+        </field>
+        <field title="a) Any animal or poultry by-product with the exception of milk or milk by-products" type="info">
+        </field>
+        <field title="b) Intentionally, Genetically Modified (GM) ingredients (within the last 90 days pre-slaughter to cattle or within the last 60 days pre-slaughter to sheep)" type="info">
+        </field>
+        <field title="c) Any prohibited substances" type="info">
+        </field>
+        <field title="3) My feed ingredients list is up to date." type="info">
+        </field>
+        <field title="4) I agree that the information in this document may be recorded by NIFCC on behalf of Linden Foods/Marks and Spencer as data and may be used by LMC/Linden Foods/Marks and Spencer for the purposes of the Select Farm scheme and the supply of beef/lamb and beef/lamb products to Marks and Spencer. The information will not be disclosed to any third party without my consent." type="info">
+        </field>
+        <field title="5) I agree to inform Linden Foods of any changes to this declaration or my feeding regime." type="info">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="Participant's Declaration" type="memo">
+        </field>
+        <field title="1 I confirm that all information presented in this document is correct to the best of my knowledge." type="info">
+        </field>
+        <field title="2 I agree to abide by the Codes of Practice of the Marks and Spencer Select Farm Scheme." type="info">
+        </field>
+        <field title="3 I agree that the information contained in this document may be recorded by NIFCC on behalf of LMC/Linden Foods and Marks and Spencer for purposes of the Select Farm Scheme. I understand that the information will not be disclosed to any other party without my consent." type="info">
+        </field>
+        <field title="4 I agree to inform Linden Foods of any changes in my circumstances to those declared in this document." type="info">
+        </field>
+        <field title="Producers Name" type="varchar" >
+        </field>
+        <field title="Position" type="varchar" >
+        </field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30"></field>
+        <field title="Date" type="datetime" >
+        </field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

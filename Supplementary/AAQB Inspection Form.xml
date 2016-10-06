@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>AAQB - Inspection Form</title>
+  </head>
+  <savefilename>AAQB - Inspection Form</savefilename>
+  <type>AAQB</type>
+  <form>
+    <section>
+      <name freq="start" colour="#A1FBF3">AAQB - Inspection Form</name>
+      <fields>
+        <field title="Distance from last location" type="int"  ></field>
+        <field title="AAQB Membership No." type="varchar" linked="false">
+        </field>
+        <field title="Forename" type="varchar" linked="false">
+        </field>
+        <field title="Surname" type="varchar" linked="false">
+        </field>
+        <field  linked="false" title="Postcode" type="varchar"  required="true">
+        </field>
+        <field title="FQAS Ref. No." type="varchar" linked="false">
+        </field>
+        <field title="Email Address" type="varchar" required="false" linked="false">
+        </field>
+        <field  linked="false" title="Inspection Date" type="datetime">
+        </field>
+        <field  linked="false" title="Inspector Name" type="varchar" systemvalue="logon" >
+        </field>
+        <field  linked="false" title="Staff No." type="int" required="freetext" >
+        </field>
+        <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBF3">Current AA Stock Bulls</name>
+      <fields>
+        <field title="Is a stock bull being used currently?" type="boolean">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="AA 5.1 Name Bull 1: (exactly as on pedigree certificate)" type="varchar" code="AA 5.1" hide="Is a stock bull being used currently?=No" disabled="true">
+        </field>
+        <field title="AA 5.1 Ear Tag No. Bull 1:" type="varchar" code="AA 5.1" hide="Is a stock bull being used currently?=No" disabled="true">
+        </field>
+        <field title="AA 5.1 Date moved onto farm Bull 1:" type="datetime" code="AA 5.1" hide="Is a stock bull being used currently?=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="AA 5.1 Name Bull 2: (exactly as on pedigree certificate)" type="varchar" code="AA 5.1" hide="Is a stock bull being used currently?=No" disabled="true" required="false">
+        </field>
+        <field title="AA 5.1 Ear Tag No. Bull 2:" type="varchar" code="AA 5.1" hide="Is a stock bull being used currently?=No" disabled="true" required="false">
+        </field>
+        <field title="AA 5.1 Date moved onto farm Bull 2:" type="datetime" code="AA 5.1" hide="Is a stock bull being used currently?=No" disabled="true" required="false">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBF3">Previous AA Stock Bulls</name>
+      <fields>
+        <field title="Have any other bulls been used in the previous 4 years?" type="boolean">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="AA 5.1 Name Bull 1: (exactly as on pedigree certificate)" type="varchar" code="AA 5.1" hide="Have any other bulls been used in the previous 4 years?=No" disabled="true">
+        </field>
+        <field title="AA 5.1 Ear Tag No. Bull 1:" type="varchar" code="AA 5.1" hide="Have any other bulls been used in the previous 4 years?=No" disabled="true">
+        </field>
+        <field title="AA 5.1 Date moved off Bull 1:" type="datetime" code="AA 5.1" hide="Have any other bulls been used in the previous 4 years?=No" disabled="true">
+        </field>
+        <field title=" " type="info">
+        </field>
+        <field title="AA 5.1 Name Bull 2: (exactly as on pedigree certificate)" type="varchar" code="AA 5.1" hide="Have any other bulls been used in the previous 4 years?=No" disabled="true" required="false">
+        </field>
+        <field title="AA 5.1 Ear Tag No. Bull 2:" type="varchar" code="AA 5.1" hide="Have any other bulls been used in the previous 4 years?=No" disabled="true" required="false">
+        </field>
+        <field title="AA 5.1 Date moved off Bull 2:" type="datetime" code="AA 5.1" hide="Have any other bulls been used in the previous 4 years?=No" disabled="true" required="false">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBF3">Additional AA Bull Information</name>
+      <fields>
+        <field title="Are there more that 2 stock bulls currently in use on the farm?" type="boolean">
+        </field>
+        <field title="If more than 2 stock bulls are currently in use on the farm, or used in the previous 4 years, please give details." type="textarea" hide="Are there more that 2 stock bulls currently in use on the farm?=No" disabled="true">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBF3">Artificial Insemination</name>
+      <fields>
+        <field title="Is AI currently in use or has been used in the previous previous 4 years?" type="boolean">
+        </field>
+        <field title="Please provide the company names:" type="textarea" disabled="true" hide="Is AI currently in use or has been used in the previous previous 4 years?=No">
+        </field>
+      </fields>
+    </section>
+    <section>
+      <name freq="once" colour="#A1FBF3">Supplier's Declaration</name>
+      <fields>
+        <field title="Suppier's Declaration:" type="memo">
+        </field>
+        <field title="1. I am a participant in the Northern Ireland Farm Quality Assurance Scheme, and as such abide by the Product Standard and Rules of that Scheme." type="info">
+        </field>
+        <field title="2. I am a registered participant in the scheme operated by Aberdeen Angus Quality Beef Ltd (referred to hereafter as AAQB) and abide by the rules of that scheme." type="info">
+        </field>
+        <field title="3. I understand that any breach of the Codes in the FQAS Product Standard and Rules may lead to my exclusion from FQAS and consequently my exclusion as a supplying farm for AAQB." type="info">
+        </field>
+        <field title="4. I agree to provide full and accurate information to NIFCC for the purpose of being a supplying farm for AAQB, and understand that this information (including appropriate farm audit details) may be used by LMC/Foyle Food Group/AAQB as part of their Quality Management System." type="info">
+        </field>
+        <field title="5. I agree to my premises, livestock and records being audited by NIFCC for the purpose of being a supplying farm for AAQB." type="info">
+        </field>
+        <field title="6. I agree that samples may be taken for the purpose of DNA testing on farm/at slaughter/post slaughter as deemed necessary by AAQB or the Foyle Food Group" type="info">
+        </field>
+        <field title="7. I have checked the information given on this form and confirm that it is correct to the best of my knowledge" type="info">
+        </field>
+        <field title="8. I agree to inform AAQB or the Foyle Food Group of any changes to my farming circumstances that may affect this declaration." type="info">
+        </field>
+        <field title="Producers Name" type="varchar">
+        </field>
+        <field title="Position" type="varchar">
+        </field>
+        <field title="Time Departed" required="true" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30"></field>
+        <field title="Date" type="datetime">
+        </field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

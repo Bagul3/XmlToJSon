@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QAConfig>
+  <connection>
+    User ID=liveqa;Password=liveqa;Initial Catalog=LiveQMobile;Data Source=cms.killercontent.net;Connection Timeout=360
+  </connection>
+  <lookupconnection>
+    User ID=sa;Password=2001space;Initial Catalog=LiveQMobile;Data Source=cranmore;Connection Timeout=360
+  </lookupconnection>
+  <savefilename>
+    Moy_Park_High_Welfare_Supplementary_Inspection_Checklist
+  </savefilename>
+  <line>Moy Park High Welfare Supplementary Inspection Checklist</line>
+  <type>Poultry-MPHW</type>
+  <head>
+    <title>Moy Park High Welfare Supplementary Inspection Checklist</title>
+    <print>
+      <showrectified>true</showrectified>
+      <chars>45</chars>
+      <height>40</height>
+      <heading>Moy Park High Welfare Supplementary: NC Summary</heading>
+      <fields>
+        <field title="Reg. No:" section="Inspection Scope" field="RT Poultry Reg No."></field>
+        <field title="Name:" section="Inspection Scope" field="Producer Name"></field>
+        <field title="Date:" section="Inspection Scope" field="Inspection Date"></field>
+        <field title="Inspector:" section="Inspection Scope" field="Inspector Name"></field>
+        <field title="Staff No:" section="Inspection Scope" field="Inspector Number"></field>
+      </fields>
+      <standard>
+        <nc>PLEASE NOTE, YOU CAN NOW SEND PHOTOGRAPHIC EVIDENCE TO THE FOLLOWING NUMBER 07561391543. PLEASE ENSURE THAT YOU INCLUDE YOUR REFERENCE NUMBER WITH ALL PHOTOGRAPHS</nc>
+        <nc>All non-conformances must be recififed within 28 days from the date of the inspection.</nc>
+        <nc>I acknowledge that the inspector has carried out an inspection and has brought to my attention areas where non-conformances have been identified. I understand that these inspection results are provided for information only at this stage. This report does not indicate wether or not I will be awarded a certificate.</nc>
+      </standard>
+    </print>
+  </head>
+  <correctiveaction>
+    <action>Contact Farm</action>
+    <action>Contact Manager</action>
+  </correctiveaction>
+  <form>
+    <section>
+      <name freq="start">Inspection Scope</name>
+      <fields>
+        <field title="Producer Name" type="varchar" required="true" code="Is.2" verify ="true"></field>
+        <field title="Postcode" type="varchar" required="true" code="Is.6"></field>
+        <field title="RT Poultry Reg No." type="varchar" required="true" code="Is.3" verify ="true"></field>
+		    <field title="Number of Houses" type="list" required="true" options="1,2,3,4"></field>
+        <field title="Company" type="list" required="true" options="Moy Park Dungannon,Moy Park Ballymena" code="Is.5"></field>
+        <field title="" type="info"></field>
+        <field title="Inspector Name" type="varchar" systemvalue="logon" required="true" code="Is.13" ></field>
+        <field title="Inspector Number" type="int" required="true" code="Is.14" ></field>
+        <field title="Inspection Date" type="datetime" required="true" code="Is.15" ></field>
+        </fields>
+      <field title="Time Arrive" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+      </field>
+    </section>
+     	
+	<section>
+      <name freq="once">Inspection Requirements</name>
+      <fields>
+
+        <field title="MPHW.1.1 Is the maximum planned stocking density in all houses less than or equal to 30kg per sqm" type="boolean" nc="select" required="true" code="Sd.1" detail="Stocking Density NC detail" ></field>
+        <field title="Stocking Density NC detail" type="varchar" hide="MPHW.1.1 Is the maximum planned stocking density in all houses less than or equal to 30kg per sqm=Yes" code="Sd.2nc" disabled="true">
+        </field>
+		
+		<field title="" type="info"></field>
+        <field title="MPHW.1.2 Do all houses have windows along each long side of the building to allow access to natural daylight" type="boolean" nc="select" required="true" code="MPHW.1.2" detail="Windows NC detail"></field>
+        <field title="Windows NC detail" type="varchar" hide="MPHW.1.2 Do all houses have windows along each long side of the building to allow access to natural daylight=Yes" disabled="true">
+        </field>
+        
+		<field title="" type="info"></field>
+
+        <field title="MPHW.1.3 Are play bales (Straw) provided in each house" type="boolean" nc="select" required="true" code="MPHW.1.3" detail="Bales NC detail"></field>
+        <field title="Bales NC detail" type="varchar" hide="MPHW.1.3 Are play bales (Straw) provided in each house=Yes" disabled="true">
+        </field>
+        
+		<field title="" type="info"></field>
+
+        <field title="MPHW.1.4 Are perches provided in each house" type="boolean" nc="select" required="true" code="MPHW.1.4" detail="Perches NC detail"></field>
+        <field title="Perches NC detail" type="varchar" hide="MPHW.1.4 Are perches provided in each house=Yes" disabled="true">
+        </field>
+        
+		<field title="" type="info"></field>
+
+        <field title="MPHW.1.5.1 Are all birds fed a vegetarian diet" type="boolean" nc="select" required="true" code="MPHW.1.5.1" detail="Vegetarian diet NC detail"></field>
+        <field title="Vegetarian diet NC detail" type="varchar" hide="MPHW.1.5.1 Are all birds fed a vegetarian diet=Yes" disabled="true">
+        </field>
+
+     <field title="" type="info"></field>
+
+        <field title="MPHW.1.5.2 Do all feeds, with the exception of starter rations, contain a minimum of 10 percent maize (Cross-check formulations with feed delivery notes)" type="boolean" nc="select" required="true" code="MPHW.1.5.2" detail="Feed formulation NC detail"></field>
+        <field title="Feed formulation NC detail" type="varchar" hide="MPHW.1.5.2 Do all feeds, with the exception of starter rations, contain a minimum of 10 percent maize (Cross-check formulations with feed delivery notes)=Yes" disabled="true">
+        </field>
+
+     <field title="" type="info"></field>
+		        
+      </fields>
+    </section>
+
+    
+    <section>
+      <name freq="once">Participant's Declaration</name>
+      <fields>
+        <field title="Participant's Declaration:" type="memo" ></field>
+        <field title="1. I confirm that all the information given in this document is correct to the best of my knowledge." type="memo" ></field>
+        <field title="2. I agree to abide by the standards of the Moy Park High Welfare Farm Scheme." type="memo" ></field>
+        <field title="3. I agree that the information in this document may be recorded by NIFCC on behalf of Moy Park for the purposes of the Moy Park High Welfare Farm Scheme." type="memo" ></field>
+        <field title="4. I agree to inform NIFCC and/or Moy Park of any changes in my circumstances to those declared in this document." type="memo" ></field>
+        <field title="" type="memo"></field>
+        <field title="Name" type="varchar" required="true" ></field>
+        <field title="Position" type="varchar" required="true" ></field>
+        <field title="Date" type="datetime" required="true" ></field>
+        <field title="" type="memo"></field>
+        <field title="Additional Comments" type="textarea" required="false"></field>
+      </fields>
+    </section>
+
+
+
+  </form>
+</QAConfig>

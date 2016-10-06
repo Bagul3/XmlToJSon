@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Memorandum</title>
+  </head>
+  <savefilename>Memorandum</savefilename>
+  <type>Memorandum form</type>
+  <form>
+    <section>
+      <name  freq="start" colour="#F0E68C">Memorandum Comments</name>
+      <fields>
+	    <field title="Inspector Name" type="varchar" required="true">
+        </field>
+        <field title="Inspector No." type="varchar" required="true">
+        </field>
+		 <field title="" type="info">
+        </field>
+        <field title="Date" type="datetime" required="true">
+        </field>    
+        <field title="Scheme" type="varchar" required="false">
+        </field>
+        <field title="Reference No." type="varchar" required="false">
+        </field>
+        <field title="Name of Scheme member" type="varchar" required="false">
+        </field>
+        <field title="Herd or Flock No." type="varchar" required="false">
+        </field>
+		 <field title="" type="info">
+        </field>
+        <field title="Comments" type="textarea" required="true">
+        </field>
+      
+      </fields>
+    </section>
+   
+  </form>
+</QAConfig>

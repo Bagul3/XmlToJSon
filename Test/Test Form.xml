@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Test Form</title>
+  </head>
+  <form title="Test Form" savefilename="Heathers Test Form" type="Inspection">
+    <section title="Initial Info." freq="start" colour="#F0E68C" hide="">
+      <name>Initial Info.</name>
+      <fields>
+        <field title="Input Inspectors Name" required="false" systemvalue="logon" expected="" expectedlookup="" disabled="false" clear="false" hide="" type="varchar"/>
+        <field title="Inspectors No." required="false" expected="" expectedlookup="" calc="" lowerlimit="" upperlimit="" disabled="false" clear="false" hide="" type="int"/>
+        <field title="Inspection Site Info." required="false" expected="" systemvalue="logon" disabled="false" clear="false" hide="" type="textarea"/>
+        <field title="Inspection Type" code="" detail="" ncoverride="false" required="false" disabled="false" clear="false" hide="" type="radio"/>
+        <field title="This is the farms first audit" ncoverride="false" required="false" expected="" code="" nc="" detail="" disabled="false" clear="false" hide="" type="boolean"/>
+      </fields>
+    </section>
+    <section title="Section 1 - Farm Category" freq="once" colour="#F0E68C" hide="">
+      <name>Section 1 - Farm Category</name>
+      <fields>
+        <field title="Indicate animals on farm" code="" detail="" ncoverride="false" required="false" disabled="false" clear="false" hide="" type="radio"/>
+        <field title="Audit on which farm amilals" code="" detail="" ncoverride="" required="" disabled="" clear="" hide="" type="radio"/>
+        <field title="No. of livestock" required="" expected="" expectedlookup="" calc="" lowerlimit="" upperlimit="" disabled="" clear="" hide="" type="int"/>
+        <field title="broiler or breeder" expected="" disabled="false" clear="true" hide="" type="checkbox"/>
+      </fields>
+    </section>
+    <section title="Section 2 - Milk" freq="start" colour="#F0E68C" hide="">
+      <name>Section 2 - Milk</name>
+      <fields>
+        <field title="Are livestock milked" ncoverride="" required="" expected="" code="" nc="" detail="" disabled="" clear="" hide="" type="boolean"/>
+        <field title="How often are they milked" required="" expected="" systemvalue="" disabled="" clear="" hide="" type="textarea"/>
+        <field title="At what time are they milked" required="" expected="" systemvalue="" disabled="" clear="" hide="" type="textarea"/>
+      </fields>
+    </section>
+    <section title="Section 3 - Medication" freq="start" colour="#F0E68C" hide="">
+      <name>Section 3 - Medication</name>
+      <fields>
+        <field title="Are any animals on medication" ncoverride="" required="" expected="" code="" nc="" detail="" disabled="" clear="" hide="" type="boolean"/>
+        <field title="If yes - how many" required="false" expected="" expectedlookup="" calc="" lowerlimit="" upperlimit="10" disabled="false" clear="false" hide="Section 3 - Medication#Are any animals on medication=false" type="int"/>
+      </fields>
+    </section>
+  </form>
+</QAConfig>

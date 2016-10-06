@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QAConfig>
+  <head>
+    <title>Cancellation form</title>
+    </head>
+  <savefilename>Cancellation form</savefilename>
+  <type>Cancellation</type>
+  <form>
+
+
+    <!--Cancellation details(Options)-->
+    <section>
+      <name freq="start" colour="#F0E68C">Cancellation details</name>
+      <fields>
+        <field  linked="false"  title="Scheme" type="list" options="FQAS,RTA Dairy,RTA Dairy + FQAS,RTA Transport,RTA Market,RTA Poultry,FQACS">
+        </field>
+        <field  linked="false" title="Ref. No." type="int" parameter="true">
+        </field>
+        <field  linked="false" title="Forename" type="varchar" parameter="true" >
+        </field>
+        <field  linked="false" title="Surname" type="varchar"  parameter="true" >
+        </field>
+        <field linked="false"  title="Inspector Name" type="varchar" systemvalue="logon">
+        </field>
+        <field linked="false"  title="Staff Number" type="int">
+        </field>
+        <field  linked="false" title="Date" type="datetime">
+        </field>
+        
+        <field linked="false" title="Cancellation details" type="radio">
+          <options>
+            <option>Cancellation form (Inside 2 working days)</option>
+            <option>Cancellation form (Outside 2 working days)</option>
+            </options>
+          </field>
+          </fields>
+    </section>
+
+    <!--Cancellation form (Inside 2 working days)-->
+    <section>
+      <name freq="once" colour="#F0E68C">Cancellation form (Inside 2 working days)</name>
+      <fields hide="Cancellation details=Cancellation form (Outside 2 working days)">
+     
+       
+        <field linked="false"  title="Scheme" type="list" options="FQAS,RTA Dairy,RTA Dairy + FQAS,RTA Transport,RTA Market,RTA Poultry,FQACS">
+        </field>
+		    <field linked="false"  title="Reference number" type="varchar">
+        </field>             
+        <field linked="false"  title="Date inspection arranged" type="datetime">
+          </field>
+        <field linked="false" title="Time inspection arranged" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field linked="false"  title="Date inspection Cancelled" type="datetime">
+        </field>
+        <field linked="false" title="Time inspection Cancelled" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field  linked="false" title="Reason for cancellation(Please give as much detail as possible)" type="textarea">
+        </field>
+        <field   title="* One cancellation per form" type="info">
+        </field>
+        </fields>
+      </section>
+
+    <!--Cancellation form (Outside 2 working days)-->
+    <section>
+      <name freq="once" colour="#F0E68C">Cancellation form (Outside 2 working days)</name>
+      <fields hide="Cancellation details=Cancellation form (Inside 2 working days)">
+       
+        <field linked="false"  title="Scheme" type="list" options="FQAS,RTA Dairy,RTA Dairy + FQAS,RTA Transport,RTA Market,RTA Poultry,FQACS">
+        </field>
+       <field linked="false"  title="Reference number" type="varchar">
+        </field>        
+        <field linked="false"  title="Date inspection arranged" type="datetime">
+        </field>
+        <field linked="false" title="Time inspection arranged" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field  linked="false" title="Date inspection Cancelled" type="datetime">
+        </field>
+        <field linked="false" title="Time inspection Cancelled" type="list" options="8:00,8:15,8:30,8:45,9:00,9:15,9:30,9:45,10:00,10:15,10:30,10:45,11:00,11:15,11:30,11:45,12:00,12:15,12:30,12:45,12:00,12:15,12:30,12:45,13:00,13:15,13:30,13:45,14:00,14:15,14:30,14:45,15:00,15:15,15:30,15:45,16:00,16:15,16:30,16:45,17:00,17:15,17:30,17:45,18:00,18:15,18:30,18:45,19:00,19:15,19:30">
+        </field>
+        <field  linked="false" title="Reason for cancellation(Please give as much detail as possible)" type="textarea">
+        </field>
+      
+        <field   title="* One cancellation per form" type="info">
+        </field>
+      </fields>
+    </section>
+
+
+  </form>
+</QAConfig>

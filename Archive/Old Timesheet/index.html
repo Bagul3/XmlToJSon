@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<!--Sets document to HTML 5-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="modern.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="jquery-ui-custom.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="ui.multiselect.css" />
+
+
+    <script src="jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="jquery-ui-custom.min.js" type="text/javascript"></script>
+    <script src="jquery.layout.js" type="text/javascript"></script>
+    <script src="grid.locale-en.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $.jgrid.no_legacy_api = true;
+        $.jgrid.useJSON = true;
+    </script>
+
+    <script src="ui.multiselect.js" type="text/javascript"></script>
+    <script src="jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="jquery.tablednd.js" type="text/javascript"></script>
+    <script src="jquery.contextmenu.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="plugins.js"></script>
+    <script type="text/javascript" src="common-2.0.js"></script>
+    <title>Time sheet</title>
+
+    <style>
+        #left-panel1 {
+            position: relative;
+            width: 600px;
+            float: left;
+        }
+
+        #right-panel1 {
+            position: relative;
+            width: 500px;
+            float: right;
+        }
+    </style>
+
+</head>
+<body style="margin: 10px">
+
+    <form id="liveqform">
+        <input type="hidden" id="formtype" name="formtype" value="TIMESHEET" />
+
+        <div style="width: 1100px; clear: both; float: left">
+
+            <!--Inspector Details Panel-->
+            <div id="left-panel1">
+                <h2>NIFCC Time Sheet</h2>
+                <p>Week Number <span id="weekno"></span></p>
+                <p><span id="status"></span>-Time Inspector</p>
+                <input type="hidden" id="InspectorStatus" name="Inspector Status" />
+                <input type="hidden" id="Week_No" name="Week No" />
+                <!--Inspector Name-->
+                <p>
+                    <span style="width: 250px; float: left;">Inspector Name :</span>
+                    <input id="InspectorName" name="Inspector Name" />
+                </p>
+                <!--Staff No-->
+                <p>
+                    <span style="width: 250px; float: left;">Staff No :</span>
+                    <input id="StaffNo" name="Staff No" />
+                </p>
+                <!--Vehicle Reg-->
+                <p>
+                    <span style="width: 250px; float: left;">Vehicle Reg :</span>
+                    <input id="VehicleReg" name="Vehicle Reg" />
+                </p>
+                <!--Mileage Brought Forward-->
+                <p>
+                    <span style="width: 250px; float: left;">Mileage Brought Forward:</span>
+                    <input id="CumulativeMiles" name="CumulativeMiles" />
+                </p>
+                <!--Total Mileage on Submission-->
+                <p>
+                    <span style="width: 250px; float: left;">Total Mileage on Submission:</span>
+                    <input id="newTotalMiles" name="newTotalMiles" readonly="true" />
+                </p>
+                <!--Start Date (Monday)-->
+                <p>
+                    <span style="width: 250px; float: left;">Start Date (Monday):</span>
+                    <input id="StartDate" name="Start Date" readonly="true" />
+                    <input type="button" value="Go" id="callws-btn" />
+
+                </p>
+            </div>
+
+            <!--Times Panel-->
+            <div id="right-panel1">
+
+                <table id="times">
+                    <!--Create Start Time & End Time Columns-->
+                    <tr>
+                        <td></td>
+                        <td><b>Start Time</b></td>
+                        <td><b>End Time</b></td>
+                    </tr>
+                    <!--Monday Column & Times Available-->
+                    <tr>
+                        <td><b>Monday</b></td>
+                        <!--Start Times-->
+                        <td>
+                            <select id="Monday_Start_Time" name="Monday Start Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                        <!--End Times-->
+                        <td>
+                            <select id="Monday_End_Time" name="Monday End Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                    </tr>
+                    <!--Tuesday Column & Times Available-->
+                    <tr>
+                        <td><b>Tuesday</b></td>
+                        <!--Start Times-->
+                        <td>
+                            <select id="Tuesday_Start_Time" name="Tuesday Start Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                        <!--End Times-->
+                        <td>
+                            <select id="Tuesday_End_Time" name="Tuesday End Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                    </tr>
+                    <!--Wednesday Column & Times Available-->
+                    <tr>
+                        <td><b>Wednesday</b></td>
+                        <!--Start Times-->
+                        <td>
+                            <select id="Wednesday_Start_Time" name="Wednesday Start Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                        <!--End Times-->
+                        <td>
+                            <select id="Wednesday_End_Time" name="Wednesday End Time">
+                                <option>Not Working<option></option>
+                                </option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                    </tr>
+                    <!--Thursday Column & Times Available-->
+                    <tr>
+                        <td><b>Thursday</b></td>
+                        <!--Start Times-->
+                        <td>
+                            <select id="Thursday_Start_Time" name="Thursday Start Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                        <!--End Times-->
+                        <td>
+                            <select id="Thursday_End_Time" name="Thursday End Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                    </tr>
+                    <!--Friday Column & Times Available-->
+                    <tr>
+                        <td><b>Friday</b></td>
+                        <!--Start Time-->
+                        <td>
+                            <select id="Friday_Start_Time" name="Friday Start Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                        <!--End Times-->
+                        <td>
+                            <select id="Friday_End_Time" name="Friday End Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                    </tr>
+                    <!--Saturday Column & Times Available-->
+                    <tr>
+                        <td><b>Saturday</b></td>
+                        <!--Start Times-->
+                        <td>
+                            <select id="Saturday_Start_Time" name="Saturday Start Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                        <!--End Times-->
+                        <td>
+                            <select id="Saturday_End_Time" name="Saturday End Time">
+                                <option>Not Working</option>
+                                <option></option>
+                                <option>06:00</option>
+                                <option>06:15</option>
+                                <option>06:30</option>
+                                <option>06:45</option>
+                                <option>07:00</option>
+                                <option>07:15</option>
+                                <option>07:30</option>
+                                <option>07:45</option>
+                                <option>08:00</option>
+                                <option>08:15</option>
+                                <option>08:30</option>
+                                <option>08:45</option>
+                                <option>09:00</option>
+                                <option>09:15</option>
+                                <option>09:30</option>
+                                <option>09:45</option>
+                                <option>10:00</option>
+                                <option>10:15</option>
+                                <option>10:30</option>
+                                <option>10:45</option>
+                                <option>11:00</option>
+                                <option>11:15</option>
+                                <option>11:30</option>
+                                <option>11:45</option>
+                                <option>12:00</option>
+                                <option>12:15</option>
+                                <option>12:30</option>
+                                <option>12:45</option>
+                                <option>13:00</option>
+                                <option>13:15</option>
+                                <option>13:30</option>
+                                <option>13:45</option>
+                                <option>14:00</option>
+                                <option>14:15</option>
+                                <option>14:30</option>
+                                <option>14:45</option>
+                                <option>15:00</option>
+                                <option>15:15</option>
+                                <option>15:30</option>
+                                <option>15:45</option>
+                                <option>16:00</option>
+                                <option>16:15</option>
+                                <option>16:30</option>
+                                <option>16:45</option>
+                                <option>17:00</option>
+                                <option>17:15</option>
+                                <option>17:30</option>
+                                <option>17:45</option>
+                                <option>18:00</option>
+                                <option>18:15</option>
+                                <option>18:30</option>
+                                <option>18:45</option>
+                                <option>19:00</option>
+                                <option>19:15</option>
+                                <option>19:30</option>
+                                <option>19:45</option>
+                                <option>20:00</option>
+                                <option>20:15</option>
+                                <option>20:30</option>
+                                <option>20:45</option>
+                                <option>21:00</option>
+                            </select></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+        <div style="width: 1000px; clear: both; float: left">
+            <table id="list486"></table>
+            <div id="plist486"></div>
+
+            <p>
+                <b>Summary:</b>
+                <div id="summary"></div>
+            </p>
+            <!--Declaration Text and Checkbox-->
+            <p>
+                <b>Declaration by claimant:</b><br />
+
+                I delcare that the details given are correct and that the travelling and incidental expenses have been incurred solely on NIFCC business. I hold a valid Driver's License and my
+motor insurance policy covers the use of my car on official duties. A current insurance certificate has been furnished to NIFCC for all vehicles used by be on NIFCC business.
+                <br />
+                <input type="checkbox" name="Confirm Declaration" id="ConfirmDeclaration" />
+            </p>
+            <!--Add Save button-->
+            <p>
+                <input type="button" value="Save Timesheet" id="save-btn" name="save-btn" />
+            </p>
+        </div>
+
+    </form>
+
+</body>
+
+<script>
+
+    //Calculate the difference in Days, Weeks, Months and Years
+    var DateDiff = {
+
+        inDays: function (d1, d2) {
+            var t2 = d2.getTime();
+            var t1 = d1.getTime();
+
+            return parseInt((t2 - t1) / (24 * 3600 * 1000));
+        },
+
+        inWeeks: function (d1, d2) {
+            var t2 = d2.getTime();
+            var t1 = d1.getTime();
+
+            return parseInt((t2 - t1) / (24 * 3600 * 1000 * 7));
+        },
+
+        inMonths: function (d1, d2) {
+            var d1Y = d1.getFullYear();
+            var d2Y = d2.getFullYear();
+            var d1M = d1.getMonth();
+            var d2M = d2.getMonth();
+
+            return (d2M + 12 * d2Y) - (d1M + 12 * d1Y);
+        },
+
+        inYears: function (d1, d2) {
+            return d2.getFullYear() - d1.getFullYear();
+        }
+    }
+
+    
+    Date.prototype.getWeek = function () {
+        var onejan = new Date(this.getFullYear(), 4, 1);
+        return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+    }
+
+
+    //Calculate the week in the year
+    function getWeekNo(mondayDate) {
+        try {
+
+            var d = new Date(mondayDate)
+            var year = d.getFullYear();
+            if (d.getMonth() < 3) {
+                year = year - 1;
+            }
+            var onejan = new Date(year, 3, 1);
+            return DateDiff.inWeeks(onejan, mondayDate) + 1;
+        } catch (e) { alert(e); }
+    }
+
+
+
+
+
+    var grid = $("#list486");
+
+    function processTable(jsonString, map) {
+        //clear table
+
+        grid.jqGrid('clearGridData');
+        var data = jQuery.parseJSON(jsonString);
+
+        //var num = grid.jqGrid.getDataIDs();
+        //if (num == "") {
+        //    num = 0;
+        //}
+        num = 0;
+
+        rowIndex = parseInt(num) + 1;
+
+
+        for (var i = 0; i < data.Table.length; i++) {
+            var row = data.Table[i];
+            //add data
+
+            var datarow = { "ROWID": row.ROWID, "XMLID": row.XMLID, "Day": row.Day, "Date": row.Date, "Task": row.Task, "Start Time": row["Start Time"], "End Time": row["End Time"], "Scheme": row.Scheme, "Ref No": row["Ref No"], "Surname": row.Surname, "Miles": row.Miles, "Postcode": row.Postcode, "Complete": row.Complete, "Linked": row.Linked };
+
+            try {
+                var su = grid.jqGrid('addRowData', rowIndex, datarow);
+            } catch (e) {
+                alert(e.Message); //works
+            }
+
+            if (row.Day == "1. Monday" && row.Task != "Not working") {
+                $("#Monday_Start_Time").val("");
+                $("#Monday_End_Time").val("");
+            }
+            if (row.Day == "2. Tuesday" && row.Task != "Not working") {
+                $("#Tuesday_Start_Time").val("");
+                $("#Tuesday_End_Time").val("");
+            }
+            if (row.Day == "3. Wednesday" && row.Task != "Not working") {
+                $("#Wednesday_Start_Time").val("");
+                $("#Wednesday_End_Time").val("");
+            }
+            if (row.Day == "4. Thursday" && row.Task != "Not working") {
+                $("#Thursday_Start_Time").val("");
+                $("#Thursday_End_Time").val("");
+            }
+            if (row.Day == "5. Friday" && row.Task != "Not working") {
+                $("#Friday_Start_Time").val("");
+                $("#Friday_End_Time").val("");
+            }
+            if (row.Day == "6. Saturday" && row.Task != "Not working") {
+                $("#Saturday_Start_Time").val("");
+                $("#Saturday_End_Time").val("");
+            }
+
+
+            rowIndex = rowIndex + 1;
+        }
+
+        grid.trigger("reloadGrid", [{ current: true }]);
+    }
+
+
+
+    function onlyMondays(date) {
+        if (date.getDay() == 1) {
+            return [true];
+        }
+        else {
+            return [false];
+        }
+    }
+
+    var milesBF = 0;
+
+    $(document).ready(function () {
+
+
+
+
+        window.CallWebservice("getInspector", "getInspector", function (result) {
+
+            var data = jQuery.parseJSON(result).Table[0];
+            $("#InspectorName").val(data.Name);
+            $("#StaffNo").val(data.StaffNo);
+            $("#status").text(data.Status);
+            $("#InspectorStatus").val(data.Status);
+            //$("#CumulativeMiles").val(data.TotalMiles);
+            // milesBF = parseInt(data.TotalMiles);
+
+
+
+        }, function (error) { alert(error); });
+
+
+
+        ///////////////////
+        ///SUBMIT
+        ///////////////////
+        $("#save-btn").bind("click", function (e) {
+
+            //validation
+            if ($("#InspectorName").val() == "") {
+                alert("Please enter your name");
+                return;
+            }
+            if ($("#StaffNo").val() == "") {
+                alert("Please enter your staff number");
+                return;
+            }
+            if ($("#VehicleReg").val() == "") {
+                alert("Please enter your vehicle registration number");
+                return;
+            }
+            if ($("#StartDate").val() == "") {
+                alert("Please select a start date");
+                return;
+            }
+            if ($("#Monday_Start_Time").val() == "") {
+                alert("Please enter Monday start time");
+                return;
+            }
+            if ($("#Monday_End_Time").val() == "") {
+                alert("Please enter Monday end time");
+                return;
+            }
+            if ($("#Tuesday_Start_Time").val() == "") {
+                alert("Please enter Tuesday start time");
+                return;
+            }
+            if ($("#Tuesday_End_Time").val() == "") {
+                alert("Please enter Tuesday end time");
+                return;
+            }
+            if ($("#Wednesday_Start_Time").val() == "") {
+                alert("Please enter Wednesday start time");
+                return;
+            }
+            if ($("#Wednesday_End_Time").val() == "") {
+                alert("Please enter Wednesday end time");
+                return;
+            }
+            if ($("#Thursday_Start_Time").val() == "") {
+                alert("Please enter Thursday start time");
+                return;
+            }
+            if ($("#Thursday_End_Time").val() == "") {
+                alert("Please enter Thursday end time");
+                return;
+            }
+            if ($("#Friday_Start_Time").val() == "") {
+                alert("Please enter Friday start time");
+                return;
+            }
+            if ($("#Friday_End_Time").val() == "") {
+                alert("Please enter Friday end time");
+                return;
+            }
+            if ($("#Saturday_Start_Time").val() == "") {
+                alert("Please enter Saturday start time");
+                return;
+            }
+            if ($("#Saturday_End_Time").val() == "") {
+                alert("Please enter Saturday end time");
+                return;
+            }
+            if ($("#ConfirmDeclaration").prop('checked') != true) {
+                alert("Check the declaration confirmation");
+                return;
+            }
+
+            var agree = confirm("Are you sure you want to submit this timesheet?");
+            if (!agree)
+                return false;
+            else {
+
+                var json = $('#liveqform').serializeObjectwithGrid();
+
+                var jsonString = JSON.stringify(json);
+
+                window.saveFile(jsonString, saveguid, function (result) { alert("Timesheet Submitted"); window.closeHostWindow(); }, function (e) { alert(e) });
+
+            }
+
+        });
+        ///////////////////
+        ///END SUBMIT
+        ///////////////////
+
+        //             try{
+        //             window.getSystemValue("Username", function (result) { $("#InspectorName").val(jQuery.parseJSON(result).Table[0].value);  }, function (e) { alert(e) } );
+        //             }
+        //             catch(e)
+        //             {
+        //             alert(e);
+        //             }
+
+        //Set StartDate to only allow Mondays
+        $("#StartDate").datepicker({ dateFormat: 'dd-mm-yy', beforeShowDay: onlyMondays });
+
+
+
+        $("#callws-btn").bind("click", function (e) {
+
+            var from = $("#StartDate").val().split("-");
+            var selDate = new Date(from[2], from[1] - 1, from[0]);
+            var weekNumber = getWeekNo(selDate);
+
+            $("#weekno").text(weekNumber);
+            $("#Week_No").val(weekNumber);
+
+            callWS("getWorkSheet", "StartDate", "Daily", "", "");
+
+
+            try {
+                $.ajax({
+                    type: "GET",
+                    // contentType: "application/json",
+                    url: "http://www.live-q.com/nifcc_totalMileage.aspx?staffNo=" + $("#StaffNo").val() + "&weekno=" + weekNumber,
+                    dataType: "json",
+                    success: function (response) {
+
+
+                        milesBF = parseInt(response.miles);
+                        $("#CumulativeMiles").val(milesBF);
+
+                    },
+                    error: function (result) { alert(JSON.stringify(result)); }
+                });
+            }
+            catch (e)
+            { alert(e); }
+
+
+        });
+
+
+
+
+
+        function callWS(webservice, param, sendmap, onerror, sql) {
+            //create json
+
+            var jsonstring = "{";
+            var arrParam = param.split('|');
+            for (var p = 0; p < arrParam.length; p++) {
+                var value = getValue(arrParam[p]);
+                jsonstring = jsonstring + " \"" + arrParam[p] + "\" : \"" + value + "\"";
+                if (p < arrParam.length - 1) {
+                    jsonstring = jsonstring + ","
+                }
+            }
+            jsonstring = jsonstring + "}";
+
+            window.CallWebservice(webservice, jsonstring, function (result) { processTable(result, ""); }, function (error) { if (sql != "") { runQuery(sql, param, sendmap); } if (onerror != "") { eval(onerror); } });
+
+        }
+
+
+
+
+        var lastSel;
+
+        var onclickSubmitLocal = function (options, postdata) {
+            var grid_p = grid[0].p,
+                idname = grid_p.prmNames.id,
+                grid_id = grid[0].id,
+                id_in_postdata = grid_id + "_id",
+                rowid = postdata[id_in_postdata],
+                addMode = rowid === "_empty",
+                oldValueOfSortColumn;
+
+            // postdata has row id property with another name. we fix it:
+            if (addMode) {
+                // generate new id
+                var new_id = grid_p.records + 1;
+                while ($("#" + new_id).length !== 0) {
+                    new_id++;
+                }
+                postdata[idname] = String(new_id);
+            } else if (typeof (postdata[idname]) === "undefined") {
+                // set id property only if the property not exist
+                postdata[idname] = rowid;
+            }
+            delete postdata[id_in_postdata];
+
+            // prepare postdata for tree grid
+            if (grid_p.treeGrid === true) {
+                if (addMode) {
+                    var tr_par_id = grid_p.treeGridModel === 'adjacency' ? grid_p.treeReader.parent_id_field : 'parent_id';
+                    postdata[tr_par_id] = grid_p.selrow;
+                }
+
+                $.each(grid_p.treeReader, function (i) {
+                    if (postdata.hasOwnProperty(this)) {
+                        delete postdata[this];
+                    }
+                });
+            }
+
+            // decode data if there encoded with autoencode
+            if (grid_p.autoencode) {
+                $.each(postdata, function (n, v) {
+                    postdata[n] = $.jgrid.htmlDecode(v); // TODO: some columns could be skipped
+                });
+            }
+
+            // save old value from the sorted column
+            oldValueOfSortColumn = grid_p.sortname === "" ? undefined : grid.jqGrid('getCell', rowid, grid_p.sortname);
+
+            // save the data in the grid
+            if (grid_p.treeGrid === true) {
+                if (addMode) {
+                    grid.jqGrid("addChildNode", rowid, grid_p.selrow, postdata);
+                } else {
+                    grid.jqGrid("setTreeRow", rowid, postdata);
+                }
+            } else {
+                if (addMode) {
+
+                    grid.jqGrid("addRowData", rowid, postdata, options.addedrow);
+                } else {
+                    grid.jqGrid("setRowData", rowid, postdata);
+                }
+            }
+
+            if ((addMode && options.closeAfterAdd) || (!addMode && options.closeAfterEdit)) {
+                // close the edit/add dialog
+                $.jgrid.hideModal("#editmod" + grid_id,
+                                  { gb: "#gbox_" + grid_id, jqm: options.jqModal, onClose: options.onClose });
+            }
+
+            //if (postdata[grid_p.sortname] !== oldValueOfSortColumn) {
+            // if the data are changed in the column by which are currently sorted
+            // we need resort the grid
+            setTimeout(function () {
+                grid.trigger("reloadGrid", [{ current: true }]);
+                calculateTotal();
+            }, 100);
+            //}
+
+            // !!! the most important step: skip ajax request to the server
+            this.processing = true;
+            return {};
+        },
+ editSettings = {
+     //recreateForm:true,
+     viewPagerButtons: false,
+     jqModal: true,
+     reloadAfterSubmit: true,
+     closeOnEscape: true,
+     savekey: [true, 13],
+     closeAfterEdit: true,
+     onclickSubmit: onclickSubmitLocal
+ },
+ addSettings = {
+     //recreateForm:true,
+     jqModal: true,
+     reloadAfterSubmit: true,
+     savekey: [true, 13],
+     closeOnEscape: true,
+     closeAfterAdd: true,
+     onclickSubmit: onclickSubmitLocal
+ },
+ delSettings = {
+
+     // because I use "local" data I don't want to send the changes to the server
+     // so I use "processing:true" setting and delete the row manually in onclickSubmit
+     onclickSubmit: function (options) { //, rowid) {
+         var grid_id = grid[0].id,
+             grid_p = grid[0].p,
+             newPage = grid_p.page,
+             rowids = grid_p.multiselect ? grid_p.selarrrow : [grid_p.selrow];
+
+         // reset the value of processing option to true
+         // because the value can be changed by jqGrid
+         options.processing = true;
+
+         // delete selected row/rows (multiselect:true)
+         $.each(rowids, function () {
+             //grid.jqGrid('delGridRow', this, { reloadAfterSubmit: false });
+             data = grid.jqGrid('getGridParam', 'data'),
+             index = grid.jqGrid('getGridParam', '_index');
+             itemIndex = index[this];
+             data.splice(itemIndex, 1);
+         });
+         // delete the row
+
+         $.jgrid.hideModal("#delmod" + grid_id,
+                           { gb: "#gbox_" + grid_id, jqm: options.jqModal, onClose: options.onClose });
+
+         //if (grid_p.lastpage > 1) {// on the multipage grid reload the grid
+         //    if (grid_p.reccount === 0 && newPage === grid_p.lastpage) {
+         //        // if after deliting there are no rows on the current page
+         //        // which is the last page of the grid
+         //        newPage--; // go to the previous page
+         //    }
+         //    // reload grid to make the row from the next page visable.
+         //    grid.trigger("reloadGrid", [{ page: newPage }]);
+         //}
+
+         grid.trigger("reloadGrid");
+         calculateTotal();
+         return true;
+     },
+     processing: true,
+     afterComplete: function () { calculateTotal(); },
+ },
+ initDateEdit = function (elem) {
+     setTimeout(function () {
+         $(elem).datepicker({
+             dateFormat: 'dd-mm-yy',
+             autoSize: false,
+             // showOn: 'button', // it dosn't work in searching dialog
+             changeYear: true,
+             changeMonth: true,
+             showButtonPanel: true,
+             showWeek: true
+         });
+         //$(elem).focus();
+     }, 100);
+ },
+ initDateSearch = function (elem) {
+     setTimeout(function () {
+         $(elem).datepicker({
+             dateFormat: 'dd-mm-yy',
+             autoSize: true,
+             //showOn: 'button', // it dosn't work in searching dialog
+             changeYear: true,
+             changeMonth: true,
+             showButtonPanel: true,
+             showWeek: true
+         });
+         //$(elem).focus();
+     }, 100);
+ };
+
+
+
+
+
+        calculateTotal = function () {
+            var obj = {};
+            var totalMiles = 0
+            var totalIncidental = 0;
+
+            var i = getColumnIndexByName(grid, 'Miles');
+
+            $("tbody > tr.jqgrow > td:nth-child(" + (i + 1) + ")", grid[0]).each(function () { totalMiles += Number(getTextFromCell(this)); });
+
+
+            var i = getColumnIndexByName(grid, 'Incidental');
+
+            $("tbody > tr.jqgrow > td:nth-child(" + (i + 1) + ")", grid[0]).each(function () { totalIncidental += Number(getTextFromCell(this)); });
+
+            grid.jqGrid('footerData', 'set', { "End Time": "TOTAL", "Miles": totalMiles, "Complete": "TOTAL", "Incidental": totalIncidental });
+
+
+            $("#newTotalMiles").val(totalMiles); //milesBF
+
+            var i = getColumnIndexByName(grid, 'Scheme');
+
+            $("tbody > tr.jqgrow > td:nth-child(" + (i + 1) + ")", grid[0]).each(function () {
+
+                var BRCRef = "";
+                var oldBRCRef = "";
+                if (getTextFromCell(this) != undefined) {
+                    var value = getTextFromCell(this)
+                    var Completed = $(this).closest("tr.jqgrow").children().eq(14).html();
+
+                    if (Completed == '<input type="checkbox" checked="checked" value="yes" offval="no" disabled="disabled">' || value == "BRC Food") {
+                        if ($(this).closest("tr.jqgrow").children().eq(13).html() == "Yes") {
+                            value = value + " Linked";
+                        }
+                        if (value == "FFG Tesco" || value == "ABP Trad" || value == "M+S Linden" || value == "M+S Omagh" || value == "AAQB" || value == "Poultry MPHW") {
+                            value = "Supplementaries";
+                        }
+
+                        if (value == "BRC Food") {
+                            BRCRef = $(this).closest("tr.jqgrow").children().eq(11).html();
+                            if (BRCRef != oldBRCRef) {
+                                value = value + " " + BRCRef;
+                                if (!obj.hasOwnProperty(value)) {
+                                    obj[value] = 1;
+                                }
+                                else {
+                                    obj[value] = obj[value] + 1;
+                                }
+                            }
+
+                            oldBRCRef = BRCRef;
+                        }
+                        else {
+                            if (!obj.hasOwnProperty(value)) {
+                                obj[value] = 1;
+                            }
+                            else {
+                                obj[value] = obj[value] + 1;
+                            }
+                        }
+                    }
+                }
+            });
+
+            //                     if (getTextFromCell(this) != undefined) {
+            //                         var value = getTextFromCell(this)
+
+            //                         if ($(this).closest("tr.jqgrow").children().eq(13).html() == "Yes") {
+            //                             value = value + " Linked";
+            //                         }
+            //                         if (!obj.hasOwnProperty(value)) {
+            //                             obj[value] = 1;
+            //                         }
+            //                         else {
+            //                             obj[value] = obj[value] + 1;
+            //                         }
+            //                     }
+            //                 });
+
+
+
+
+
+            //set table
+            var html = "";
+            var totalIns = 0;
+            var i = 0;
+            for (var prop in obj) {
+                if (obj.hasOwnProperty(prop)) {
+
+
+                    if (String(prop).length > 2) {
+                        html += prop + ":" + obj[prop] + "<br/>";
+                        totalIns = totalIns + obj[prop];
+                    }
+
+                    i++;
+                }
+
+            }
+            html += "<b>Total: " + totalIns + "</b>";
+            $('#summary').html(html);
+        };
+
+        //{ viewPagerButtons: false }
+        grid.jqGrid({
+            //data: mydata,
+            datatype: "local",
+            rowNum: 150,
+            colNames: ['ROWID', 'XMLID', 'Day', 'Date', 'Task', 'Start Time', 'End Time', 'Miles', 'Notes', 'Scheme', 'Ref No', 'Surname', 'Postcode', 'Linked', 'Complete', 'Incidental', 'Desc'],
+            colModel: [
+                     { name: 'ROWID', index: 'ROWID', width: 1, editable: false, sorttype: "int" },
+               { name: 'XMLID', index: 'XMLID', width: 1, editable: false, sorttype: "int" },
+               { name: 'Day', index: 'Day', width: 100, editable: true, sorttype: "text", edittype: "select", editoptions: { value: "1. Monday:Monday;2. Tuesday:Tuesday;3. Wednesday:Wednesday;4. Thursday:Thursday;5. Friday:Friday;6. Saturday:Saturday;7. Sunday:Sunday" } },
+               {
+                   name: 'Date', index: 'Date', width: 90, editable: true, sorttype: 'date',
+                   formatter: 'date', formatoptions: { newformat: 'd-m-Y' }, editable: true, datefmt: 'dd-mm-yy',
+                   editoptions: { dataInit: initDateEdit }, editrules: { required: true }
+               },
+               { name: 'Task', index: 'Task', width: 140, editable: true, sorttype: "text", edittype: "select", editoptions: { value: "Not Working:Not Working;Inspection:Inspection;Annual Leave Full Day:Annual Leave Full Day;Annual Leave Half Day:Annual Leave Half Day;Annual Leave Quarter Day:Annual Leave Quarter Day;Public Holiday:Public Holiday;Unpaid Leave:Unpaid Leave;Working in HQ:Working in HQ;Meeting at HQ:Meeting at HQ;Training Full Day:Training Full Day;Training Half Day:Training Half Day;Sick Leave:Sick Leave;Personnel Leave:Personnel Leave;Travel Food Audit:Travel Food Audit;Working from Home:Working from Home;Mileage to HQ:Mileage to HQ" } },
+               { name: 'Start Time', index: 'Start Time', width: 70, editable: true, sorttype: "time", formatter: "time" },
+               { name: 'End Time', index: 'End Time', width: 70, editable: true, sorttype: "time", formatter: "time" },
+               { name: 'Miles', index: 'Miles', width: 60, editable: true, sorttype: "int", formatter: "number", summaryType: 'sum', summaryTpl: '<b>{0}</b>' },
+               { name: 'Notes', index: 'Notes', width: 90, editable: true, sorttype: "text" },
+               { name: 'Scheme', index: 'Scheme', width: 90, editable: true, sorttype: "text", edittype: "select", editoptions: { value: ":;FQAS:FQAS;FQACS:FQACS;Dairy:Dairy;ABP Trad:ABP Trad;FFG Tesco:FFG Tesco;LTS:LTS;M+S Linden:M+S Linden;M+S Omagh:M+S Omagh;AAQB:AAQB;LMS:LMS;Poultry-MPHW:Poultry-MPHW;Poultry-BL:Poultry-BL;Poultry-BR:Poultry-BR;Poultry-B:Poultry-B;Poultry-FRB:Poultry-FRB;Poultry MPHW:Poultry MPHW;Poultry BL:Poultry BL;Poultry BR:Poultry BR;Poultry B:Poultry B;Poultry FRB:Poultry FRB;TASCC Haulage (NI):TASCC Haulage (NI);TASCC Haulage (ROI):TASCC Haulage (ROI);TASCC Storage:TASCC Storage;TASCC Testing:TASCC Testing;BRC Food:BRC Food;BRC Storage and Distribution:BRC Storage and Distribution;RT Meat Processing:RT Meat Processing;RT Pigs:RT Pigs;Beef Labelling:Beef Labelling;CG Oats:CG Oats" } },
+               { name: 'Ref No', index: 'Ref No', width: 80, editable: true, sorttype: "text" },
+               { name: 'Surname', index: 'Surname', width: 90, editable: true, sorttype: "text" },
+               { name: 'Postcode', index: 'Postcode', width: 80, editable: true, sorttype: "text" },
+                { name: 'Linked', index: 'Linked', width: 60, editable: true, sorttype: "text" },
+               {
+                   name: 'Complete', index: 'Complete', width: 50, editable: true, formatter: 'checkbox',
+                   edittype: 'checkbox', editoptions: { value: 'Yes:No', defaultValue: 'No' }
+               },
+               { name: 'Incidental', index: 'Incidental', width: 80, editable: true, sorttype: "int", formatter: "number", summaryType: 'sum', summaryTpl: '<b>{0}</b>' },
+               { name: 'Desc', index: 'Desc', width: 100, editable: true, sorttype: "text" }
+            ],
+            pager: "#plist486",
+            multiSort: true,
+            sortname: "ROWID, Day",
+            sortorder: 'asc',
+            grouping: true,
+            groupingView: {
+
+                groupDataSorted: true,
+                groupField: ['Day'],
+                groupOrder: ['asc'],
+                groupSummary: [true],
+                groupColumnShow: [true],
+                groupText: ['<b>{0}</b>'],
+
+
+            },
+            caption: "Time Sheet",
+            height: '100%',
+            footerrow: true,
+            gridComplete: function () { calculateTotal(); },
+            editurl: 'clientArray',
+            ondblClickRow: function (rowid, ri, ci) {
+                var p = grid[0].p;
+                if (p.selrow !== rowid) {
+                    // prevent the row from be unselected on double-click
+                    // the implementation is for "multiselect:false" which we use,
+                    // but one can easy modify the code for "multiselect:true"
+                    grid.jqGrid('setSelection', rowid);
+                }
+                grid.jqGrid('editGridRow', rowid, editSettings);
+            },
+            onSelectRow: function (id) {
+                if (id && id !== lastSel) {
+                    // cancel editing of the previous selected row if it was in editing state.
+                    // jqGrid hold intern savedRow array inside of jqGrid object,
+                    // so it is safe to call restoreRow method with any id parameter
+                    // if jqGrid not in editing state
+                    if (typeof lastSel !== "undefined") {
+                        grid.jqGrid('restoreRow', lastSel);
+                    }
+                    lastSel = id;
+                }
+            }
+        }).jqGrid('navGrid', '#plist486', {}, editSettings, addSettings, delSettings,
+                  {
+                      multipleSearch: true, overlay: false,
+                      onClose: function (form) {
+                          // if we close the search dialog during the datapicker are opened
+                          // the datepicker will stay opened. To fix this we have to hide
+                          // the div used by datepicker
+                          $("div#ui-datepicker-div.ui-datepicker").hide();
+                      }
+                  });
+
+
+        //jQuery("#list486").jqGrid('navGrid', "#plist486", { edit: true, add: true, del: true, search: false});
+
+
+    });
+
+</script>
+</html>
