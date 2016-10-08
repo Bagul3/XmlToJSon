@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace XMLToJson.Models
 {
-    class Section
+    [XmlRoot("section")]
+    public class Section
     {
-        int Id { get; set; }
-        string Freq { get; set; }    
-        SectionAttributes[] SectionAttributes { get; set; }    
+        [XmlAttribute("freq")]
+        public string freq { get; set; }
+        [XmlAttribute("colour")]
+        public string colour { get; set; }
+
+        [XmlArray("fields")]
+        [XmlArrayItem("field")]
+        public List<FieldAttributes> FormAttributes { get; set; }           
     }
 }
