@@ -18,8 +18,8 @@ namespace XMLToJson
 
         public static void XMLParser()
         {
-            List<KeyValuePair<string, List<KeyValuePair<string, dynamic>>>> results =  ActionValues(@"C:\Users\Conor\Desktop\sections.xml");
-            var result2 = GetAttributes(results.ElementAt(0).Value.ElementAt(0));
+            var results =  ActionValues(@"C:\Users\ConorShannon\Desktop\sections.xml");
+            GetAttributes(results);
         }
 
         public static List<KeyValuePair<string, List<KeyValuePair<string, dynamic>>>> ActionValues(string xmlPath)
@@ -36,7 +36,7 @@ namespace XMLToJson
                         IEnumerable<XmlNode> xmlNodes = childNode2.ChildNodes.Cast<XmlNode>();
                         List<KeyValuePair<string, object>> keyValuePairList2 = new List<KeyValuePair<string, object>>();
                         foreach (XmlNode xmlNode in xmlNodes)
-                            keyValuePairList2.Add(new KeyValuePair<string, object>(xmlNode.Name + "," + xmlNode.Attributes, (object)xmlNode));
+                            keyValuePairList2.Add(new KeyValuePair<string, object>(xmlNode.Name, (object)xmlNode));
                         keyValuePairList1.Add(new KeyValuePair<string, List<KeyValuePair<string, object>>>(childNode2.Name, keyValuePairList2));
                     }
                 }
@@ -44,9 +44,36 @@ namespace XMLToJson
             return keyValuePairList1;
         }
 
-        private static List<KeyValuePair<string, dynamic>> GetAttributes(KeyValuePair<string, dynamic> properties)
+        private static void GetFields(List<KeyValuePair<string, dynamic>> properties)
         {
-            var xml = properties.Value as XmlText;
+            foreach (var rulesProperties in properties)
+            {
+                switch (rulesProperties.Key)
+                {
+                    case "field":
+                        MapAttributes(rulesProperties);
+                        break;
+                }
+            }
+            
+        }
+
+        public static void GetAttributes(List<KeyValuePair<string, List<KeyValuePair<string, dynamic>>>> properties)
+        {
+            foreach (var rulesProperties in properties)
+            {
+                switch (rulesProperties.Key)
+                {
+                    case "fields":
+                        GetFields(rulesProperties.Value);
+                        break;
+                }
+            }
+        }
+
+        public static List<KeyValuePair<string, dynamic>> MapAttributes(KeyValuePair<string, dynamic> properties)
+        {
+            var xml = properties.Value as XmlElement;
             var doc = new XmlDocument();
             var nodeValues = new List<KeyValuePair<string, dynamic>>();
             var xmlBuilder = "<action>" + xml.InnerXml + "</action>";

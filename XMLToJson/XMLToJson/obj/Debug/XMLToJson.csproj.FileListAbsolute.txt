@@ -5,3 +5,10 @@ c:\users\conor\documents\visual studio 2015\Projects\XMLToJson\XMLToJson\obj\Deb
 c:\users\conor\documents\visual studio 2015\Projects\XMLToJson\XMLToJson\obj\Debug\XMLToJson.exe
 c:\users\conor\documents\visual studio 2015\Projects\XMLToJson\XMLToJson\obj\Debug\XMLToJson.pdb
 C:\Users\Conor\documents\visual studio 2015\Projects\XMLToJson\XMLToJson\bin\Debug\XMLEngine.dll
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.exe.config
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.exe
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.pdb
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.exe
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.pdb
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLEngine.dll
+C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.csprojResolveAssemblyReference.cache
