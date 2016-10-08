@@ -1,0 +1,29 @@
+<section>
+      <name freq="once" colour="#A0ACFC">Farm Details</name>
+      <fields>
+        <field title=" " type="info">
+        </field>
+        <field title="Enterprise Type" type="info">
+        </field>
+        <field title="Grain sold off combine (at harvest)" type="checkbox">
+        </field>
+        <field title="Grain stored for use on farm" type="checkbox">
+        </field>
+        <field title="Grain stored for future trading" type="checkbox">
+        </field>
+        <field title="Some grain stored and sold (BOTH)" type="checkbox">
+        </field>
+        <field title=" " type="info">
+        </field>
+		<field title="Is a contractor used for harvesting?" type="boolean">
+        </field>
+		<field title="Is a grain drier used?" type="boolean">
+        </field>
+		<field title="Is grain stored on farm?" type="boolean">
+        </field>
+		<field title="Are any post harvest grain treatments used?" type="boolean">
+        </field>
+		<field title="Is any grain sold?" type="boolean">
+        </field>
+      </fields>
+    </section>

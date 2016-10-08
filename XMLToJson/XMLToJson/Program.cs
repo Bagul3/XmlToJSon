@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using XMLEngine;
 
 namespace XMLToJson
 {
@@ -17,20 +18,46 @@ namespace XMLToJson
 
         public static void XMLParser()
         {
-            string xmlFile = File.ReadAllText(@"C:\Users\Conor\Desktop\NIFCC\FQAS\FQAS Inspection Checklist.xml");
-            XmlDocument xmldoc = new XmlDocument();
-            xmldoc.LoadXml(xmlFile);
-            XmlNodeList nodeList = xmldoc.ChildNodes;
-            string Short_Fall = string.Empty;
-            foreach (XmlNode node in nodeList)
+            List<KeyValuePair<string, List<KeyValuePair<string, dynamic>>>> results =  ActionValues(@"C:\Users\Conor\Desktop\sections.xml");
+            var result2 = GetAttributes(results.ElementAt(0).Value.ElementAt(0));
+        }
+
+        public static List<KeyValuePair<string, List<KeyValuePair<string, dynamic>>>> ActionValues(string xmlPath)
+        {
+            List<KeyValuePair<string, List<KeyValuePair<string, object>>>> keyValuePairList1 = new List<KeyValuePair<string, List<KeyValuePair<string, object>>>>();
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(xmlPath);
+            foreach (XmlNode childNode1 in xmlDocument.ChildNodes)
             {
-               foreach(XmlElement x in node)
+                if (childNode1.Name.Equals("section"))
                 {
-                    Console.WriteLine(x.HasAttributes);
+                    foreach (XmlNode childNode2 in childNode1.ChildNodes)
+                    {
+                        IEnumerable<XmlNode> xmlNodes = childNode2.ChildNodes.Cast<XmlNode>();
+                        List<KeyValuePair<string, object>> keyValuePairList2 = new List<KeyValuePair<string, object>>();
+                        foreach (XmlNode xmlNode in xmlNodes)
+                            keyValuePairList2.Add(new KeyValuePair<string, object>(xmlNode.Name + "," + xmlNode.Attributes, (object)xmlNode));
+                        keyValuePairList1.Add(new KeyValuePair<string, List<KeyValuePair<string, object>>>(childNode2.Name, keyValuePairList2));
+                    }
                 }
             }
+            return keyValuePairList1;
+        }
 
-            Console.Read();
+        private static List<KeyValuePair<string, dynamic>> GetAttributes(KeyValuePair<string, dynamic> properties)
+        {
+            var xml = properties.Value as XmlText;
+            var doc = new XmlDocument();
+            var nodeValues = new List<KeyValuePair<string, dynamic>>();
+            var xmlBuilder = "<action>" + xml.InnerXml + "</action>";
+            doc.LoadXml(xmlBuilder);
+            foreach (XmlNode xmlProperties in doc.ChildNodes)
+            {
+                var nodes = xmlProperties.ChildNodes.Cast<XmlNode>();
+                foreach (var node in nodes)
+                    nodeValues.Add(new KeyValuePair<string, dynamic>(node.Name, node.InnerText));
+            }
+            return nodeValues;
         }
     }
 }
