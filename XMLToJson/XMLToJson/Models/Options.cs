@@ -7,9 +7,11 @@ using System.Xml.Serialization;
 
 namespace XMLToJson.Models
 {
-    public class Field
+    public class Options
     {
-        [XmlElement("field")]
-        public FieldAttributes fieldattributes { get; set; }       
+        [XmlAttribute("nc")]
+        public string Nc { get; set; }
+        [XmlText]
+        public string Value { get; set; }
     }
 }

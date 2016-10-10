@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace XMLToJson.Models
 {
-    class Form
+    public class Form
     {
+        [XmlElement("section")]
+        public Section[] sections { get; set; }
     }
 }

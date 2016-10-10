@@ -7,9 +7,10 @@ using System.Xml.Serialization;
 
 namespace XMLToJson.Models
 {
-    public class Field
+    [XmlRoot("QAConfig")]
+    public class QAConfig
     {
-        [XmlElement("field")]
-        public FieldAttributes fieldattributes { get; set; }       
+        [XmlElement("form")]
+        public Form Form { get; set; }
     }
 }

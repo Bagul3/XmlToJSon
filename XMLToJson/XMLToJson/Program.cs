@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,9 @@ using System.Xml;
 using System.Xml.Serialization;
 using XMLEngine;
 using XMLToJson.Models;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
 
 namespace XMLToJson
 {
@@ -19,86 +23,99 @@ namespace XMLToJson
         }
 
         public static void XMLParser()
-        {
-            //var results =  ActionValues(@"C:\Users\ConorShannon\Desktop\sections.xml");
-            //GetAttributes(results);
-            
-            var serializer = new XmlSerializer(typeof(Section));
-            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Desktop\sections.xml"))
+        {            
+            var serializer = new XmlSerializer(typeof(QAConfig));
+            QAConfig form;
+            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Contract-Work\XmlToJSon\FQAS\FQAS Inspection Checklist.xml"))
             {
-                Section section = (Section)serializer.Deserialize(reader);
-                List<FieldAttributes> attributes = section.FormAttributes;
+                form = (QAConfig)serializer.Deserialize(reader);
             }
+            
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            string json = JsonConvert.SerializeObject(form.Form, Newtonsoft.Json.Formatting.Indented);
+            JToken tokenJson = JToken.Parse(json.Trim());
+            json = Regex.Unescape(json);
+            StringBuilder formJson = new StringBuilder("[");
+            formJson.Append(GetForm(form.Form));
+            formJson.Append(GetSections(form.Form));
+            formJson.Append("]");
         }
 
-        //public static List<KeyValuePair<XmlNode, List<KeyValuePair<XmlNode, dynamic>>>> ActionValues(string xmlPath)
-        //{
-        //    List<KeyValuePair<XmlNode, List<KeyValuePair<XmlNode, object>>>> keyValuePairList1 = new List<KeyValuePair<XmlNode, List<KeyValuePair<XmlNode, object>>>>();
-        //    XmlDocument xmlDocument = new XmlDocument();
-        //    xmlDocument.Load(xmlPath);
-        //    foreach (XmlNode childNode1 in xmlDocument.ChildNodes)
-        //    {
-        //        if (childNode1.Name.Equals("section"))
-        //        {
-        //            foreach (XmlNode childNode2 in childNode1.ChildNodes)
-        //            {
-        //                IEnumerable<XmlNode> xmlNodes = childNode2.ChildNodes.Cast<XmlNode>();
-        //                List<KeyValuePair<XmlNode, object>> keyValuePairList2 = new List<KeyValuePair<XmlNode, object>>();
-        //                foreach (XmlNode xmlNode in xmlNodes)
-        //                    keyValuePairList2.Add(new KeyValuePair<XmlNode, object>(xmlNode, (object)xmlNode.InnerText));
-        //                keyValuePairList1.Add(new KeyValuePair<XmlNode, List<KeyValuePair<XmlNode, object>>>(childNode2, keyValuePairList2));
-        //            }
-        //        }
-        //    }
-        //    return keyValuePairList1;
-        //}
+        public static StringBuilder GetSections(Form form)
+        {
+            StringBuilder buildSections = new StringBuilder("");
+            Section last = form.sections.Last();
+            foreach(Section section in form.sections)
+            {
+                ActualSection actualSection = new ActualSection(section);
 
-        //private static void GetFields(List<KeyValuePair<XmlNode, dynamic>> properties)
-        //{
-        //    foreach (var rulesProperties in properties)
-        //    {
-        //        switch (rulesProperties.Key.Name)
-        //        {
-        //            case "field":
-        //                MapAttributes(rulesProperties);
-        //                break;
-        //        }
-        //    }
-            
-        //}
+                if (!section.Equals(last))
+                {
+                    buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(actualSection)) + ",");
+                    FieldAttributes lastField = new FieldAttributes();
+                    if (section.field.Count != 0)
+                    {
+                        lastField = section.field.Last();
+                    }
 
-        //public static void GetAttributes(List<KeyValuePair<XmlNode, List<KeyValuePair<XmlNode, dynamic>>>> properties)
-        //{
-        //    foreach (var rulesProperties in properties)
-        //    {
-        //        switch (rulesProperties.Key.Name)
-        //        {
-        //            case "fields":
-        //                GetFields(rulesProperties.Value);
-        //                break;
-        //        }
-        //    }
-        //}
+                    foreach (FieldAttributes field in section.field)
+                    {
+                        if(!field.Equals(lastField))
+                        {
+                            buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(field)) + ",");
+                        }
+                        else
+                        {
+                            buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(field)) + ",");
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(actualSection)));
+                    FieldAttributes lastField = new FieldAttributes();
+                    if (section.field.Count != 0)
+                    {
+                        lastField = section.field.Last();
+                    }
+                   
+                    foreach (FieldAttributes field in section.field)
+                    {
+                        if (!field.Equals(lastField))
+                        {
+                            buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(field)) + ",");
+                        }
+                        else
+                        {
+                            buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(field)));
+                        }
 
-        //public static List<KeyValuePair<XmlNode, dynamic>> MapAttributes(KeyValuePair<XmlNode, dynamic> properties)
-        //{
-            
-        //    foreach(XmlAttribute attribute in properties.Key.Attributes)
-        //    {
-        //        Console.WriteLine(" " + attribute.Name + " " + " " + attribute.Value);
-        //    }
+                    }
+                }
+            }
+            return buildSections;
+        }
 
-        //    //var doc = new XmlDocument();
-        //    //var nodeValues = new List<KeyValuePair<string, dynamic>>();
-        //    //var xmlBuilder = "<action>" + xml.InnerXml + "</action>";
-        //    //doc.LoadXml(xmlBuilder);
-        //    //foreach (XmlNode xmlProperties in doc.ChildNodes)
-        //    //{
-        //    //    var nodes = xmlProperties.ChildNodes.Cast<XmlNode>();
-        //    //    foreach (var node in nodes)
-        //    //        nodeValues.Add(new KeyValuePair<XmlNode, dynamic>(node, node.InnerText));
-        //    //}
-        //    return null;
-        //}
+        public static StringBuilder GetForm(Form form)
+        {
+            ActualForm formbj = new ActualForm();
+            StringBuilder builderForm = new StringBuilder("");
+            builderForm.Append(Regex.Unescape(JsonConvert.SerializeObject(formbj)));
+            builderForm.Append(",");
+            return builderForm;
+        }
+
+        public static StringBuilder GetField(FieldAttributes field)
+        {
+            StringBuilder buildField = new StringBuilder("");
+            ActualField actualField = new ActualField(field.Title,field.Type);
+            ActualFieldAttributes attributes = new ActualFieldAttributes(field);
+            actualField.attributes = attributes;
+            buildField.Append(Regex.Unescape(JsonConvert.SerializeObject(actualField)));
+            return buildField;
+        }
+
+        
     }
 }
