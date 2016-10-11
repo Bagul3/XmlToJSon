@@ -19,7 +19,6 @@ namespace XMLToJson.Models.IndividualFields.Actual
             caption = listField.caption;
             requiredgroup = listField.requiredgroup;
             required = listField.required;
-            hidden = listField.hidden;
             code = listField.code;
         }
 

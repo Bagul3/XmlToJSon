@@ -218,6 +218,10 @@ namespace XMLToJson.Models
 
         public string upperdatelimit { get; set; }
 
+        public string sql { get; set; }
+
+        public string addtableonselect { get; set; }
+
         private static int idCount { get; set; }
 
         //example

@@ -25,7 +25,7 @@ namespace XMLToJson
         {            
             var serializer = new XmlSerializer(typeof(QAConfig));
             QAConfig form;
-            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Contract-Work\XmlToJSon\FQAS\FQAS Inspection Checklist.xml"))
+            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Contract-Work\XmlToJSon\Livestock Market\Market Scheme Inspection Checklist.xml"))
             {
                 form = (QAConfig)serializer.Deserialize(reader);
             }
@@ -99,6 +99,15 @@ namespace XMLToJson
                                 date.attributes.example = "25/12/2013";
                                 date.attributes.mailmerge = date.caption + " " + date.id;
                                 buildSections.Append(NotLastFieldItem_MapFieldItem(date, lastField));
+                                break;
+                            case "radio":
+                                ActualRadioField radio = new ActualRadioField(field);
+                                ActualRadioFieldAttributes radioattributes = new ActualRadioFieldAttributes(field);
+                                radio.attributes = radioattributes;
+                                radio.name = "radio";
+                                radio.title = "Radio Button Field";
+                                radio.attributes.mailmerge = radio.caption + " " + radio.id;
+                                buildSections.Append(NotLastFieldItem_MapFieldItem(radio, lastField));
                                 break;
                         }                        
                     }
