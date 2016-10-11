@@ -55,17 +55,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.cs" />
-    <Compile Include="Models\ActualField.cs" />
-    <Compile Include="Models\ActualForm.cs" />
-    <Compile Include="Models\ActualFieldAttributes.cs" />
-    <Compile Include="Models\ActualSection.cs" />
-    <Compile Include="Models\Field.cs" />
-    <Compile Include="Models\FieldAttributes.cs" />
-    <Compile Include="Models\Form.cs" />
-    <Compile Include="Models\QAConfig.cs" />
-    <Compile Include="Models\Options.cs" />
-    <Compile Include="Models\Section.cs" />
-    <Compile Include="Models\SectionAttributes.cs" />
+    <Compile Include="Models\IndividualFields\Actual\ActualNumberField.cs" />
+    <Compile Include="Models\IndividualFields\Actual\ActualNumberFieldAttributes.cs" />
+    <Compile Include="Models\Misc\Row.cs" />
+    <Compile Include="OldFiles\ActualField.cs" />
+    <Compile Include="Models\Fields\FieldAttributes.cs" />
+    <Compile Include="Models\Form\ActualForm.cs" />
+    <Compile Include="OldFiles\ActualFieldAttributes.cs" />
+    <Compile Include="Models\IndividualFields\Actual\ActualTextField.cs" />
+    <Compile Include="Models\IndividualFields\Actual\ActualTextFieldAttributes.cs" />
+    <Compile Include="Models\IndividualFields\TextField.cs" />
+    <Compile Include="Models\Misc\Metadata.cs" />
+    <Compile Include="Models\Misc\Step.cs" />
+    <Compile Include="Models\Section\ActualSection.cs" />
+    <Compile Include="Models\Misc\Data_Queries.cs" />
+    <Compile Include="OldFiles\Field.cs" />
+    <Compile Include="Models\Fields\FieldAttributes - backup.cs" />
+    <Compile Include="Models\Form\Form.cs" />
+    <Compile Include="Models\Misc\Pictures.cs" />
+    <Compile Include="Models\Misc\QAConfig.cs" />
+    <Compile Include="Models\Misc\Options.cs" />
+    <Compile Include="Models\Misc\Rule.cs" />
+    <Compile Include="Models\Section\Section.cs" />
+    <Compile Include="Models\Section\SectionAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

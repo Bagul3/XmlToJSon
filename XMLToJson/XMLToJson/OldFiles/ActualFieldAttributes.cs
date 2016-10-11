@@ -15,10 +15,10 @@ namespace XMLToJson.Models
 
         public ActualFieldAttributes(FieldAttributes fieldAttributes)
         {
-            group = fieldAttributes.Group;
-            mandatory = fieldAttributes.Mandatory;
-            Default = fieldAttributes.Default;
-            Option = fieldAttributes.Option;            
+            //group = fieldAttributes.Group;
+            //mandatory = fieldAttributes.Mandatory;
+            //Default = fieldAttributes.Default;
+            //Option = fieldAttributes.Option;            
         }
 
         public string group { get; set; }

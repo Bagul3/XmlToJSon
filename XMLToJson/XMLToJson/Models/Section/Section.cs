@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace XMLToJson.Models
 {
-    public class ActualSection
+    public class Section
     {
-        public ActualSection(Section section)
+        public Section()
         {
-            this.id = section.id;
-            this.parent_id = section.parent_id;
-            this.order = section.order;
-            this.attributes = section.attributes;
-            this.title = section.title;
-            this.caption = section.caption;
-            this.uud_id = section.uud_id;
-            this.NCReason = section.NCReason;
-            this.timestamp = section.timestamp;
+            Global.id++;
+            id = Global.id;
+            Global.parent_id = id;
+            parent_id = 0;
         }
-
+        private static int idCount { get; set; }
         public int id { get; set; }
         public int parent_id { get; set; }
         public int order { get; set; }
+        [XmlElement("name")]
         public SectionAttributes attributes { get; set; }
-        //public string name { get; set; }   
+        [XmlArray("fields")]
+        [XmlArrayItem("field")]
+        public List<FieldAttributes> field { get; set; }
+        //public string Name { get; set; }   
         public string title { get; set; }
         public string caption { get; set; }
         public string uud_id { get; set; }
