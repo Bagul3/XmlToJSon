@@ -25,7 +25,7 @@ namespace XMLToJson
         {            
             var serializer = new XmlSerializer(typeof(QAConfig));
             QAConfig form;
-            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Contract-Work\XmlToJSon\Livestock Market\Market Scheme Inspection Checklist.xml"))
+            using (var reader = File.OpenRead(@"C:\Users\Chis\Documents\XmlToJson\XmlToJSon\FQACS\FQACS Inspection.xml"))
             {
                 form = (QAConfig)serializer.Deserialize(reader);
             }

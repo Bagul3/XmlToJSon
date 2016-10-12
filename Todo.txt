@@ -1,0 +1,28 @@
+--Freq (Found on Sections)  - add to meta
+--Linked (Found on Fields) - add to meta
+--Parameters (Found on Fields) - add to meta
+--systemvalue (Found on Fields) - set as default value - translate to one of  "DATE", "TIME", "USERNAME", "USERID"
+--Hide (Does hide equal hidden on JSON?) - its a rule
+--Group (Does group equal groupby on JSON?)  -MAD
+--Verify (Found on Fields) add to meta
+--Clear (Found on Fields) add to meta
+--OpenForm (Found on Fields) add to meta
+--Disabled (Found on Fields) hidden= true
+--nc (Found on Fields, option tag)
+--details (Found on Fields, radio buttons) --set value to hidden adn add information to meta data
+
+
+linked --  "metadata": [
+        {
+          "key": "one",
+          "val": "1"
+        },
+        {
+          "key": "two",
+          "val": "2"
+        }
+      ],
+
+Checkboxes should be yes/no's
+
+on booleans nc will become field servity attribute and the excepted value must be yes to raise an nc
