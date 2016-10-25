@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using XMLToJson.Models.Misc;
+using XMLToJson.Models.Rules;
 
 namespace XMLToJson.Models
 {
@@ -15,6 +16,6 @@ namespace XMLToJson.Models
         [XmlText]
         public string value { get; set; }
         [XmlAttribute("if")]
-        public Statement statement { get; set; } 
+        public Statements statement { get; set; } 
     }
 }

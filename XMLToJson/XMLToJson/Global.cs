@@ -11,5 +11,6 @@ namespace XMLToJson
         public static int id = 0;
         public static int parent_id = 0;
         public static int order = 0;
+        public static int field_id = 0;
     }
 }

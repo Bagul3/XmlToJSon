@@ -57,5 +57,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
 
         //has default value
         public string calculator { get; set; }
+
+        public string Default { get; set; }
     }
 }

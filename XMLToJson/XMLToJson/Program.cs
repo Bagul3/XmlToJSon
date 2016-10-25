@@ -18,14 +18,16 @@ namespace XMLToJson
     {
         static void Main(string[] args)
         {
-            TOJSON();
+            //TOJSON();
+            BuildRule b = new BuildRule();
+            b.RuleBuider("Are there any other holdings=No");
         }
 
         public static void TOJSON()
         {            
             var serializer = new XmlSerializer(typeof(QAConfig));
             QAConfig form;
-            using (var reader = File.OpenRead(@"C:\Users\Chis\Documents\XmlToJson\XmlToJSon\FQACS\FQACS Inspection.xml"))
+            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Contract-Work\XmlToJSon\FQACS\FQACS Inspection.xml"))
             {
                 form = (QAConfig)serializer.Deserialize(reader);
             }

@@ -44,8 +44,8 @@ namespace XMLToJson.Models
 
         public string Readonly { get; set; }
 
-        [XmlAttribute("hide")]
-        public string hidden { get; set; }
+        [XmlAttribute("disabled")]
+        public string hidden { get { return hidden; } set { hidden = "true"; } }
 
         public string regex { get; set; }
 
@@ -59,8 +59,9 @@ namespace XMLToJson.Models
 
         public string value { get; set; }
 
-        [XmlAttribute("default")]
-        public string Default { get; set; }
+        //commenting out as using default for systemvalue
+        //[XmlAttribute("default")]
+        //public string Default { get; set; }
 
         public string format { get; set; }
 
@@ -136,30 +137,6 @@ namespace XMLToJson.Models
         //has default value
         public string calculator { get; set; }
 
-        //number field
-
-        // caption 
-
-            //helper text
-
-            // required
-
-            // requiredgroup
-
-            //expected
-
-        //public string validregex { get; set; }
-
-        // readonly 
-
-        //hidden 
-
-        //regex 
-
-        //example
-
-        // format 
-
         public string button { get; set; }
 
         public string totalable { get; set; }
@@ -169,48 +146,10 @@ namespace XMLToJson.Models
         public string lowerlimit { get; set; }
 
         public string upperlimit { get; set; }
-
-        //value
-
-        //step
-
-        //severity 
-
-        //metadata
-
-        //mail merge
-
-        //isproduct
-
-        //iscustomer
-
-        //isbatch
-
-        //isline
-
-        //issupplier
-
-        //code
-
-        //style
-
-        //allowncoveride
-
-        //end of number attributes
-
-        // List items 
-        // captions
-        //helpertext
-
+        
         [XmlArray("options")]
         [XmlArrayItem("option")]
         public List<Options> Options { get; set; }
-
-        //required
-        //requiredgroup
-        //expected
-        //readonly
-        //hidden
         
         public string multiple { get; set; }
 
@@ -222,17 +161,11 @@ namespace XMLToJson.Models
 
         public string addtableonselect { get; set; }
 
+        [XmlAttribute("systemvalue")]
+        public string Default { get; set; }
+
+        
+
         private static int idCount { get; set; }
-
-        //example
-        //value
-        //buttons
-        //steps
-
-       
-
-        //unknown:
-        //verify
-        //linked
     }
 }

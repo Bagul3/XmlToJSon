@@ -10,7 +10,6 @@ C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLT
 C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.pdb
 C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.exe
 C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.pdb
-C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLEngine.dll
 C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.csprojResolveAssemblyReference.cache
 C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ConorShannon\Contract-Work\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\Newtonsoft.Json.xml
