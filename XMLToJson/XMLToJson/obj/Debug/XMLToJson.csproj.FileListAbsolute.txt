@@ -21,3 +21,11 @@ C:\Users\Chis\Documents\XmlToJson\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJ
 C:\Users\Chis\Documents\XmlToJson\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Chis\Documents\XmlToJson\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Chis\Documents\XmlToJson\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.csprojResolveAssemblyReference.cache
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.exe.config
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.exe
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\XMLToJson.pdb
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.csprojResolveAssemblyReference.cache
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.exe
+C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\XMLToJson\XMLToJson\obj\Debug\XMLToJson.pdb

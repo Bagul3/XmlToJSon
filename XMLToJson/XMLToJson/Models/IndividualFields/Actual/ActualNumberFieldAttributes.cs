@@ -20,7 +20,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
             requiredgroup = numberField.requiredgroup;
             hidden = numberField.hidden;
             issupplier = numberField.issupplier;
-            code = numberField.code;
+            code = numberField.Code;
             required = numberField.required;
         }
 

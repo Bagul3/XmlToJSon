@@ -17,19 +17,18 @@ namespace XMLToJson
 {
     class Program
     {
+        private static BuildRule ruleBuilder = new BuildRule();
+
         static void Main(string[] args)
         {
-            //TOJSON();
-            BuildRule b = new BuildRule();
-            Statements statement = b.RuleBuider("Are there any other holdings=No");
-            string boh = "ce;";
+            TOJSON();
         }
 
         public static void TOJSON()
         {            
             var serializer = new XmlSerializer(typeof(QAConfig));
             QAConfig form;
-            using (var reader = File.OpenRead(@"C:\Users\ConorShannon\Contract-Work\XmlToJSon\FQACS\FQACS Inspection.xml"))
+            using (var reader = File.OpenRead(@"C:\Users\Conor\Documents\DevWork\XMLToJson\NIFCC\FQACS\FQACS Inspection.xml"))
             {
                 form = (QAConfig)serializer.Deserialize(reader);
             }
@@ -73,6 +72,11 @@ namespace XMLToJson
                                 textField.title = "Text Field";
                                 textField.attributes.mailmerge = textField.caption + " " + textField.id;
                                 buildSections.Append(NotLastFieldItem_MapFieldItem(textField, lastField));
+                                if (textField.hasRule != String.Empty)
+                                {
+                                    XMLToJson.Models.Rules.Rule rule = new XMLToJson.Models.Rules.Rule();
+                                    rule.statements.Add(ruleBuilder.RuleBuider(textField.hasRule));
+                                }
                                 break;
                             case "int":
                                 ActualNumberField number = new ActualNumberField(field);

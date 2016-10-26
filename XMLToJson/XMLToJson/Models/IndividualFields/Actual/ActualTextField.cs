@@ -20,7 +20,8 @@ namespace XMLToJson.Models.IndividualFields.Actual
             caption = textfield.caption;
             id = textfield.id;
             parent_id = textfield.parent_id;
-            order = textfield.order;            
+            order = textfield.order;
+            hasRule = textfield.Hide;
         }
 
         public int id { get; set; }
@@ -40,7 +41,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
 
         public string caption { get; set; }
 
-        public List<Rule> rules { get; set; }
+        public Rule rules { get; set; }
 
         public List<Data_Queries> data_queries { get; set; }
 
@@ -59,5 +60,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
         public string calculator { get; set; }
 
         public string Default { get; set; }
+
+        public string hasRule { get; set; }
     }
 }

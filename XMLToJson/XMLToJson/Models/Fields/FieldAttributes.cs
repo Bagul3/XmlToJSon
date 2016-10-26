@@ -44,8 +44,9 @@ namespace XMLToJson.Models
 
         public string Readonly { get; set; }
 
+        // { return hidden; } set { hidden = "true"; }
         [XmlAttribute("disabled")]
-        public string hidden { get { return hidden; } set { hidden = "true"; } }
+        public string hidden { get; set; }
 
         public string regex { get; set; }
 
@@ -100,7 +101,7 @@ namespace XMLToJson.Models
         public string inputstyle { get; set; }
 
         [XmlAttribute("code")]
-        public string code { get; set; }
+        public string Code { get; set; }
 
         //has default value
         public string iscasename { get; set; }
@@ -164,7 +165,8 @@ namespace XMLToJson.Models
         [XmlAttribute("systemvalue")]
         public string Default { get; set; }
 
-        
+        [XmlAttribute("hide")]
+        public string Hide { get; set; }
 
         private static int idCount { get; set; }
     }

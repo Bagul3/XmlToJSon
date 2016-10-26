@@ -21,7 +21,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
             required = listField.required;
             hidden = listField.hidden;
             issupplier = listField.issupplier;
-            code = listField.code;
+            code = listField.Code;
             Options = listField.Options;
         }
 

@@ -67,6 +67,7 @@
     <Compile Include="Models\IndividualFields\Actual\ActualRadioField.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualRadioFieldAttributes.cs" />
     <Compile Include="Models\Misc\Row.cs" />
+    <Compile Include="Models\Misc\Statement.cs" />
     <Compile Include="Models\Rules\Actions.cs" />
     <Compile Include="Models\Rules\Rule.cs" />
     <Compile Include="Models\Rules\Statements.cs" />

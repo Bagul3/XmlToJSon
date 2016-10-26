@@ -19,7 +19,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
             caption = listField.caption;
             requiredgroup = listField.requiredgroup;
             required = listField.required;
-            code = listField.code;
+            code = listField.Code;
         }
 
         public string caption { get; set; }

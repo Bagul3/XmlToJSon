@@ -11,9 +11,10 @@ namespace XMLToJson.Models.Rules
         public Statements()
         {
             field_id++;
+            type = "Clause";
         }
 
-        public string type { get { return type; } set { type = "Clause"; } }
+        public string type { get; set; }
 
         public int field_id { get; set; }
 
