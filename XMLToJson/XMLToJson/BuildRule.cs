@@ -12,39 +12,46 @@ namespace XMLToJson
         public Statements RuleBuider(string rule)
         {
             Statements statement = new Statements();
-            if (rule.Contains("="))
-                statement.Operator = "EQ";
-            else if (rule.Contains("!="))
-                statement.Operator = "NQ";
-            else if (rule.Contains(">="))
-                statement.Operator = "GTE";
-            else if (rule.Contains("<="))
-                statement.Operator = "LTE";
-            else if (rule.Contains("<"))
-                statement.Operator = "LT";
-            else if (rule.Contains(">"))
-                statement.Operator = "GT";
-            GetTest(rule);
-            return statement;
-
-        }
-
-        public string GetTest(string rule)
-        {
             string[] testArray;
             if (rule.Contains("="))
             {
+                statement.Operator = "EQ";
                 testArray = rule.Split('=');
+                statement.test = testArray[1];
             }
-            else if(rule.Contains(">"))
+            else if (rule.Contains("!="))
             {
-                testArray = rule.Split('>');
+                statement.Operator = "NQ";
+                testArray = rule.Split('=');
+                statement.test = testArray[1];
             }
-            else if(rule.Contains("<"))
+            else if (rule.Contains(">="))
             {
+                statement.Operator = "GTE";
+                testArray = rule.Split('=');
+                statement.test = testArray[1];
+            }
+            else if (rule.Contains("<="))
+            {
+                statement.Operator = "LTE";
+                testArray = rule.Split('=');
+                statement.test = testArray[1];
+            }
+            else if (rule.Contains("<"))
+            {
+                statement.Operator = "LT";
                 testArray = rule.Split('<');
+                statement.test = testArray[1];
             }
-            return "";
+            else if (rule.Contains(">"))
+            {
+                statement.Operator = "GT";
+                testArray = rule.Split('>');
+                statement.test = testArray[1];
+            }
+                
+            return statement;
+
         }
 
     }

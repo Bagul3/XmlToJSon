@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using XMLToJson.Models.IndividualFields.Actual;
 using XMLToJson.Models.IndividualFields;
+using XMLToJson.Models.Rules;
 
 namespace XMLToJson
 {
@@ -20,7 +21,8 @@ namespace XMLToJson
         {
             //TOJSON();
             BuildRule b = new BuildRule();
-            b.RuleBuider("Are there any other holdings=No");
+            Statements statement = b.RuleBuider("Are there any other holdings=No");
+            string boh = "ce;";
         }
 
         public static void TOJSON()
