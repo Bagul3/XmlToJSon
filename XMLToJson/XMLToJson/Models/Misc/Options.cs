@@ -14,7 +14,7 @@ namespace XMLToJson.Models
         public string servity { get; set; }
         [XmlText]
         public string value { get; set; }
-        [XmlAttribute("if")]
-        public Statement statement { get; set; } 
+        /*[XmlAttribute("if")]
+        public Statement statement { get; set; } */
     }
 }

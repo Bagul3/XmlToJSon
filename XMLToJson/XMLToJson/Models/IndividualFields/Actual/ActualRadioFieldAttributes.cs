@@ -21,75 +21,76 @@ namespace XMLToJson.Models.IndividualFields.Actual
             required = listField.required;
             hidden = listField.hidden;
             issupplier = listField.issupplier;
-            code = listField.code;
+            code = listField.Code;
             Options = listField.Options;
+            hidden = listField.hidden;
         }
 
 
-        public string caption { get; set; }
+        public string caption { get; set; } = "";
 
-        public string helpertext { get; set; }
+        public string helpertext { get; set; } = "";
 
         public List<Options> Options { get; set; }
 
-        public string required { get; set; }
+        public string required { get; set; } = "";
 
-        public string requiredgroup { get; set; }
+        public string requiredgroup { get; set; } = "";
 
-        public string expected { get; set; }
+        public string expected { get; set; } = "";
 
-        public string Readonly { get; set; }
+        public string Readonly { get; set; } = "";
 
-        public string hidden { get; set; }
+        public string hidden { get; set; } = "";
 
-        public string example { get; set; }
+        public string example { get; set; } = "";
 
-        public string value { get; set; }
+        public string value { get; set; } = "";
 
-        public string buttons { get; set; }
+        public string buttons { get; set; } = "";
 
         public List<Step> step { get; set; }
 
-        public string severity { get; set; }
+        public string severity { get; set; } = "";
 
-        public string format { get; set; }
+        public string format { get; set; } = "";
 
         public List<Metadata> metadata { get; set; }
 
-        //TODO: set to cation value
-        public string mailmerge { get; set; }
+        //TODO: set to cation value 
+        public string mailmerge { get; set; } = "";
 
         //has default
-        public string isproduct { get; set; }
+        public string isproduct { get; set; } = "";
 
         //has default
-        public string iscustomer { get; set; }
+        public string iscustomer { get; set; } = "";
 
         //has default
-        public string isbatch { get; set; }
+        public string isbatch { get; set; } = "";
 
         //has default 
-        public string isdepartment { get; set; }
+        public string isdepartment { get; set; } = "";
 
         //has default
-        public string isline { get; set; }
+        public string isline { get; set; } = "";
 
         //has default
-        public string issupplier { get; set; }
+        public string issupplier { get; set; } = "";
 
-        public string style { get; set; }
+        public string style { get; set; } = "";
 
-        public string inputstyle { get; set; }
+        public string inputstyle { get; set; } = "";
 
         //default value
-        public string casestatusupdate { get; set; }
+        public string casestatusupdate { get; set; } = "";
 
-        public string code { get; set; }
+        public string code { get; set; } = "";
 
-        public string allowncoveride { get; set; }
+        public string allowncoveride { get; set; } = "";
 
-        public string sql { get; set; }
+        public string sql { get; set; } = "";
 
-        public string addtableonselect { get; set; }
+        public string addtableonselect { get; set; } = "";
     }
 }

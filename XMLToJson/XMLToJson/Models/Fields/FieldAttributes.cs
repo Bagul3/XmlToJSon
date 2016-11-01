@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using XMLToJson.Models.Misc;
+using XMLToJson.Models.Rules;
 
 namespace XMLToJson.Models
 {
@@ -23,7 +24,7 @@ namespace XMLToJson.Models
 
         public int parent_id { get; set; }
 
-        public int order { get; set; }        
+        public int order { get; set; }
 
         //Text Field Attributes
         //caption is in both
@@ -44,70 +45,72 @@ namespace XMLToJson.Models
 
         public string Readonly { get; set; }
 
-        [XmlAttribute("hide")]
+        // { return hidden; } set { hidden = "true"; }
+        [XmlAttribute("disabled")]
         public string hidden { get; set; }
 
-        public string regex { get; set; }
+        public string regex { get; set; } = "";
 
-        public string example { get; set; }
+        public string example { get; set; } = "";
 
-        public string forcecaptial { get; set; }
+        public string forcecaptial { get; set; } = "";
 
-        public string max { get; set; }
+        public string max { get; set; } = "";
 
-        public string min { get; set; }
+        public string min { get; set; } = "";
 
-        public string value { get; set; }
+        public string value { get; set; } = "";
 
-        [XmlAttribute("default")]
-        public string Default { get; set; }
+        //commenting out as using default for systemvalue
+        //[XmlAttribute("default")]
+        //public string Default { get; set; }
 
-        public string format { get; set; }
+        public string format { get; set; } = "";
 
         //Has default value in formbuilder
-        public string buttons { get; set; }
+        public string buttons { get; set; } = "";
 
         public List<Step> step { get; set; }
 
-        public string severity { get; set; }
+        public string severity { get; set; } = "";
 
         public List<Metadata> metadata { get; set; }
 
         //TODO: set to cation value
-        public string mailmerge { get; set; }
+        public string mailmerge { get; set; } = "";
 
         //has default
-        public string isproduct { get; set; }
+        public string isproduct { get; set; } = "";
 
         //has default
-        public string iscustomer { get; set; }
+        public string iscustomer { get; set; } = "";
 
         //has default
-        public string isbatch { get; set; }
+        public string isbatch { get; set; } = "";
 
         //has default
-        public string isline { get; set; }
+        public string isline { get; set; } = "";
 
         //has default
         [XmlAttribute("updateSupplier")]
         public string issupplier { get; set; }
 
-        public string isdeperatment { get; set; }
+        public string isdeperatment { get; set; } = "";
 
-        public string style { get; set; }
+        public string style { get; set; } = "";
 
-        public string inputstyle { get; set; }
+        public string inputstyle { get; set; } = "";
 
         [XmlAttribute("code")]
-        public string code { get; set; }
+        public string Code { get; set; }
 
         //has default value
-        public string iscasename { get; set; }
+        public string iscasename { get; set; } = "";
 
         //default value
-        public string casestatusupdate { get; set; }
+        public string casestatusupdate { get; set; } = "";
 
-        public string allowncoveride { get; set; }
+        public string allowncoveride { get; set; } = "";
         //End text field attributes
 
         public List<Pictures> pictures { get; set; }
@@ -116,123 +119,74 @@ namespace XMLToJson.Models
         public string name { get; set; }
 
         //TODO set default value
-        public string title { get; set; }
+        public string title { get; set; } = "";
 
-        public List<Rule> rules { get; set; }
+        public Rules.Rules rules { get; set; }
 
         public List<Data_Queries> data_queries { get; set; }
 
         //has default
         public string uuid { get; set; }
 
-        public string NCReason { get; set; }
+        public string NCReason { get; set; } = "";
 
-        public string job_id { get; set; }
+        public string job_id { get; set; } = "";
 
-        public List<Row> row { set; get; }
+        public List<Row> row { set; get; } 
 
-        public string timestamp { get; set; }
+        public string timestamp { get; set; } = "";
 
         //has default value
-        public string calculator { get; set; }
+        public string calculator { get; set; } = "";
 
-        //number field
+        public string button { get; set; } = "";
 
-        // caption 
+        public string totalable { get; set; } = "";
 
-            //helper text
+        public string sectiontotal { get; set; } = "";
 
-            // required
+        public string lowerlimit { get; set; } = "";
 
-            // requiredgroup
-
-            //expected
-
-        //public string validregex { get; set; }
-
-        // readonly 
-
-        //hidden 
-
-        //regex 
-
-        //example
-
-        // format 
-
-        public string button { get; set; }
-
-        public string totalable { get; set; }
-
-        public string sectiontotal { get; set; }
-
-        public string lowerlimit { get; set; }
-
-        public string upperlimit { get; set; }
-
-        //value
-
-        //step
-
-        //severity 
-
-        //metadata
-
-        //mail merge
-
-        //isproduct
-
-        //iscustomer
-
-        //isbatch
-
-        //isline
-
-        //issupplier
-
-        //code
-
-        //style
-
-        //allowncoveride
-
-        //end of number attributes
-
-        // List items 
-        // captions
-        //helpertext
+        public string upperlimit { get; set; } = "";
 
         [XmlArray("options")]
         [XmlArrayItem("option")]
         public List<Options> Options { get; set; }
 
-        //required
-        //requiredgroup
-        //expected
-        //readonly
-        //hidden
-        
-        public string multiple { get; set; }
+        public string multiple { get; set; } = "";
 
-        public string lowerdatelimit { get; set; }
+        public string lowerdatelimit { get; set; } = "";
 
-        public string upperdatelimit { get; set; }
+        public string upperdatelimit { get; set; } = "";
 
-        public string sql { get; set; }
+        public string sql { get; set; } = "";
 
-        public string addtableonselect { get; set; }
+        public string addtableonselect { get; set; } = "";
+
+        [XmlAttribute("systemvalue")]
+        public string Default { get; set; }
+
+        [XmlAttribute("hide")]
+        public string Hide { get; set; }
+
+        [XmlAttribute("freq")]
+        public string freq { get; set; }
+
+        [XmlAttribute("linked")]
+        public string linked { get; set; }
+
+        [XmlAttribute("parameters")]
+        public string parameters { get; set; }
+
+        [XmlAttribute("verify")]
+        public string verify { get; set; }
+
+        [XmlAttribute("clear")]
+        public string clear { get; set; }
+
+        [XmlAttribute("openform")]
+        public string openform { get; set; }
 
         private static int idCount { get; set; }
-
-        //example
-        //value
-        //buttons
-        //steps
-
-       
-
-        //unknown:
-        //verify
-        //linked
     }
 }

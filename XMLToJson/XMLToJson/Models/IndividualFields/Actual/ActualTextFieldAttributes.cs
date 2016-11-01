@@ -21,8 +21,9 @@ namespace XMLToJson.Models.IndividualFields.Actual
             hidden = textfield.hidden;
             Default = textfield.Default;
             issupplier = textfield.issupplier;
-            code = textfield.code;
+            code = textfield.Code;
             required = textfield.required;
+            hidden = textfield.hidden;
         }
 
         public string caption { get; set; }

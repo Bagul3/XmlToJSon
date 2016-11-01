@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using XMLToJson.Models.IndividualFields.Actual;
 using XMLToJson.Models.IndividualFields;
+using XMLToJson.Models.Rules;
 
 namespace XMLToJson
 {
@@ -25,7 +26,7 @@ namespace XMLToJson
         {            
             var serializer = new XmlSerializer(typeof(QAConfig));
             QAConfig form;
-            using (var reader = File.OpenRead(@"C:\Users\Chis\Documents\XmlToJson\XmlToJSon\FQACS\FQACS Inspection.xml"))
+            using (var reader = File.OpenRead(@"C:\Users\Conor\Documents\DevWork\ChrisWork\XmlToJSon\FQACS\FQACS Inspection.xml"))
             {
                 form = (QAConfig)serializer.Deserialize(reader);
             }
@@ -68,6 +69,7 @@ namespace XMLToJson
                                 textField.attributes = attributes;
                                 textField.title = "Text Field";
                                 textField.attributes.mailmerge = textField.caption + " " + textField.id;
+                                
                                 buildSections.Append(NotLastFieldItem_MapFieldItem(textField, lastField));
                                 break;
                             case "int":
@@ -154,16 +156,6 @@ namespace XMLToJson
             builderForm.Append(",");
             return builderForm;
         }
-
-        //public static StringBuilder GetField(FieldAttributes field)
-        //{
-        //    StringBuilder buildField = new StringBuilder("");
-        //    ActualField actualField = new ActualField(field.Title, UppercaseFirstEach(field.Type));
-        //    ActualFieldAttributes attributes = new ActualFieldAttributes(field);
-        //    actualField.attributes = attributes;
-        //    buildField.Append(Regex.Unescape(JsonConvert.SerializeObject(actualField)));
-        //    return buildField;
-        //}
 
         public static string UppercaseFirstEach(string s)
         {

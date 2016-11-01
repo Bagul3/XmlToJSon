@@ -14,47 +14,59 @@ namespace XMLToJson.Models.IndividualFields.Actual
 
         }
 
+
+
         public ActualDateTimeFieldAttributes(FieldAttributes listField)
         {
             caption = listField.caption;
             requiredgroup = listField.requiredgroup;
             required = listField.required;
-            code = listField.code;
+            code = listField.Code;
+            hidden = listField.hidden;
+            metadata = new List<KeyValuePair<object, object>>();    
+            metadata.Add();
         }
 
-        public string caption { get; set; }
+        public void keyvalue(object obj)
+        {
+            
+        }
 
-        public string helpertext { get; set; }
-        
-        public string required { get; set; }
-        
-        public string requiredgroup { get; set; }
+        public string caption { get; set; } = "";
 
-        public string example { get; set; }
+        public string helpertext { get; set; } = "";
 
-        public string validregex { get; set; }
+        public string required { get; set; } = "";
 
-        public string lowerdatelimit { get; set; }
+        public string requiredgroup { get; set; } = "";
 
-        public string upperdatelimit { get; set; }
+        public string example { get; set; } = "";
 
-        public string value { get; set; }
+        public string validregex { get; set; } = "";
+
+        public string lowerdatelimit { get; set; } = "";
+
+        public string upperdatelimit { get; set; } = "";
+
+        public string value { get; set; } = "";
 
         public List<Step> step { get; set; }
 
-        public string severity { get; set; }
+        public string severity { get; set; } = "";
 
-        public List<Metadata> metadata { get; set; }
+        public List<KeyValuePair<object,object>> metadata { get; set; }
 
         //TODO: set to cation value
-        public string mailmerge { get; set; }
+        public string mailmerge { get; set; } = "";
 
-        public string expected { get; set; }
+        public string expected { get; set; } = "";
 
-        public string style { get; set; }
-        
-        public string code { get; set; }
+        public string style { get; set; } = "";
 
-        public string allowncoveride { get; set; }
+        public string code { get; set; } = "";
+
+        public string allowncoveride { get; set; } = "";
+
+        public string hidden { get; set; } = "";
     }
 }
