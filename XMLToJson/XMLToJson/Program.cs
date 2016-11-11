@@ -182,7 +182,5 @@ namespace XMLToJson
                 return buildField.Append(Regex.Unescape(JsonConvert.SerializeObject(field)) + ",");
             }
         }
-
-
     }
 }

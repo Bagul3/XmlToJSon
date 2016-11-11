@@ -14,11 +14,13 @@ namespace XMLToJson.Models
             Global.id++;
             id = Global.id;
             Global.parent_id = id;
+            Global.order++;
+            order = Global.order;
             parent_id = 0;
             rules = new List<Rules.Rules>();
             data_queries = new List<Data_Queries>();
             type = "linear";
-            layout = "vertical";
+            layout = "vertical";            
         }
         public int id { get; set; }
         public int parent_id { get; set; }
@@ -40,5 +42,7 @@ namespace XMLToJson.Models
         public List<Data_Queries> data_queries { get; set; }
         public string type { get; set; }
         public string layout { get; set; }
+        [XmlAttribute("hide")]
+        public string hasRules { get; set; }
     }
 }

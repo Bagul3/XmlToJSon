@@ -67,6 +67,7 @@
     <Compile Include="Models\IndividualFields\Actual\ActualRadioField.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualRadioFieldAttributes.cs" />
     <Compile Include="Models\Misc\Row.cs" />
+    <Compile Include="Models\Misc\SectionRule.cs" />
     <Compile Include="Models\Misc\Statement.cs" />
     <Compile Include="Models\Rules\Actions.cs" />
     <Compile Include="Models\Rules\Rules.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Models\Section\SectionAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

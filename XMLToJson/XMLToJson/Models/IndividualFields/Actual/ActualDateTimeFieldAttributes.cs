@@ -24,7 +24,7 @@ namespace XMLToJson.Models.IndividualFields.Actual
             code = listField.Code;
             hidden = listField.hidden;
             metadata = new List<KeyValuePair<object, object>>();    
-            metadata.Add();
+            //metadata.Add();
         }
 
         public void keyvalue(object obj)

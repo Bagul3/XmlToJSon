@@ -17,7 +17,7 @@ namespace XMLToJson.Models
             Global.order++;
             id = Global.id;
             parent_id = Global.parent_id;
-            order = order;
+            order = Global.order;
         }
 
         public int id { get; set; }

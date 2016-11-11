@@ -9,10 +9,19 @@ namespace XMLToJson
 {
     class BuildRule
     {
-        public Statements RuleBuider(string rule)
+        public Statements RuleBuider(string rule, int parentID)
         {
             Statements statement = new Statements();
             string[] testArray;
+
+
+            if(rule.Contains("#"))
+            {
+                int bn = 0;
+                string wow = "";
+            }
+
+            statement.field_id = parentID;
             if (rule.Contains("="))
             {
                 statement.Operator = "EQ";

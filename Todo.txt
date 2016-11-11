@@ -1,13 +1,13 @@
---Freq (Found on Sections)  - add to meta
---Linked (Found on Fields) - add to meta
---Parameters (Found on Fields) - add to meta
+--Freq (Found on Sections)  - add to meta -- done
+--Linked (Found on Fields) - add to meta -- done
+--Parameters (Found on Fields) - add to meta -- done 
 --systemvalue (Found on Fields) - set as default value - translate to one of  "DATE", "TIME", "USERNAME", "USERID"
---Hide (Does hide equal hidden on JSON?) - its a rule
+--Hide (Does hide equal hidden on JSON?) - its a rule -- done
 --Group (Does group equal groupby on JSON?)  -MAD
---Verify (Found on Fields) add to meta
---Clear (Found on Fields) add to meta
---OpenForm (Found on Fields) add to meta
---Disabled (Found on Fields) hidden= true
+--Verify (Found on Fields) add to meta -- done
+--Clear (Found on Fields) add to meta -- done 
+--OpenForm (Found on Fields) add to meta -- done
+--Disabled (Found on Fields) hidden= true -- done
 --nc (Found on Fields, option tag)
 --details (Found on Fields, radio buttons) --set value to hidden adn add information to meta data
 
