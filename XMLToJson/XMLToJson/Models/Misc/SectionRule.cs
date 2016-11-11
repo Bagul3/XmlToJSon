@@ -11,8 +11,7 @@ namespace XMLToJson.Models.Misc
         public SectionRule()
         {
 
+
         }
-
-
     }
 }
