@@ -26,15 +26,13 @@ namespace XMLToJson.Models.IndividualFields
             parent_id = textfield.parent_id;
             order = textfield.order;
             rules = new List<Rules.Rules>();
-            action = new List<Actions>();
-            order = textfield.order;
-            ReferenceList.reference.Add(textfield.caption, id);
+            order = textfield.order;            
             if (textfield.Hide != null)
             {
                 Rules.Rules rule = new Rules.Rules();
                 rule.statements = buildRule.RuleBuider(textfield.Hide, id);
                 rules.Add(rule);
-                action.Add(new Actions());
+                rule.actions = new Actions();
             }
             data_queries = new List<Data_Queries>();
         }
@@ -57,8 +55,6 @@ namespace XMLToJson.Models.IndividualFields
 
         public List<Rules.Rules> rules { get; set; }
 
-        public List<Actions> action { get; set; }
-
         public List<Data_Queries> data_queries { get; set; }        
 
         //has default
@@ -71,8 +67,6 @@ namespace XMLToJson.Models.IndividualFields
         public List<Row> row { set; get; }
 
         public string timestamp { get; set; } = "";
-
-        public string hasRule { get; set; } = "";
 
         //has default value
         public string calculator { get; set; }

@@ -25,15 +25,13 @@ namespace XMLToJson.Models.IndividualFields.Actual
             parent_id = textfield.parent_id;
             order = textfield.order;
             rules = new List<Rules.Rules>();
-            actions = new List<Actions>();
             order = textfield.order;
-            ReferenceList.reference.Add(textfield.caption, id);
             if (textfield.Hide != null)
             {
                 Rules.Rules rule = new Rules.Rules();
                 rule.statements = buildRule.RuleBuider(textfield.Hide, id);
+                rule.actions = new Actions();
                 rules.Add(rule);
-                actions.Add(new Actions());
             }
             data_queries = new List<Data_Queries>();
         }
@@ -56,8 +54,6 @@ namespace XMLToJson.Models.IndividualFields.Actual
         public string caption { get; set; } = "";
 
         public List<Rules.Rules> rules { get; set; }
-
-        public List<Actions> actions { get; set; }
 
         public List<Data_Queries> data_queries { get; set; }
 

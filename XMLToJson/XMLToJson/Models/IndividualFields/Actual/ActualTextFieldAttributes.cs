@@ -24,39 +24,40 @@ namespace XMLToJson.Models.IndividualFields.Actual
             code = textfield.Code;
             required = textfield.required;
             hidden = textfield.hidden;
+            pictures = new List<Pictures>();
         }
 
-        public string caption { get; set; }
+        public string caption { get; set; } = "";
 
-        public string helpertext { get; set; }
+        public string helpertext { get; set; } = "";
 
-        public string required { get; set; }
-        
-        public string requiredgroup { get; set; }
+        public string required { get; set; } = "";
 
-        public string expected { get; set; }
+        public string requiredgroup { get; set; } = "";
 
-        public string validregex { get; set; }
+        public string expected { get; set; } = "";
 
-        public string Readonly { get; set; }
-        
-        public string hidden { get; set; }
+        public string validregex { get; set; } = "";
 
-        public string regex { get; set; }
+        public string Readonly { get; set; } = "";
 
-        public string example { get; set; }
+        public string hidden { get; set; } = "";
 
-        public string forcecaptial { get; set; }
+        public string regex { get; set; } = "";
 
-        public string max { get; set; }
+        public string example { get; set; } = "";
 
-        public string min { get; set; }
+        public string forcecaptial { get; set; } = "";
 
-        public string value { get; set; }
-        
-        public string Default { get; set; }
+        public string max { get; set; } = "";
 
-        public string format { get; set; }
+        public string min { get; set; } = "";
+
+        public string value { get; set; } = "";
+
+        public string Default { get; set; } = "";
+
+        public string format { get; set; } = "";
 
         //Has default value in formbuilder
         public string buttons { get; set; }
@@ -71,19 +72,19 @@ namespace XMLToJson.Models.IndividualFields.Actual
         public string mailmerge { get; set; }
 
         //has default
-        public string isproduct { get; set; }
+        public string isproduct { get; set; } = "false";
 
         //has default
-        public string iscustomer { get; set; }
+        public string iscustomer { get; set; } = "false";
 
         //has default
-        public string isbatch { get; set; }
+        public string isbatch { get; set; } = "false";
 
         //has default
-        public string isline { get; set; }
+        public string isline { get; set; } = "false";
 
         //has default
-        public string issupplier { get; set; }
+        public string issupplier { get; set; } = "false";
 
         public string style { get; set; }
 

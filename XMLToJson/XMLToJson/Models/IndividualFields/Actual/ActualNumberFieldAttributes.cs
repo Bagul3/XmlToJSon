@@ -66,19 +66,19 @@ namespace XMLToJson.Models.IndividualFields.Actual
         public string mailmerge { get; set; } = "";
 
         //has default
-        public string isproduct { get; set; } = "";
+        public string isproduct { get; set; } = "false";
 
         //has default
-        public string iscustomer { get; set; } = "";
+        public string iscustomer { get; set; } = "false";
 
         //has default
-        public string isbatch { get; set; } = "";
+        public string isbatch { get; set; } = "false";
 
         //has default
-        public string isline { get; set; } = "";
+        public string isline { get; set; } = "false";
 
         //has default
-        public string issupplier { get; set; } = "";
+        public string issupplier { get; set; } = "false";
 
         public string code { get; set; } = "";
 

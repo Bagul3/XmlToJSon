@@ -77,23 +77,23 @@ namespace XMLToJson.Models
         public List<Metadata> metadata { get; set; }
 
         //TODO: set to cation value
-        public string mailmerge { get; set; } = "";
+        public string mailmerge { get; set; } = "false";
 
         //has default
-        public string isproduct { get; set; } = "";
+        public string isproduct { get; set; } = "false";
 
         //has default
-        public string iscustomer { get; set; } = "";
+        public string iscustomer { get; set; } = "false";
 
         //has default
-        public string isbatch { get; set; } = "";
+        public string isbatch { get; set; } = "false";
 
         //has default
-        public string isline { get; set; } = "";
+        public string isline { get; set; } = "false";
 
         //has default
         [XmlAttribute("updateSupplier")]
-        public string issupplier { get; set; }
+        public string issupplier { get; set; } = "false";
 
         public string isdeperatment { get; set; } = "";
 

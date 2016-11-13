@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using XMLToJson.Models.Misc;
 
 namespace XMLToJson.Models
 {
@@ -27,10 +28,17 @@ namespace XMLToJson.Models
         public int order { get; set; }
         [XmlElement("name")]
         public SectionAttributes attributes { get; set; }
-        [XmlArray("fields")]
-        [XmlArrayItem("field")]
-        public List<FieldAttributes> field { get; set; }
-        //public string Name { get; set; }   
+
+        [XmlElement("fields")]
+        public Nest nested { get; set; }
+        
+        public class Nest
+        {
+            [XmlAttribute("hide")]
+            public string hasRule { get; set; }
+            [XmlElement("field")]
+            public List<FieldAttributes> field { get; set; }            
+        }
         public string title { get; set; } = "";
         public string caption { get; set; } = "";
         public string uud_id { get; set; }
@@ -41,8 +49,6 @@ namespace XMLToJson.Models
         public List<Rules.Rules> rules { get; set; }
         public List<Data_Queries> data_queries { get; set; }
         public string type { get; set; }
-        public string layout { get; set; }
-        [XmlAttribute("hide")]
-        public string hasRules { get; set; }
+        public string layout { get; set; }    
     }
 }

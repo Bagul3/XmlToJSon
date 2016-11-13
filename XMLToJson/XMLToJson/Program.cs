@@ -53,13 +53,14 @@ namespace XMLToJson
                 if (!section.Equals(last))
                 {
                     buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(actualSection)) + ",");
-                    FieldAttributes lastField = new FieldAttributes();
-                    if (section.field.Count != 0)
+                    FieldAttributes lastField = new FieldAttributes();                
+                        
+                    if (section.nested.field.Count != 0)
                     {
-                        lastField = section.field.Last();
+                        lastField = section.nested.field.Last();
                     }
 
-                    foreach (FieldAttributes field in section.field)
+                    foreach (FieldAttributes field in section.nested.field)
                     {
                         switch (field.name)
                         {
@@ -69,7 +70,7 @@ namespace XMLToJson
                                 textField.attributes = attributes;
                                 textField.title = "Text Field";
                                 textField.attributes.mailmerge = textField.caption + " " + textField.id;
-                                
+
                                 buildSections.Append(NotLastFieldItem_MapFieldItem(textField, lastField));
                                 break;
                             case "int":
@@ -111,19 +112,21 @@ namespace XMLToJson
                                 radio.attributes.mailmerge = radio.caption + " " + radio.id;
                                 buildSections.Append(NotLastFieldItem_MapFieldItem(radio, lastField));
                                 break;
-                        }                        
+                        }
                     }
+                    
                 }
                 else
                 {
                     buildSections.Append(Regex.Unescape(JsonConvert.SerializeObject(actualSection)));
                     FieldAttributes lastField = new FieldAttributes();
-                    if (section.field.Count != 0)
+                    Section nested = new Section();
+                    if (section.nested.field.Count != 0)
                     {
-                        lastField = section.field.Last();
+                        lastField = section.nested.field.Last();
                     }
 
-                    foreach (FieldAttributes field in section.field)
+                    foreach (FieldAttributes field in section.nested.field)
                     {
                         ActualTextField actualField = new ActualTextField();
                         switch (field.caption)

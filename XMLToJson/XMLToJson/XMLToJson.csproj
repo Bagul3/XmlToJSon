@@ -59,8 +59,6 @@
     <Compile Include="Models\IndividualFields\Actual\ActualDateTimeField.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualListField.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualListFieldAttributes.cs" />
-    <Compile Include="Models\IndividualFields\Actual\ActualMemoField.cs" />
-    <Compile Include="Models\IndividualFields\Actual\ActualMemoFieldAttributes.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualNumberField.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualNumberFieldAttributes.cs" />
     <Compile Include="Models\IndividualFields\Actual\ActualDateTimeFieldAttributes.cs" />

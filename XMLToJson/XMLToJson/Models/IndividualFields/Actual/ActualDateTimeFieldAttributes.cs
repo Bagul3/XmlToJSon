@@ -36,37 +36,30 @@ namespace XMLToJson.Models.IndividualFields.Actual
 
         public string helpertext { get; set; } = "";
 
+        public List<Options> Options { get; set; }
+
         public string required { get; set; } = "";
 
         public string requiredgroup { get; set; } = "";
 
+        public string expected { get; set; } = "";
+
+        public string Readonly { get; set; } = "";
+
+        public string hidden { get; set; } = "";
+
         public string example { get; set; } = "";
 
-        public string validregex { get; set; } = "";
-
-        public string lowerdatelimit { get; set; } = "";
-
-        public string upperdatelimit { get; set; } = "";
-
         public string value { get; set; } = "";
+
+        public string buttons { get; set; } = "";
 
         public List<Step> step { get; set; }
 
         public string severity { get; set; } = "";
 
-        public List<KeyValuePair<object,object>> metadata { get; set; }
+        public string format { get; set; } = "";
 
-        //TODO: set to cation value
-        public string mailmerge { get; set; } = "";
-
-        public string expected { get; set; } = "";
-
-        public string style { get; set; } = "";
-
-        public string code { get; set; } = "";
-
-        public string allowncoveride { get; set; } = "";
-
-        public string hidden { get; set; } = "";
+        public List<Metadata> metadata { get; set; }
     }
 }

@@ -24,11 +24,10 @@ namespace XMLToJson.Models.IndividualFields.Actual
             id = textfield.id;
             parent_id = textfield.parent_id;
             order = textfield.order;
-            hasRule = textfield.Hide;
             order = textfield.order;
             rules = new List<Rules.Rules>();
             actions = new List<Actions>();
-            ReferenceList.reference.Add(textfield.caption, id);
+            
             if (textfield.Hide != null)
             {
                 Rules.Rules rule = new Rules.Rules();
@@ -72,8 +71,6 @@ namespace XMLToJson.Models.IndividualFields.Actual
         public List<Row> row { set; get; }
 
         public string timestamp { get; set; } = "";
-
-        public string hasRule { get; set; } = "";
 
         //has default value
         public string calculator { get; set; }

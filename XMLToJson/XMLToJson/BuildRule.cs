@@ -13,14 +13,7 @@ namespace XMLToJson
         {
             Statements statement = new Statements();
             string[] testArray;
-
-
-            if(rule.Contains("#"))
-            {
-                int bn = 0;
-                string wow = "";
-            }
-
+            
             statement.field_id = parentID;
             if (rule.Contains("="))
             {
