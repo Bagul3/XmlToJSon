@@ -15,14 +15,14 @@ namespace XMLToJson.Models.Rules
             value = "";
         }
 
-        string key  { get; set; }
+        public string key  { get; set; }
 
-        string field_id { get; set; }
+        public string field_id { get; set; }
 
-        string attribute_name { get; set; }
+        public string attribute_name { get; set; }
 
-        string formula { get; set; }
+        public string formula { get; set; }
 
-        string value { get; set; }
+        public string value { get; set; }
     }
 }

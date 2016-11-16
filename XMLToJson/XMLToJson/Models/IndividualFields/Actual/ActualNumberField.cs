@@ -31,8 +31,8 @@ namespace XMLToJson.Models.IndividualFields
             {
                 Rules.Rules rule = new Rules.Rules();
                 rule.statements = buildRule.RuleBuider(textfield.Hide, id);
-                rules.Add(rule);
                 rule.actions = new Actions();
+                rules.Add(rule);                
             }
             data_queries = new List<Data_Queries>();
         }

@@ -98,9 +98,9 @@ namespace XMLToJson
                                 date.name = "datetime";
                                 date.title = "Date Field";
                                 date.attributes.helpertext = "Please enter a date as dd/mm/yyyy";
-                                date.attributes.validregex = "DATE_SYSTEM";
+                                //date.attributes.validregex = "DATE_SYSTEM";
                                 date.attributes.example = "25/12/2013";
-                                date.attributes.mailmerge = date.caption + " " + date.id;
+                                //date.attributes.mailmerge = date.caption + " " + date.id;
                                 buildSections.Append(NotLastFieldItem_MapFieldItem(date, lastField));
                                 break;
                             case "radio":

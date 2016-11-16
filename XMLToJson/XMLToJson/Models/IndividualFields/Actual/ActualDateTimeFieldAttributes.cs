@@ -21,9 +21,9 @@ namespace XMLToJson.Models.IndividualFields.Actual
             caption = listField.caption;
             requiredgroup = listField.requiredgroup;
             required = listField.required;
-            code = listField.Code;
+            //code = listField.Code;
             hidden = listField.hidden;
-            metadata = new List<KeyValuePair<object, object>>();    
+            //metadata = new List<KeyValuePair<object, object>>();    
             //metadata.Add();
         }
 
